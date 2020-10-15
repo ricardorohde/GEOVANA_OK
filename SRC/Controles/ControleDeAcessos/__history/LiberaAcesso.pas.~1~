@@ -1,0 +1,105 @@
+unit LiberaAcesso;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, 
+  Dialogs, StdCtrls, ExtCtrls, DB, jpeg, FireDAC.Stan.Intf, FireDAC.Stan.Option, 
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, 
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, 
+  FireDAC.Comp.Client;
+
+type
+  TfrmLiberaAcesso = class(TForm)
+    pnSenhaPreco: TPanel;
+    Label75: TLabel;
+    edUsuario: TEdit;
+    btSenhaPreco: TButton;
+    Query1: TFDQuery;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    edSenha: TEdit;
+    edFuncao: TPanel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Panel1: TPanel;
+    pnUsuario: TPanel;
+    procedure btSenhaPrecoClick(Sender: TObject);
+    procedure FormKeyPress(Sender: TObject; var Key: Char);
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmLiberaAcesso: TfrmLiberaAcesso;
+  vfrmLiberaAcesso : boolean;
+
+implementation
+
+{$R *.dfm}
+uses
+  funcoes;
+
+procedure TfrmLiberaAcesso.btSenhaPrecoClick(Sender: TObject);
+begin
+   xxxUsuarioLiberouAcesso := '';
+   vfrmLiberaAcesso := false;
+   if (edUsuario.text <> '') and (edSenha.text <> '') then
+   begin
+       query1.Close;
+       query1.Sql.Clear;
+       query1.Sql.Add('SELECT *                         ');
+       query1.Sql.Add('  FROM USUARIO_USU,              ');
+       query1.Sql.Add('       ACESSOS_ACC               ');
+       query1.Sql.Add(' WHERE USU_CODIGO  = :USU_CODIGO ');
+       query1.Sql.Add('   AND USU_SENHA   = :USU_SENHA  ');
+       query1.Sql.Add('   AND ACC_USUARIO = USU_CODIGO  ');
+       query1.Sql.Add('   AND ACC_FUNCAO  = :FUN        ');
+       query1.ParamByName('USU_CODIGO').AsString := edUsuario.text;
+       query1.ParamByName('USU_SENHA' ).AsString := cripto(edSenha.text);
+       query1.ParamByName('FUN'       ).AsString := edfuncao.caption;
+       query1.Open;
+       if not query1.Eof Then
+       begin
+          // LIBERA O ACESSO
+          xxxUsuarioLiberouAcesso := edUsuario.text;
+          vfrmLiberaAcesso := true;
+       end;
+   end;
+   close;
+end;
+
+procedure TfrmLiberaAcesso.FormKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+   if key = #27 Then
+   begin
+      key := #0;
+      close;
+   End;
+   if key = #13 then
+   begin
+      key := #0;
+      Perform(Wm_NextDlgCtl,0,0);
+   end;
+end;
+
+procedure TfrmLiberaAcesso.FormShow(Sender: TObject);
+begin
+     pnUsuario.Caption := xxxUsuario + ' - ' + xxxNomeUsuario;
+     {
+     if FileExists('FERRAMENTAS\LOGO.JPG') then
+     begin
+        image1.Picture.LoadFromFile('FERRAMENTAS\LOGO.JPG');
+        image1.Refresh;
+     end;
+     }
+     vfrmLiberaAcesso := false;
+     edUsuario.SetFocus;
+end;
+
+end.

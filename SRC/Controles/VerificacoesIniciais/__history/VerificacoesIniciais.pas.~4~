@@ -1,0 +1,42 @@
+unit VerificacoesIniciais;
+
+interface
+
+uses Dialogs, SysUtils;
+
+type
+   TStatusInternet = (tsiComConexao,tsiSemConexao);
+
+type
+   TVerificacao = class
+   protected
+      FValidadeDoSistema: TDateTime;
+      FStatusInternet   : TStatusInternet;
+      procedure Conferir_Validade_Da_Licenca_Do_Sistema;
+      procedure Conferir_Status_Internet;
+      procedure Verificar_Validade_Certificado_Digital;
+      procedure Atualizar_Sistema;
+      procedure Conferir_Copia_de_Segurança;
+   public
+      function Realizar_Verificacoes_Iniciais:Boolean;
+   end;
+
+implementation
+
+end;
+
+
+
+{
+1)	Conferência da validade da liberação do sistema no período de 30 dias, o mesmo precisa ser verificado num período de 24 horas, mesmo que o sistema não seja fechado pelo cliente.
+
+2)	Conferência do status da internet, (normal, ociosa, não tem) a fim de colocar de maneira automática a emissão de NF-e | NFC-e em contingência automática.
+
+3)	Verificação da validade do certificado digital, 30 dias antes do vencimento precisa começar a informar o cliente do vencimento, na abertura do sistema.
+
+4)	Atualizações automáticas do sistema.
+
+5)	Conferência se foi feito cópia de segurança e a mesma enviada para nuvem e local específico (pendrive, partição do hd, outro pc ou vários locais) configurado nas dependências do cliente.
+}
+
+end.

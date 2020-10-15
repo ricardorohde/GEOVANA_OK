@@ -1,0 +1,210 @@
+unit ControleDeAcessos;
+
+interface
+
+uses Dialogs, SysUtils,
+     Classe_Empresa,
+     Classe_Acesso,
+     Classe_Usuario,
+     Classe_VerificacaoInicial,
+
+     Email,
+
+     FireDAC.Stan.Intf,  FireDAC.Stan.Option, FireDAC.Stan.Param,
+     FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+     FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
+
+     Vcl.Controls,
+     SHELLAPI, {SHELLAPI Para o ShellExecute}
+     IniFiles, // arquivos ini,
+     MMSystem, {ACTIVEVOICEPROJECTLib_TLB, execwait,Lembrete,}
+     Math, Registry,
+     stdctrls, Windows, Messages, Classes, Graphics, Forms,
+     ExtCtrls, Mask, Grids, Db, Buttons, ComCtrls,
+     Dados, Winsock, Quickrpt, QRCtrls;
+
+function TemAcesso(pUSUARIO,funcao:string):Boolean; overload;
+function TemAcesso(funcao:string):Boolean; overload;
+function TemAcessoSemMensagem(pUSUARIO,funcao:string):Boolean;
+
+implementation
+
+function TemAcesso(funcao:string):Boolean; overload;
+begin
+  if xxxUsuario = '' then
+     xxxUsuario:=xxxUsuario2;
+  result := TemAcesso(xxxUsuario,funcao);
+end;
+
+function TemAcesso(pUSUARIO,funcao:string):Boolean; overload;
+var Q : TFDQuery;
+    vGrupo : String;
+begin
+   ErroFatal;
+
+   // Clientes da Icone vão parar de usar o sistema em 28/09/19
+   // Para garantir que vão honrar nosso contrato
+   if ClienteIcone then
+      if DataServidor >= StrToDate('28/12/20') then
+         Application.Terminate;
+
+   PausaDelay;
+
+   TemAcesso := False;
+   IF pUSUARIO = 'MASTER' Then
+   begin
+     TemAcesso := True;
+     Result := true;
+     exit;
+   end;
+
+   q := TFDQuery.Create(nil);
+   Q.ConnectionName := 'X';
+
+   try
+     q.Close;
+     q.Sql.Clear;
+     q.Sql.Add('SELECT PAR_PARAR FROM PARAR_PAR ');
+     q.open; //PausaDelay;
+     if q.FieldByName('PAR_PARAR').AsInteger = 1 then
+     begin
+        q.Free;
+        Application.Terminate;
+     end;
+   except
+   end;
+
+   q.Close;
+   q.Sql.Clear;
+   q.Sql.Add('SELECT * FROM ACESSOS_ACC ');
+   q.Sql.Add(' WHERE ACC_USUARIO = :USU ');
+   q.Sql.Add('   AND ACC_FUNCAO  = :FUN ');
+   q.ParamByName('USU').AsString := pUSUARIO;
+   q.ParamByName('FUN').AsString := funcao;
+   q.open; //PausaDelay;
+   if q.Eof Then
+   Begin
+      try
+         // DESCOBRE O NÚMERO DESTA FUNCAO
+         q.Close;
+         q.SQL.Clear;
+         q.Sql.Add('SELECT * FROM FUNCOES_FUN   ');
+         q.Sql.Add(' WHERE FUN_CODIGO = :CODIGO ');
+         q.ParamByName('CODIGO').AsString  := funcao;
+         q.open; //PausaDelay;
+         if q.eof then
+         begin
+            MensagemBrena(Traduzir('Função Inexistente. Execute o ATUALIZADOR do Sistema.'),'A');
+            q.free;
+            exit;
+         end;
+         if not q.eof then
+         begin
+            // PEDIR SENHA...
+            // NAO PODE INFORMAR O PRECO
+            // SOLICITA SENHA PARA LIBERACAO DE PRECO....
+            try
+               frmLiberaAcesso := tfrmLiberaAcesso.Create(nil);
+            except
+               frmLiberaAcesso.Free;
+               frmLiberaAcesso := tfrmLiberaAcesso.Create(nil);
+            end;
+            frmLiberaAcesso.edFuncao.caption := funcao;
+            frmLiberaAcesso.panel1.caption := q.FieldByName('FUN_NUMERO').AsString;
+            frmLiberaAcesso.ShowModal;
+            if vfrmLiberaAcesso then
+            begin
+               frmLiberaAcesso.Free;
+               TemAcesso := True;
+               q.free;
+               exit;
+            end;
+            frmLiberaAcesso.Free;
+            q.free;
+            ShowMessage(xxxNomeUsuario+', '+Traduzir('Acesso Negado...'));
+            exit;
+         end;
+      except
+         showMessage(xxxNomeUsuario+', '+Traduzir('impossível verificar se voce possui acesso a esta função.')+#13+#13+
+                                    Traduzir('Informe o suporte do Sistema.'));
+         TemAcesso := true;
+      end;
+      q.free;
+      Exit;
+   End;
+   TemAcesso := True;
+
+   q.Close;
+   q.SQL.Clear;
+   q.Sql.Add('SELECT FUN_DESCRICAO FROM FUNCOES_FUN ');
+   q.Sql.Add(' WHERE FUN_CODIGO = :CODIGO           ');
+   q.ParamByName('CODIGO'   ).AsString := Copy(Funcao,1,10);
+   q.open; //PausaDelay;
+   Log(Funcao,'',q.FieldByName('FUN_DESCRICAO').AsString,'','','','',0);
+   q.free;
+
+   AtualizaFUSADA_FUS(pUSUARIO,funcao);
+End;
+
+procedure AtualizaFUSADA_FUS(pUSUARIO,pfuncao:String);
+var qLocal : TFDQuery;
+begin
+   qLocal := TFDQuery.Create(nil);
+   qLocal.ConnectionName := 'X';
+
+   qLocal.close;
+   qLocal.sql.clear;
+   qLocal.sql.add('DELETE FUSADA_FUS                ');
+   qLocal.sql.add(' WHERE FUS_USUARIO = :FUS_USUARIO');
+   qLocal.sql.add('   AND FUS_FUNCAO  = :FUS_FUNCAO ');
+   qLocal.ParamByName('FUS_USUARIO').AsString := pUSUARIO;
+   qLocal.ParamByName('FUS_FUNCAO' ).AsString := pFUNCAO;
+   qLocal.ExecSql;
+
+   qLocal.close;
+   qLocal.sql.clear;
+   qLocal.sql.add('INSERT INTO FUSADA_FUS  ');
+   qLocal.sql.add('     ( FUS_USUARIO,     ');
+   qLocal.sql.add('       FUS_FUNCAO)      ');
+   qLocal.sql.add('VALUES                  ');
+   qLocal.sql.add('     (:FUS_USUARIO,     ');
+   qLocal.sql.add('      :FUS_FUNCAO)      ');
+   qLocal.ParamByName('FUS_USUARIO').AsString := pUSUARIO;
+   qLocal.ParamByName('FUS_FUNCAO' ).AsString := pFUNCAO;
+   qLocal.ExecSql;
+
+   qLocal.Free;
+end;
+
+function TemAcessoSemMensagem(pUSUARIO,funcao:string):Boolean;
+var qLocal : TFDQuery;
+    vGrupo : String;
+begin
+   IF pUSUARIO = 'MASTER' Then
+   begin
+     Result := true;
+     exit;
+   end;
+
+   qLocal := TFDQuery.Create(nil);
+   qLocal.ParamByName('ConnectionName := 'X';
+
+   qLocal.Close;
+   qLocal.Sql.Clear;
+   qLocal.Sql.Add('SELECT * FROM ACESSOS_ACC ');
+   qLocal.Sql.Add(' WHERE ACC_USUARIO = :USU ');
+   qLocal.Sql.Add('   AND ACC_FUNCAO  = :FUN ');
+   qLocal.ParamByName('USU').AsString := pUSUARIO;
+   qLocal.ParamByName('FUN').AsString := funcao;
+   qLocal.open; //PausaDelay;
+   if qLocal.Eof Then
+   Begin
+      Result  := False;
+      qLocal.free;
+      Exit;
+   End;
+   Result  := True;
+   qLocal.free;
+End;
+
+end.

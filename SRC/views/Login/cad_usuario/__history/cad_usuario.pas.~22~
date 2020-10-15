@@ -1,0 +1,144 @@
+unit cad_usuario;
+{-------------------------------------------------------------------------------
+Campos obrigatórios devem ter TAG = 123
+-------------------------------------------------------------------------------}
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, cxGraphics, cxControls, cxLookAndFeels,
+  cxLookAndFeelPainters, cxContainer, cxEdit, dxSkinsCore,
+  dxSkinOffice2007Silver, dxSkinOffice2013LightGray, dxSkinOffice2013White,
+  Vcl.Menus, Vcl.StdCtrls, cxButtons, cxCheckBox, dxGDIPlusClasses,Vcl.ExtCtrls,
+  dxSkinBlack, dxSkinBlue, dxSkinBlueprint, dxSkinCaramel, dxSkinCoffee,
+  dxSkinDarkRoom, dxSkinDarkSide, dxSkinDevExpressDarkStyle,
+  dxSkinDevExpressStyle, dxSkinFoggy, dxSkinGlassOceans, dxSkinHighContrast,
+  dxSkiniMaginary, dxSkinLilian, dxSkinLiquidSky, dxSkinLondonLiquidSky,
+  dxSkinMcSkin, dxSkinMetropolis, dxSkinMetropolisDark, dxSkinMoneyTwins,
+  dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Green,
+  dxSkinOffice2007Pink, dxSkinOffice2010Black, dxSkinOffice2010Blue,
+  dxSkinOffice2010Silver, dxSkinOffice2013DarkGray, dxSkinOffice2016Colorful,
+  dxSkinOffice2016Dark, dxSkinPumpkin, dxSkinSeven, dxSkinSevenClassic,
+  dxSkinSharp, dxSkinSharpPlus, dxSkinSilver, dxSkinSpringTime, dxSkinStardust,
+  dxSkinSummer2008, dxSkinTheAsphaltWorld, dxSkinsDefaultPainters,
+  dxSkinValentine, dxSkinVisualStudio2013Blue, dxSkinVisualStudio2013Dark,
+  dxSkinVisualStudio2013Light, dxSkinVS2010, dxSkinWhiteprint,
+  dxSkinXmas2008Blue,
+  //----------------------------------------------------------------------------
+  funcoes,
+  Classe_Usuario;
+
+type
+  Tfrm_cad_usuario = class(TForm)
+    bGravar: TcxButton;
+    bCancelar: TcxButton;
+    GroupBox1: TGroupBox;
+    Label22: TLabel;
+    Label3: TLabel;
+    Label10: TLabel;
+    edt_confirma_senha: TEdit;
+    edt_senha: TEdit;
+    edt_usuario: TEdit;
+    btn_cons_usuario: TcxButton;
+    chk_admin: TcxCheckBox;
+    Image2: TImage;
+    bPermissoes: TcxButton;
+    lbNomeDaTela: TLabel;
+    procedure bCancelarClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure edt_usuarioExit(Sender: TObject);
+    procedure bGravarClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+    procedure Iniciar;
+    function DadosCorretos:Boolean;
+  public
+    { Public declarations }
+  end;
+
+var
+  frm_cad_usuario: Tfrm_cad_usuario;
+  UsuarioLocal: TUsuario;
+
+implementation
+
+{$R *.dfm}
+
+procedure Tfrm_cad_usuario.bGravarClick(Sender: TObject);
+begin
+  if not DadosCorretos then
+     exit;
+
+  UsuarioLocal.Senha := edt_senha.Text;
+  if not UsuarioLocal.Existe(edt_Usuario.Text) then
+  begin
+    UsuarioLocal.Codigo := edt_usuario.Text;
+    UsuarioLocal.Nome   := edt_usuario.Text;
+    UsuarioLocal.Insert;
+  end
+  else
+  begin
+    UsuarioLocal.Update;
+  end;
+  UsuarioLocal.Free;
+
+  Iniciar;
+end;
+
+procedure Tfrm_cad_usuario.Iniciar;
+begin
+  Limpar_os_campos_da_Tela(frm_cad_usuario);
+  edt_Usuario.SetFocus;
+end;
+
+procedure Tfrm_cad_usuario.bCancelarClick(Sender: TObject);
+begin
+   try
+      UsuarioLocal.Free;
+   finally
+   end;
+   Close;
+end;
+
+function Tfrm_cad_usuario.DadosCorretos: Boolean;
+begin
+  result := false;
+  if FaltaPreencherAlgumCampoObrigatorio(frm_cad_usuario)then
+     exit;
+  if edt_senha.Text <> edt_Confirma_Senha.Text then
+  begin
+    ShowMessage('As senhas não conferem.');
+    edt_senha.SetFocus;
+    exit;
+  end;
+  result:=true;
+end;
+
+procedure Tfrm_cad_usuario.edt_usuarioExit(Sender: TObject);
+begin
+  if edt_Usuario.Text = '' then exit;
+
+  try
+    UsuarioLocal := TUsuario.Create;
+  except
+    UsuarioLocal.Free;
+    UsuarioLocal := TUsuario.Create;
+  end;
+  edt_Senha.SetFocus;
+end;
+
+procedure Tfrm_cad_usuario.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  Action := cafree;
+  self := nil;
+end;
+
+procedure Tfrm_cad_usuario.FormShow(Sender: TObject);
+begin
+     Iniciar;
+end;
+
+end.
+

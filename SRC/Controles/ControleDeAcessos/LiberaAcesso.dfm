@@ -1,0 +1,213 @@
+object frmLiberaAcesso: TfrmLiberaAcesso
+  Left = 240
+  Top = 164
+  AutoSize = True
+  BorderIcons = [biSystemMenu]
+  Caption = 'Usu'#225'rio e Senha para liberar fun'#231#227'o'
+  ClientHeight = 252
+  ClientWidth = 376
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  KeyPreview = True
+  OldCreateOrder = False
+  Position = poScreenCenter
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pnSenhaPreco: TPanel
+    Left = 0
+    Top = 40
+    Width = 376
+    Height = 212
+    Color = 8421440
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -24
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+    object Label75: TLabel
+      Left = 54
+      Top = 8
+      Width = 273
+      Height = 16
+      Caption = 'Voc'#234' n'#227'o possui acesso a esta fun'#231#227'o.'
+      Color = 8421440
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label1: TLabel
+      Left = 56
+      Top = 30
+      Width = 258
+      Height = 16
+      Caption = 'Informe usu'#225'rio e senha com acesso.'
+      Color = 8421440
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 5
+      Top = 86
+      Width = 55
+      Height = 16
+      Caption = 'Usu'#225'rio'
+      Color = 8421440
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label3: TLabel
+      Left = 13
+      Top = 123
+      Width = 45
+      Height = 16
+      Caption = 'Senha'
+      Color = 8421440
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label4: TLabel
+      Left = 276
+      Top = 155
+      Width = 43
+      Height = 13
+      Caption = 'Fun'#231#227'o'
+      Color = 8421440
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label5: TLabel
+      Left = 67
+      Top = 63
+      Width = 282
+      Height = 13
+      Caption = 'Ou passe o cart'#227'o magn'#233'tico do usu'#225'rio que possui acesso'
+      Color = 8421440
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+    end
+    object edUsuario: TEdit
+      Left = 64
+      Top = 78
+      Width = 310
+      Height = 37
+      CharCase = ecUpperCase
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -24
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      PasswordChar = '*'
+      TabOrder = 0
+      OnExit = edUsuarioExit
+    end
+    object btSenhaPreco: TButton
+      Left = 65
+      Top = 155
+      Width = 114
+      Height = 56
+      Caption = 'ok'
+      TabOrder = 2
+      OnClick = btSenhaPrecoClick
+    end
+    object edSenha: TEdit
+      Left = 64
+      Top = 115
+      Width = 310
+      Height = 37
+      CharCase = ecUpperCase
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -24
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      MaxLength = 10
+      ParentFont = False
+      PasswordChar = '*'
+      TabOrder = 1
+    end
+    object edFuncao: TPanel
+      Left = 251
+      Top = 86
+      Width = 63
+      Height = 28
+      Caption = '(invisivel)'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 3
+      Visible = False
+    end
+    object Panel1: TPanel
+      Left = 227
+      Top = 170
+      Width = 146
+      Height = 38
+      BevelOuter = bvNone
+      Caption = '00'
+      Color = 8421440
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -32
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 4
+    end
+  end
+  object pnUsuario: TPanel
+    Left = 0
+    Top = 0
+    Width = 376
+    Height = 41
+    Caption = 'USU'#193'RIO'
+    Color = clBlue
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 1
+  end
+end

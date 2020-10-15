@@ -1,0 +1,68 @@
+unit Classe_Empresa;
+
+interface
+
+uses Classes, Dialogs, SysUtils, IniFiles,
+     FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+     FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet,
+     FireDAC.Comp.Client,
+     FireDAC.Stan.Intf, FireDAC.Stan.Option;
+
+type
+   TEmpresa = class
+  private
+    FNome,
+    FCodigoUniSystem: String;
+    FExiste         : Boolean;
+    function getFNome: String;
+    function getExiste: Boolean;
+    function getCodigoUniSystem: String;
+   public
+      procedure Abrir;
+      property Nome            : String  read getFNome;
+      property CodigoUniSystem : String  read getCodigoUniSystem;
+      property Existe          : Boolean read getExiste;
+   end;
+
+implementation
+{ TEmpresa }
+
+procedure TEmpresa.Abrir;
+var qLocal: TFDQuery;
+begin
+    qLocal := TFDQuery.Create(nil);
+    qLocal.ConnectionName :='X';
+    qLocal.Close;
+    qLocal.SQL.Clear;
+    qLocal.SQL.Add('SELECT * FROM EMPRESA_EMP');
+    qLocal.Open;
+    FNome:='';
+    FCodigoUniSystem:='';
+    if qLocal.eof then
+    begin
+       FExiste:=False;
+       qLocal.Free;
+       exit;
+    end;
+    FExiste         := True;
+    FNome           := qLocal.FieldByName('EMP_DESCRICAO'       ).AsString;
+    FCodigoUniSystem:= qLocal.FieldByName('EMP_CODIGO_UNISYSTEM').AsString;
+    Qlocal.Free;
+end;
+
+function TEmpresa.getCodigoUniSystem: String;
+begin
+   result := FCodigoUniSystem;
+end;
+
+function TEmpresa.getExiste: Boolean;
+begin
+   result := self.FExiste;
+end;
+
+function TEmpresa.getFNome: String;
+begin
+   result := self.FNome;
+end;
+
+end.
