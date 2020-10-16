@@ -109,7 +109,7 @@ type
 
 implementation
 
-uses U_Proxy, cadastro_fornecedor, cadastro_clientes, u_funcoes;
+uses U_Proxy, cadastro_fornecedor, cad_cliente, funcoes;
 
 {$R *.dfm}
 
@@ -127,6 +127,8 @@ procedure TFrm_CNPJ.BtnConsultarClick(Sender: TObject);
 var
   I: Integer;
 begin
+
+
   try
     if FSistConsultaCNPJ.Consulta(u_funcoes.removercaracteresespeciais(EditCNPJ.Text), EditCaptcha.Text) then
     begin
@@ -156,7 +158,8 @@ begin
       MemoAtividadesSecundarias.Lines.Clear;
       for I := 0 to FSistConsultaCNPJ.CodigoDescricaoAtividadeEconomicaSecundariasCount - 1 do
         MemoAtividadesSecundarias.Lines.Add(
-          { Copy( } FSistConsultaCNPJ.CodigoDescricaoAtividadeEconomicaSecundarias(I) // , 1, 10)
+          //{ Copy(
+           FSistConsultaCNPJ.CodigoDescricaoAtividadeEconomicaSecundarias(I) // , 1, 10)
           );
 
       ListViewSocios.Items.Clear;
@@ -175,7 +178,7 @@ begin
     on E: Exception do
       wnErro('Erro de consulta', E.Message + sLineBreak + 'Erro de conexão com o serviço de consulta.');
   end;
-
+}
 end;
 
 procedure TFrm_CNPJ.EditCaptchaKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);

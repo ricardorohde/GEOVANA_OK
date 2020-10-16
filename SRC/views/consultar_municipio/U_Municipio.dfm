@@ -86,7 +86,6 @@ object Frm_Municipio: TFrm_Municipio
     Top = 69
   end
   object SQL_Municipio: TFDQuery
-    Connection = Module.connection
     SQL.Strings = (
       
         'Select endereco_municipio.CODIGO, endereco_municipio.IBGE,endere' +

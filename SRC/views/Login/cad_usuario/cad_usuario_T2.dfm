@@ -1,4 +1,4 @@
-object frm_cad_usuario: Tfrm_cad_usuario
+object frm_cad_usuario_T2: Tfrm_cad_usuario_T2
   Left = 0
   Top = 0
   BorderIcons = [biSystemMenu]

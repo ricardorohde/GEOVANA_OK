@@ -387,7 +387,7 @@
 implementation
 
 uses
-  cad_empresa, reg_tributario, cad_usuario_T2, alterar_senha;
+  cad_empresa, reg_tributario, cad_usuario, alterar_senha;
 
 {$R *.dfm}
 
@@ -399,8 +399,8 @@ end;
 
 procedure TFrm_main.dxBarLargeButton113Click(Sender: TObject);
 begin
-    frm_cad_usuario_T2 := Tfrm_cad_usuario_T2.Create(nil);
-    frm_cad_usuario_T2.showmodal;
+    frm_cad_usuario := Tfrm_cad_usuario.Create(nil);
+    frm_cad_usuario.showmodal;
 end;
 
 procedure TFrm_main.dxBarLargeButton114Click(Sender: TObject);

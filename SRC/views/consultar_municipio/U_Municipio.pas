@@ -69,7 +69,7 @@ implementation
 
 {$R *.dfm}
 
-uses u_funcoes;
+//uses u_funcoes;
 
 procedure TFrm_Municipio.Pesquisar;
 begin

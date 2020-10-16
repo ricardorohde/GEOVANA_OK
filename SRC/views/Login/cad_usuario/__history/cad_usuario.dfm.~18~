@@ -1106,7 +1106,7 @@ object frm_cad_usuario: Tfrm_cad_usuario
     Top = 177
     Width = 84
     Height = 23
-    Caption = '&Gravar'
+    Caption = 'Gravar'
     LookAndFeel.NativeStyle = False
     LookAndFeel.SkinName = 'Metropolis'
     OptionsImage.Glyph.Data = {
@@ -1364,7 +1364,7 @@ object frm_cad_usuario: Tfrm_cad_usuario
     Top = 177
     Width = 99
     Height = 23
-    Caption = '&Permiss'#245'es'
+    Caption = 'Permiss'#245'es'
     LookAndFeel.NativeStyle = False
     LookAndFeel.SkinName = 'Metropolis'
     OptionsImage.Glyph.Data = {

@@ -147,7 +147,7 @@ implementation
 
 uses
   //tipo_colab, funcao_colab, cad_comissoes;
-  tipo_colab, cad_comissoes, consulta;//, consulta;
+  tipo_colab, cad_comissoes;//, consulta;
 
 procedure Tfrm_colaborador.cxButton5Click(Sender: TObject);
 begin

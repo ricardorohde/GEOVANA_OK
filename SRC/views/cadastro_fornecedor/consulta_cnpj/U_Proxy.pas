@@ -28,13 +28,13 @@ var
 
 implementation
 
-uses U_Principal, U_CNPJ;
+//uses U_Principal, U_CNPJ;
 
 {$R *.dfm}
 
 procedure TF_Proxy.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  Frm_CNPJ.FSistConsultaCNPJ.Proxy(EditHost.Text, EditPorta.Text, EditUsuario.Text, EditSenha.Text);
+  //Frm_CNPJ.FSistConsultaCNPJ.Proxy(EditHost.Text, EditPorta.Text, EditUsuario.Text, EditSenha.Text);
 end;
 
 end.
