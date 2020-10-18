@@ -230,7 +230,6 @@
             <Form>frm_config_email_fiscais</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="..\..\src\views\configs\global_variables.pas"/>
         <DCCReference Include="..\..\src\views\configs\integracao_outros_bancos.pas">
             <Form>frm_intagracao_outras_base_dados</Form>
             <FormType>dfm</FormType>
@@ -258,6 +257,10 @@
         </DCCReference>
         <DCCReference Include="..\..\src\views\consultar_municipio\U_Municipio.pas">
             <Form>Frm_Municipio</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\src\views\Acesso_Remoto\vw_acesso_remoto.pas">
+            <Form>frm_acesso_remoto</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <None Include="ModelSupport_SMC_PLUS_\default.txaPackage"/>

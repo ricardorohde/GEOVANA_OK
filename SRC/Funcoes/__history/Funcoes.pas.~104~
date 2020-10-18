@@ -40,8 +40,7 @@ var Acesso : TAcesso;
     Empresa: TEmpresa;
     xMemo : tMemo;
 
-    xxxAtualizado,
-    globalFuncoes_Atualizado:String;
+    xxxAtualizado:String;
 
 function SoNumeros(pnumero:String):String;
 function SoNumerosI(pnumero:String):Integer;
@@ -874,7 +873,7 @@ begin
    qLocal := TFDQuery.Create(nil);
    qLocal.ConnectionName := 'X';
 
-   pInformacao:=Copy(pInformacao,1,255);
+   pInformacao:=Copy(pInformacao,1,100);
    xxxAtualizado := pInformacao;
 
    result := true;

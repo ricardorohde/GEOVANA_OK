@@ -375,7 +375,6 @@ begin
     qEmpresa.ParamByName('EMP_SUFRAMA'            ).AsString   := FSUFRAMA;
     qEmpresa.ParamByName('EMP_CNAE'               ).AsString   := FCNAE;
     qEmpresa.ParamByName('EMP_CNPJ'               ).AsString   := FCNPJ;
-    qEmpresa.ParamByName('EMP_NIRE'               ).AsString   := FNIRE;
 
     //passo12
 end;
@@ -470,7 +469,6 @@ begin
         qEmpresa.SQL.Add('       EMP_SUFRAMA             = :EMP_SUFRAMA,            ');
         qEmpresa.SQL.Add('       EMP_CNAE                = :EMP_CNAE,               ');
         qEmpresa.SQL.Add('       EMP_CNPJ                = :EMP_CNPJ,               ');
-        qEmpresa.SQL.Add('       EMP_NIRE                = :EMP_NIRE,               ');
 
         //passo11
         Preencher_Parametros_Empresa;

@@ -50,7 +50,7 @@ end;
 
 procedure TAcesso.AtualizaBaseDeDados;
 begin
-   if globalFuncoes_Atualizado = 'S' then
+   if xxxAtualizado = 'S' then
       EXIT;
 
    //Aumenta o tamanho da coluna ATU_FUNCAO de 100 para 255 caracteres
@@ -77,9 +77,8 @@ begin
    Executar_Script('UPDATE EMPRESA_EMP SET EMP_INSCRICAO_MUNICIPAL = EMP_INSCRICAOMUNICIPAL');
    Executar_Script('ALTER TABLE EMPRESA_EMP DROP COLUMN EMP_IE');
    Executar_Script('ALTER TABLE EMPRESA_EMP DROP COLUMN EMP_INSCRICAOMUNICIPAL');
-   Executar_Script('ALTER TABLE EMPRESA_EMP ADD EMP_NIRE VARCHAR(11) NULL');
 
-   globalFuncoes_Atualizado:='S';
+   xxxAtualizado:='S';
 
 end;
 

@@ -96,11 +96,11 @@ type
     edRazaoSocial: TEdit;
     edNomeFantasia: TEdit;
     edCNAE: TEdit;
-    edCodigoSuframa: TEdit;
+    edSUFRAMA: TEdit;
     edInscricaoEstadual: TEdit;
-    Edit15: TEdit;
-    Edit16: TEdit;
-    Edit17: TEdit;
+    edCNPJ: TEdit;
+    edInscricaoMunicipal: TEdit;
+    edNIRE: TEdit;
     Edit19: TEdit;
     Edit20: TEdit;
     Edit21: TEdit;
@@ -151,9 +151,12 @@ type
     procedure cxButton5Click(Sender: TObject);
     procedure cxButton10Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure BtnGravarClick(Sender: TObject);
   private
     { Private declarations }
     procedure Preencher_Campos_da_Tela;
+    function DadosCorretos:Boolean;
+    function Gravar_Empresa:Boolean;
   public
     { Public declarations }
   end;
@@ -186,6 +189,17 @@ procedure Tfrm_cad_empresa.BtnEmailClick(Sender: TObject);
 begin
     frm_config_email := Tfrm_config_email.Create(nil);
     frm_config_email.showmodal;
+end;
+
+procedure Tfrm_cad_empresa.BtnGravarClick(Sender: TObject);
+begin
+     if not DadosCorretos then
+        exit;
+
+     if not Gravar_Empresa then
+        exit;
+
+     Close;
 end;
 
 procedure Tfrm_cad_empresa.BtnMDEClick(Sender: TObject);
@@ -254,6 +268,11 @@ begin
     Frm_regiao.showmodal;
 end;
 
+function Tfrm_cad_empresa.DadosCorretos: Boolean;
+begin
+
+end;
+
 procedure Tfrm_cad_empresa.FormShow(Sender: TObject);
 begin
    Limpar_os_campos_da_Tela(frm_cad_empresa);
@@ -261,14 +280,37 @@ begin
    edRazaoSocial.SetFocus;
 end;
 
+function Tfrm_cad_empresa.Gravar_Empresa:Boolean;
+begin
+    Result := False;
+    try
+        Empresa.NomeFantasia         := edNomeFantasia.Text;
+        Empresa.RazaoSocial          := edRazaoSocial.Text;
+        Empresa.DataInicioAtividades := StrToDate(edDataInicioAtividades.text);
+        Empresa.InscricaoEstadual    := edInscricaoEstadual.Text;
+        Empresa.SUFRAMA              := edSUFRAMA.Text;
+        Empresa.CNAE                 := edCNAE.Text;
+        Empresa.CNPJ                 := edCNPJ.Text;
+        Empresa.InscricaoMunicipal   := edInscricaoMunicipal.Text;
+        Empresa.NIRE                 := edNIRE.Text;
+        result := Empresa.Gravar;
+    Except
+
+    end;
+end;
+
 procedure Tfrm_cad_empresa.Preencher_Campos_da_Tela;
 begin
-//   Empresa.Abrir;
+   Empresa.Abrir;
    edRazaoSocial.Text          := Empresa.RazaoSocial;
    edNomeFantasia.Text         := Empresa.NomeFantasia;
-   edDataInicioAtividades.Text := DateToStr(Empresa.DataInicioAtividades);
+   edDataInicioAtividades.Text := Empresa.DataInicioAtividadesString;
    edInscricaoEstadual.Text    := Empresa.InscricaoEstadual;
-   edCodigoSuframa.Text        := Empresa.CodigoSuframa;
+   edSUFRAMA.Text              := Empresa.SUFRAMA;
+   edCNAE.Text                 := Empresa.CNAE;
+   edCNPJ.Text                 := Empresa.CNPJ;
+   edInscricaoMunicipal.Text   := Empresa.InscricaoMunicipal;
+   edNIRE.Text                 := Empresa.NIRE;
 //PASSO 9 :)
    {
    edCodigoUniSystem.Text := Empresa.CodigoUniSystem;

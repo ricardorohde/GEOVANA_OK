@@ -61,7 +61,6 @@ type
     procedure edEmpresaKeyPress(Sender: TObject; var Key: Char);
     procedure edt_usuarioKeyPress(Sender: TObject; var Key: Char);
     procedure edt_senhaKeyPress(Sender: TObject; var Key: Char);
-    procedure bAcessoRemotoClick(Sender: TObject);
     {procedure btn_entrarClick(Sender: TObject);
     procedure bSairClick(Sender: TObject);
     procedure edt_usuarioKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
@@ -98,8 +97,7 @@ uses
   funcoes,
   Classe_Acesso,
   Classe_Usuario,
-  Classe_VerificacaoInicial,
-  vw_acesso_remoto;
+  Classe_VerificacaoInicial;
 
 {$R *.dfm}
 
@@ -245,13 +243,6 @@ begin
     self.edt_senha.SetFocus;
   end;
 end;                       }
-
-procedure Tfrm_Login.bAcessoRemotoClick(Sender: TObject);
-begin
-   frm_acesso_remoto := tfrm_acesso_remoto.Create(nil);
-   frm_acesso_remoto.ShowModal;
-   frm_acesso_remoto.Free;
-end;
 
 procedure Tfrm_Login.bSairClick(Sender: TObject);
 begin

@@ -165,6 +165,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
     Font.Name = 'HelveticaNeue'
     Font.Style = [fsBold]
     ParentFont = False
+    OnClick = BtnGravarClick
   end
   object BtnAlterar: TcxButton
     Left = 1132
@@ -3767,11 +3768,11 @@ object frm_cad_empresa: Tfrm_cad_empresa
       ParentFont = False
     end
     object Label8: TLabel
-      Left = 308
-      Top = 182
-      Width = 130
+      Left = 313
+      Top = 180
+      Width = 127
       Height = 17
-      Caption = 'IE Subist. Tribu'#225'trio:'
+      Caption = 'IE Subst. Tribu'#225'trio:'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -15
@@ -3896,7 +3897,6 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Style = []
       ParentFont = False
       TabOrder = 0
-      Text = 'Edit1'
     end
     object edNomeFantasia: TEdit
       Left = 141
@@ -3911,13 +3911,13 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Style = []
       ParentFont = False
       TabOrder = 1
-      Text = 'Edit1'
     end
     object edCNAE: TEdit
       Left = 141
       Top = 177
-      Width = 120
+      Width = 145
       Height = 26
+      Color = 8454016
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNone
       Font.Height = -15
@@ -3925,9 +3925,8 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Style = []
       ParentFont = False
       TabOrder = 2
-      Text = 'Edit1'
     end
-    object edCodigoSuframa: TEdit
+    object edSUFRAMA: TEdit
       Left = 139
       Top = 145
       Width = 147
@@ -3940,7 +3939,6 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Style = []
       ParentFont = False
       TabOrder = 3
-      Text = 'Edit1'
     end
     object edInscricaoEstadual: TEdit
       Left = 141
@@ -3955,13 +3953,13 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Style = []
       ParentFont = False
       TabOrder = 4
-      Text = 'Edit1'
     end
-    object Edit15: TEdit
+    object edCNPJ: TEdit
       Left = 444
-      Top = 82
+      Top = 84
       Width = 158
       Height = 26
+      Color = 8454016
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNone
       Font.Height = -15
@@ -3969,13 +3967,13 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Style = []
       ParentFont = False
       TabOrder = 5
-      Text = 'Edit1'
     end
-    object Edit16: TEdit
+    object edInscricaoMunicipal: TEdit
       Left = 444
       Top = 113
       Width = 158
       Height = 26
+      Color = 8454016
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNone
       Font.Height = -15
@@ -3983,9 +3981,8 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Style = []
       ParentFont = False
       TabOrder = 6
-      Text = 'Edit1'
     end
-    object Edit17: TEdit
+    object edNIRE: TEdit
       Left = 444
       Top = 144
       Width = 158

@@ -40,11 +40,8 @@ var Acesso : TAcesso;
     Empresa: TEmpresa;
     xMemo : tMemo;
 
-    xxxAtualizado,
-    globalFuncoes_Atualizado:String;
+    xxxAtualizado:String;
 
-function SoNumeros(pnumero:String):String;
-function SoNumerosI(pnumero:String):Integer;
 function Eh_CPF(pNumero:String):Boolean;
 function Eh_CNPJ(pNumero:String):Boolean;
 function FormataCPF_CGC(CPF_CGC: string):string; //formata o CPF ou CGC com suas respectivas máscaras.
@@ -874,7 +871,7 @@ begin
    qLocal := TFDQuery.Create(nil);
    qLocal.ConnectionName := 'X';
 
-   pInformacao:=Copy(pInformacao,1,255);
+   pInformacao:=Copy(pInformacao,1,100);
    xxxAtualizado := pInformacao;
 
    result := true;
@@ -1120,45 +1117,6 @@ begin
          end;
 end;
 
-function SoNumeros(pnumero:String):String;
-var vDigito, vNumero : String;
-    i       : integer;
-begin
-    // recebe uma string e a retorna somente com digitos,
-    // ex. recebe 633.403.056-68 e retorna 63340305668
-    vNumero := '';
-    for i := 1 to length(pNumero) do
-    begin
-        vDigito := Copy(pNumero,i,1);
-        if (vDigito = '1') or
-           (vDigito = '2') or
-           (vDigito = '3') or
-           (vDigito = '4') or
-           (vDigito = '5') or
-           (vDigito = '6') or
-           (vDigito = '7') or
-           (vDigito = '8') or
-           (vDigito = '9') or
-           (vDigito = '0') then
-           vNumero := vNumero + vDigito;
-        {end
-        else
-        begin
-           try
-              StrToInt(vDigito);
-              vNumero := vNumero + vDigito
-           except
-           end;
-        end;
-        }
-    end;
-    result := vNumero;
-end;
-
-function SoNumerosI(pnumero:String):Integer;
-begin
-     Result := StrToInt(SoNumeros(pNumero));
-end;
 Function fNomeDoSistema:String;
 begin
      Result := 'SMC Plus';

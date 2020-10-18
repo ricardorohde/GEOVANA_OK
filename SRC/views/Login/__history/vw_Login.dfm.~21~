@@ -13060,6 +13060,5 @@ object frm_Login: Tfrm_Login
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
-    OnClick = bAcessoRemotoClick
   end
 end

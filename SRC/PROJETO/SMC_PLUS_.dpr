@@ -38,7 +38,6 @@ uses
   config_nfe in '..\..\src\views\configs\config_nfe.pas' {Frmconfig_NFe},
   config_nfs in '..\..\src\views\configs\config_nfs.pas' {frm_confi_nfs},
   email_arquivos_fiscais in '..\..\src\views\configs\email_arquivos_fiscais.pas' {frm_config_email_fiscais},
-  global_variables in '..\..\src\views\configs\global_variables.pas',
   integracao_outros_bancos in '..\..\src\views\configs\integracao_outros_bancos.pas' {frm_intagracao_outras_base_dados},
   MenuConfiguracaoNfeNFce in '..\..\src\views\configs\MenuConfiguracaoNfeNFce.pas' {frmMenuConfiguracaoNfeNFce},
   reg_tributario in '..\..\src\views\configs\reg_tributario.pas' {frm_reg_tributaria},
@@ -46,7 +45,8 @@ uses
   ControleDeAcessos in '..\..\src\Controles\ControleDeAcessos\ControleDeAcessos.pas',
   LiberaAcesso in '..\..\src\Controles\ControleDeAcessos\LiberaAcesso.pas' {frmLiberaAcesso},
   cad_empresa in '..\..\src\views\cad_empresa\cad_empresa.pas' {frm_cad_empresa},
-  U_Municipio in '..\..\src\views\consultar_municipio\U_Municipio.pas' {Frm_Municipio};
+  U_Municipio in '..\..\src\views\consultar_municipio\U_Municipio.pas' {Frm_Municipio},
+  vw_acesso_remoto in '..\..\src\views\Acesso_Remoto\vw_acesso_remoto.pas' {frm_acesso_remoto};
 
 {$R *.res}
 
@@ -55,5 +55,6 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TDM, DM);
   Application.CreateForm(Tfrm_Login, frm_Login);
+  Application.CreateForm(Tfrm_acesso_remoto, frm_acesso_remoto);
   Application.Run;
 end.
