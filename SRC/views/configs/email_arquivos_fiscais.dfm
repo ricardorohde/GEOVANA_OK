@@ -2,7 +2,7 @@ object frm_config_email_fiscais: Tfrm_config_email_fiscais
   Left = 0
   Top = 0
   BorderStyle = bsSingle
-  Caption = 'Configura'#231#227'o | E-mail Arquivos Fiscais'
+  Caption = 'Configura'#231#227'o | e-mail Arquivos Fiscais'
   ClientHeight = 460
   ClientWidth = 381
   Color = clBtnFace
@@ -31,7 +31,7 @@ object frm_config_email_fiscais: Tfrm_config_email_fiscais
   end
   object Label1: TLabel
     Left = 50
-    Top = 199
+    Top = 189
     Width = 58
     Height = 18
     Caption = 'Cliente:'
@@ -44,7 +44,7 @@ object frm_config_email_fiscais: Tfrm_config_email_fiscais
   end
   object Shape1: TShape
     Left = 115
-    Top = 216
+    Top = 206
     Width = 379
     Height = 1
     Pen.Color = clHighlight
@@ -58,7 +58,7 @@ object frm_config_email_fiscais: Tfrm_config_email_fiscais
   end
   object Label2: TLabel
     Left = 22
-    Top = 305
+    Top = 312
     Width = 86
     Height = 18
     Caption = 'Remetente:'
@@ -74,7 +74,7 @@ object frm_config_email_fiscais: Tfrm_config_email_fiscais
     Top = 5
     Width = 301
     Height = 19
-    Caption = 'Configura'#231#245'es E-mail arquivos fiscais'
+    Caption = 'Configura'#231#245'es e-mail arquivos fiscais'
     Color = clHighlight
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clHighlight
@@ -86,18 +86,10 @@ object frm_config_email_fiscais: Tfrm_config_email_fiscais
   end
   object Shape3: TShape
     Left = 115
-    Top = 320
+    Top = 327
     Width = 379
     Height = 1
     Pen.Color = clHighlight
-  end
-  object edSMTP_CONTA: TDBEdit
-    Left = 87
-    Top = 63
-    Width = 270
-    Height = 26
-    DataField = 'SMTP_CONTA'
-    TabOrder = 0
   end
   object cxButton23: TcxButton
     Left = 22
@@ -142,58 +134,7 @@ object frm_config_email_fiscais: Tfrm_config_email_fiscais
       89FFAB5989FFAB5989FFAB5989FFAB5989FFAB5989FF00000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000}
-    TabOrder = 1
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object cxButton24: TcxButton
-    Left = 154
-    Top = 416
-    Width = 84
-    Height = 25
-    Caption = 'Alterar'
-    LookAndFeel.NativeStyle = False
-    LookAndFeel.SkinName = 'Metropolis'
-    OptionsImage.Glyph.Data = {
-      36040000424D3604000000000000360000002800000010000000100000000100
-      2000000000000004000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      00000000000000000000000000003827174DB8824DFF00000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      000000000000000000003827174DB8824DFFB8824DFF00000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000003827174DB8824DFFB8824DFFB8824DFFB5804CFB9F7042DC7955
-      32A747321E630E0A061400000000000000000000000000000000000000000000
-      00003827174DB8824DFFB8824DFFB8824DFFB8824DFFB8824DFFB8824DFFB882
-      4DFFB8824DFF7C5834AC2B1E123B000000000000000000000000000000000000
-      0000000000003827174DB8824DFFB8824DFFB8824DFFB8824DFFB8824DFFB882
-      4DFFB8824DFFB8824DFF855E38B91E150C290000000000000000000000000000
-      0000484F3879212419373827174DB8824DFFB8824DFF060402082A1E123A6144
-      2886A27344E1B8824DFFB8824DFF5D4227810000000000000000000000000000
-      000077845DC98E9D6FF0212419373827174DB8824DFF00000000000000000000
-      00004C36206AB8824DFFB8824DFF91663DC90000000000000000000000000000
-      000093A273F897A776FF8E9D6FF0020302040000000000000000000000000000
-      000003020104AD7A48F0B8824DFFB37E4BF80000000000000000000000000000
-      000077845DC997A776FF97A776FF3F45316A00000000000000000000000097A7
-      76FF2E32244D281C1137AD7A48F091663DC90000000000000000000000000000
-      00004C543C8197A776FF97A776FF859368E14F583E8622261B3A0505040897A7
-      76FF97A776FF2E32244D281C1137573E25790000000000000000000000000000
-      0000181B13296E7956B997A776FF97A776FF97A776FF97A776FF97A776FF97A7
-      76FF97A776FF97A776FF2E32244D000000000000000000000000000000000000
-      00000000000023271B3B667150AC97A776FF97A776FF97A776FF97A776FF97A7
-      76FF97A776FF97A776FF97A776FF2E32244D0000000000000000000000000000
-      000000000000000000000C0D09143B412E63636D4DA7829066DC95A474FB97A7
-      76FF97A776FF97A776FF2E32244D000000000000000000000000000000000000
-      00000000000000000000000000000000000000000000000000000000000097A7
-      76FF97A776FF2E32244D00000000000000000000000000000000000000000000
-      00000000000000000000000000000000000000000000000000000000000097A7
-      76FF2E32244D0000000000000000000000000000000000000000}
-    TabOrder = 2
+    TabOrder = 0
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -206,7 +147,7 @@ object frm_config_email_fiscais: Tfrm_config_email_fiscais
     Top = 417
     Width = 84
     Height = 23
-    Caption = 'Cancelar'
+    Caption = 'Sair'
     LookAndFeel.NativeStyle = False
     LookAndFeel.SkinName = 'Metropolis'
     OptionsImage.Glyph.Data = {
@@ -244,69 +185,13 @@ object frm_config_email_fiscais: Tfrm_config_email_fiscais
       0000000000000000000022316C7F4463D8FF4261D3F9151E424E00000000151E
       414D212F677A0000000000000000000000000000000000000000000000000000
       00000000000000000000000000002130687B151E414D00000000}
-    TabOrder = 3
+    TabOrder = 1
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
-  end
-  object DBEdit1: TDBEdit
-    Left = 87
-    Top = 96
-    Width = 270
-    Height = 26
-    DataField = 'SMTP_CONTA'
-    TabOrder = 4
-  end
-  object DBEdit2: TDBEdit
-    Left = 87
-    Top = 130
-    Width = 270
-    Height = 26
-    DataField = 'SMTP_CONTA'
-    TabOrder = 5
-  end
-  object DBEdit3: TDBEdit
-    Left = 87
-    Top = 163
-    Width = 270
-    Height = 26
-    DataField = 'SMTP_CONTA'
-    TabOrder = 6
-  end
-  object DBEdit4: TDBEdit
-    Left = 87
-    Top = 232
-    Width = 270
-    Height = 26
-    DataField = 'SMTP_CONTA'
-    TabOrder = 7
-  end
-  object DBEdit5: TDBEdit
-    Left = 87
-    Top = 266
-    Width = 270
-    Height = 26
-    DataField = 'SMTP_CONTA'
-    TabOrder = 8
-  end
-  object DBEdit6: TDBEdit
-    Left = 87
-    Top = 338
-    Width = 270
-    Height = 26
-    DataField = 'SMTP_CONTA'
-    TabOrder = 9
-  end
-  object DBEdit7: TDBEdit
-    Left = 87
-    Top = 372
-    Width = 270
-    Height = 26
-    DataField = 'SMTP_CONTA'
-    TabOrder = 10
   end
   object cxGroupBox2: TcxGroupBox
     Left = -436
@@ -328,8 +213,80 @@ object frm_config_email_fiscais: Tfrm_config_email_fiscais
     StyleDisabled.LookAndFeel.Kind = lfFlat
     StyleDisabled.LookAndFeel.NativeStyle = True
     StyleDisabled.TextColor = clSkyBlue
-    TabOrder = 11
+    TabOrder = 2
     Height = 2
     Width = 817
+  end
+  object Edit1: TEdit
+    Left = 115
+    Top = 58
+    Width = 242
+    Height = 26
+    TabOrder = 3
+    Text = 'Edit1'
+  end
+  object Edit2: TEdit
+    Left = 115
+    Top = 90
+    Width = 242
+    Height = 26
+    TabOrder = 4
+    Text = 'Edit1'
+  end
+  object Edit3: TEdit
+    Left = 115
+    Top = 122
+    Width = 242
+    Height = 26
+    TabOrder = 5
+    Text = 'Edit1'
+  end
+  object Edit4: TEdit
+    Left = 115
+    Top = 154
+    Width = 242
+    Height = 26
+    TabOrder = 6
+    Text = 'Edit1'
+  end
+  object Edit5: TEdit
+    Left = 114
+    Top = 214
+    Width = 242
+    Height = 26
+    TabOrder = 7
+    Text = 'Edit1'
+  end
+  object Edit6: TEdit
+    Left = 114
+    Top = 246
+    Width = 242
+    Height = 26
+    TabOrder = 8
+    Text = 'Edit1'
+  end
+  object Edit7: TEdit
+    Left = 114
+    Top = 278
+    Width = 242
+    Height = 26
+    TabOrder = 9
+    Text = 'Edit1'
+  end
+  object Edit8: TEdit
+    Left = 115
+    Top = 336
+    Width = 242
+    Height = 26
+    TabOrder = 10
+    Text = 'Edit1'
+  end
+  object Edit9: TEdit
+    Left = 115
+    Top = 368
+    Width = 242
+    Height = 26
+    TabOrder = 11
+    Text = 'Edit1'
   end
 end

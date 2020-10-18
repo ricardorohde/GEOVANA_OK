@@ -11587,6 +11587,8 @@ object frm_Login: Tfrm_Login
   Position = poScreenCenter
   PrintScale = poNone
   Scaled = False
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Image2: TImage
@@ -12359,12 +12361,29 @@ object frm_Login: Tfrm_Login
       21021842840811C010224488008610214204308408112280214488100F6EFC17
       3A549E2921ADF52F0000000049454E44AE426082}
   end
+  object lbNomeDaTela: TLabel
+    Left = 0
+    Top = 311
+    Width = 719
+    Height = 13
+    Align = alBottom
+    Alignment = taRightJustify
+    Caption = 'T1'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    ExplicitLeft = 705
+    ExplicitWidth = 14
+  end
   object btn_entrar: TcxButton
     Left = 296
     Top = 182
     Width = 121
     Height = 55
-    Caption = 'Entrar'
+    Caption = '&Entrar'
     LookAndFeel.NativeStyle = False
     LookAndFeel.SkinName = 'Metropolis'
     OptionsImage.Glyph.Data = {
@@ -12499,7 +12518,7 @@ object frm_Login: Tfrm_Login
       1E42000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000}
     TabOrder = 0
-    OnExit = btn_entrarExit
+    OnExit = bSairClick
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -12515,7 +12534,7 @@ object frm_Login: Tfrm_Login
     Height = 149
     Ctl3D = True
     ParentCtl3D = False
-    TabOrder = 1
+    TabOrder = 3
     object Label2: TLabel
       Left = 48
       Top = 102
@@ -12556,8 +12575,9 @@ object frm_Login: Tfrm_Login
       ParentFont = False
     end
     object edt_usuario: TEdit
+      Tag = 100
       Left = 150
-      Top = 59
+      Top = 61
       Width = 231
       Height = 32
       CharCase = ecUpperCase
@@ -12567,9 +12587,12 @@ object frm_Login: Tfrm_Login
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 0
+      TabOrder = 1
+      OnExit = edt_usuarioExit
+      OnKeyPress = edt_usuarioKeyPress
     end
     object edt_senha: TEdit
+      Tag = 100
       Left = 150
       Top = 102
       Width = 231
@@ -12582,9 +12605,12 @@ object frm_Login: Tfrm_Login
       Font.Style = []
       ParentFont = False
       PasswordChar = '*'
-      TabOrder = 1
+      TabOrder = 2
+      OnExit = edt_senhaExit
+      OnKeyPress = edt_senhaKeyPress
     end
     object edEmpresa: TEdit
+      Tag = 100
       Left = 150
       Top = 21
       Width = 231
@@ -12596,8 +12622,9 @@ object frm_Login: Tfrm_Login
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      PasswordChar = '*'
-      TabOrder = 2
+      TabOrder = 0
+      OnExit = edEmpresaExit
+      OnKeyPress = edEmpresaKeyPress
     end
   end
   object bSair: TcxButton
@@ -12605,7 +12632,7 @@ object frm_Login: Tfrm_Login
     Top = 182
     Width = 121
     Height = 55
-    Caption = 'Sair'
+    Caption = '&Sair'
     LookAndFeel.NativeStyle = False
     LookAndFeel.SkinName = 'Metropolis'
     OptionsImage.Glyph.Data = {
@@ -12739,7 +12766,8 @@ object frm_Login: Tfrm_Login
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000}
-    TabOrder = 2
+    TabOrder = 1
+    TabStop = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -12748,12 +12776,12 @@ object frm_Login: Tfrm_Login
     ParentFont = False
     OnClick = bSairClick
   end
-  object cxButton1: TcxButton
+  object bAcessoRemoto: TcxButton
     Left = 296
     Top = 243
     Width = 394
     Height = 54
-    Caption = 'Acesso Remoto'
+    Caption = '&Acesso Remoto'
     LookAndFeel.NativeStyle = False
     LookAndFeel.SkinName = 'Metropolis'
     OptionsImage.Glyph.Data = {
@@ -13024,7 +13052,8 @@ object frm_Login: Tfrm_Login
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       00000000000000000000}
-    TabOrder = 3
+    TabOrder = 2
+    TabStop = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -20

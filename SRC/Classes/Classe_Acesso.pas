@@ -51,6 +51,12 @@ end;
 procedure TAcesso.AtualizaBaseDeDados;
 begin
    Executar_Script('ALTER TABLE EMPRESA_EMP ADD EMP_CODIGO_UNISYSTEM VARCHAR(10) NULL');
+   Executar_Script('TRUNCATE TABLE CORPOEMAIL_CEMAIL');
+   Executar_Script('TRUNCATE TABLE EMAIL_EMAIL');
+   Executar_Script('TRUNCATE TABLE FUSADA_FUS');
+   Executar_Script('TRUNCATE TABLE FUNCOES_FUN');
+   Executar_Script('ALTER TABLE EMPRESA_EMP DROP COLUMN EMP_DESCRICAO');
+   Executar_Script('ALTER TABLE EMPRESA_EMP ADD  EMP_INICIOATIVIDADES DATETIME NULL');
 end;
 
 function TAcesso.carregarConfiguracaoDeAcesso: Boolean;

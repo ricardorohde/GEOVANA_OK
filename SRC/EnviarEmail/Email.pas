@@ -215,7 +215,7 @@ begin
         Antigo;
         PostMessage(Handle, WM_CLOSE, 0, 0);
      end;
-     edAssunto.Text := Empresa.Nome;
+     edAssunto.Text := Empresa.NomeFantasia;
 end;
 
 end.

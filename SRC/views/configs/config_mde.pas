@@ -42,17 +42,16 @@ type
     Label5: TLabel;
     Label6: TLabel;
     Label7: TLabel;
-    edSMTP: TDBEdit;
-    edSMTP_PORTA: TDBEdit;
-    edSMTP_CONTA: TDBEdit;
-    edSMTP_SENHA: TDBEdit;
-    edSMTP_REMETENTE: TDBEdit;
-    edSMTP_EMAIL: TDBEdit;
     Label9: TLabel;
-    DBEdit1: TDBEdit;
     cxButton23: TcxButton;
-    cxButton24: TcxButton;
     cxButton25: TcxButton;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    Edit5: TEdit;
+    Edit6: TEdit;
+    Edit7: TEdit;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }

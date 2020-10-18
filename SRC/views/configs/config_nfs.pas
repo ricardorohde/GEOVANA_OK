@@ -8,21 +8,7 @@ uses
   cxLookAndFeelPainters, Vcl.Menus, dxSkinsCore, dxSkinOffice2013White,
   cxControls, cxContainer, cxEdit, cxTextEdit, cxMaskEdit, cxDropDownEdit,
   Vcl.Mask, Vcl.DBCtrls, cxGroupBox, Vcl.StdCtrls, cxButtons,
-  dxSkinOffice2007Silver, dxSkinOffice2013LightGray, dxSkinBlack, dxSkinBlue,
-  dxSkinBlueprint, dxSkinCaramel, dxSkinCoffee, dxSkinDarkRoom, dxSkinDarkSide,
-  dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle, dxSkinFoggy,
-  dxSkinGlassOceans, dxSkinHighContrast, dxSkiniMaginary, dxSkinLilian,
-  dxSkinLiquidSky, dxSkinLondonLiquidSky, dxSkinMcSkin, dxSkinMetropolis,
-  dxSkinMetropolisDark, dxSkinMoneyTwins, dxSkinOffice2007Black,
-  dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Pink,
-  dxSkinOffice2010Black, dxSkinOffice2010Blue, dxSkinOffice2010Silver,
-  dxSkinOffice2013DarkGray, dxSkinOffice2016Colorful, dxSkinOffice2016Dark,
-  dxSkinPumpkin, dxSkinSeven, dxSkinSevenClassic, dxSkinSharp, dxSkinSharpPlus,
-  dxSkinSilver, dxSkinSpringTime, dxSkinStardust, dxSkinSummer2008,
-  dxSkinTheAsphaltWorld, dxSkinsDefaultPainters, dxSkinValentine,
-  dxSkinVisualStudio2013Blue, dxSkinVisualStudio2013Dark,
-  dxSkinVisualStudio2013Light, dxSkinVS2010, dxSkinWhiteprint,
-  dxSkinXmas2008Blue;
+  dxSkinOffice2007Silver, dxSkinOffice2013LightGray;
 
 type
   Tfrm_confi_nfs = class(TForm)
@@ -46,12 +32,8 @@ type
     Edit4: TEdit;
     Label11: TLabel;
     Label12: TLabel;
-    edSMTP_SENHA: TDBEdit;
     Label13: TLabel;
     cxGroupBox1: TcxGroupBox;
-    cxComboBox2: TcxComboBox;
-    cxComboBox3: TcxComboBox;
-    cxComboBox4: TcxComboBox;
     Label6: TLabel;
     Label7: TLabel;
     Label8: TLabel;
@@ -66,8 +48,13 @@ type
     Edit8: TEdit;
     Label16: TLabel;
     cxButton23: TcxButton;
-    cxButton24: TcxButton;
     cxButton25: TcxButton;
+    ComboBox1: TComboBox;
+    ComboBox2: TComboBox;
+    ComboBox3: TComboBox;
+    Edit9: TEdit;
+    Edit10: TEdit;
+    Edit11: TEdit;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }

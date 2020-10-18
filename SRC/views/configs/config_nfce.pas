@@ -38,9 +38,7 @@ type
     edtPastaNotas: TEdit;
     btn_buscar_xml: TcxButton;
     grp_impressora_nfce: TGroupBox;
-    cb_nfce_impressoras: TcxComboBox;
     GroupBox2: TGroupBox;
-    cxComboBox1: TcxComboBox;
     grp_sequencia_nfce: TGroupBox;
     lbl1: TLabel;
     Label15: TLabel;
@@ -48,8 +46,6 @@ type
     grp_grupo_nfce: TGroupBox;
     Label7: TLabel;
     Label8: TLabel;
-    nfce_lote: TDBEdit;
-    nfce_serie: TDBEdit;
     Label4: TLabel;
     cxGroupBox2: TcxGroupBox;
     Edit1: TEdit;
@@ -59,11 +55,14 @@ type
     grp_csc: TGroupBox;
     Label1: TLabel;
     Label5: TLabel;
-    id_token: TDBEdit;
-    id_csc: TDBEdit;
     cxButton23: TcxButton;
-    cxButton24: TcxButton;
     cxButton25: TcxButton;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    Edit5: TEdit;
+    Edit6: TEdit;
+    ComboBox1: TComboBox;
+    ComboBox2: TComboBox;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }

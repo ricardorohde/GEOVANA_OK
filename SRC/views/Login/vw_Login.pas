@@ -1,27 +1,19 @@
-﻿unit vw_Login;
+﻿// TELA-T1
+unit vw_Login;
 {
 ================================================================================
 |   DATA   |DESENVOLVEDOR|HISTORICO DA ALTERACAO DO CODIGO                     |
 |----------|-------------|-----------------------------------------------------|
-|21/02/2020|WANDER       |Passou a atualizar a variável Global_Usuario_Logado. |
-|        06|             |                                                     |
-================================================================================
-| ITEM|DATA  HR|UNIT                |HISTORICO                                 |
-|-----|--------|--------------------|------------------------------------------|
-|  128|11/05/20|vw_Login            |Passou a pedir a Filial e a atualizar a   |
-|     |   15:12|                    |variável Global_Filial_Em_Uso             |
-|     |        |                    |para controlar a Filial ativa (em uso)    |
-|-----|--------|--------------------|------------------------------------------|
-|  133|13/05/20|wander              |Só exibe e exige que o usuário preencha o |
-|     |   10:44|vw_Login            |campo EMPRESA se existir filiais cadastra-|
-|     |        |                    |das.                                      |
+|12/10/2020|WANDER       |Codificou a unit                                     |
 ================================================================================
 }
 
 interface
 
 uses
+  Messages,
   Winapi.Windows, System.SysUtils,
+
   Vcl.Dialogs,
   System.Classes,
   Vcl.Controls, Vcl.Forms,
@@ -56,11 +48,19 @@ type
     Image2: TImage;
     lbEmpresa: TLabel;
     edEmpresa: TEdit;
-    cxButton1: TcxButton;
+    bAcessoRemoto: TcxButton;
+    lbNomeDaTela: TLabel;
 
     procedure bSairClick(Sender: TObject);
     procedure btn_entrarClick(Sender: TObject);
-    procedure btn_entrarExit(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure edEmpresaExit(Sender: TObject);
+    procedure edt_usuarioExit(Sender: TObject);
+    procedure edt_senhaExit(Sender: TObject);
+    procedure FormKeyPress(Sender: TObject; var Key: Char);
+    procedure edEmpresaKeyPress(Sender: TObject; var Key: Char);
+    procedure edt_usuarioKeyPress(Sender: TObject; var Key: Char);
+    procedure edt_senhaKeyPress(Sender: TObject; var Key: Char);
     {procedure btn_entrarClick(Sender: TObject);
     procedure bSairClick(Sender: TObject);
     procedure edt_usuarioKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
@@ -71,12 +71,21 @@ type
     procedure edEmpresaKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);    }
 
   private
-//    mostramensagem: boolean;
+  //mostramensagem: boolean;
+    function DadosCorretos:Boolean;
+    procedure AbreMenuPrincipal;
+    procedure Encerrar_a_Aplicacao;
+    procedure Tratar_Validade_de_Certificado_Digital;
+    procedure Preencher_Dados_do_Ultimo_Acesso;
+    procedure Desabilitar_Campos_e_Botão_Entrar;
   public
   end;
 
 var
   frm_Login: Tfrm_Login;
+//  Acesso : TAcesso;
+//  Usuario: TUsuario;
+
   {UltimaLiberacao, cnpj: String;
   xLiberado: boolean;
   days, compared_date: Integer;   }
@@ -84,7 +93,11 @@ var
 implementation
 
 uses
-  main_smc;
+  main_smc,
+  funcoes,
+  Classe_Acesso,
+  Classe_Usuario,
+  Classe_VerificacaoInicial;
 
 {$R *.dfm}
 
@@ -231,27 +244,226 @@ begin
   end;
 end;                       }
 
-
-
 procedure Tfrm_Login.bSairClick(Sender: TObject);
 begin
    modalresult := mrcancel;
-  close;
+   close;
 end;
+
+function Tfrm_Login.DadosCorretos:Boolean;
+begin
+    result := false;
+
+    if edEmpresa.Text = '' then
+    begin
+      ShowMessage('Informe a empresa');
+      exit;
+    end;
+
+    if edt_Usuario.Text = '' then
+    begin
+      ShowMessage('Informe o usuário');
+      exit;
+    end;
+
+    if not Acesso.Conectado  then exit;
+
+    if usuario.Senha <>  edt_Senha.Text then
+    begin
+      ShowMessage('Senha inválida');
+      exit;
+    end;
+
+    result := true;
+end;
+
 procedure Tfrm_Login.btn_entrarClick(Sender: TObject);
+begin
+    if not DadosCorretos then
+       exit;
+
+
+    Gravar_Dados_do_Ultimo_Acesso(edEmpresa.Text);
+
+    //------------------------------------------------
+    VerificacaoInicial := TVerificacaoInicial.Create;
+    VerificacaoInicial.Processar;
+    if VerificacaoInicial.AcessoNegado then
+       Encerrar_a_Aplicacao;
+
+    Tratar_Validade_de_Certificado_Digital;
+    VerificacaoInicial.Free;
+    //------------------------------------------------
+
+    frm_Login.Visible := false;
+    AbreMenuPrincipal;
+    Encerrar_a_Aplicacao;
+end;
+
+procedure Tfrm_Login.Tratar_Validade_de_Certificado_Digital;
+begin
+    if VerificacaoInicial.ValidadeCertificado > DataServidor + 30 then
+       exit;
+
+    Certificado_Digital_Vencendo_Avisar_Usuario_e_Enviar_Email_Ao_Suporte;
+end;
+
+procedure Tfrm_Login.Encerrar_a_Aplicacao;
+begin
+   Destroi_Objetos_das_Classes;
+   close;
+end;
+
+procedure Tfrm_Login.AbreMenuPrincipal;
 begin
     Frm_main := TFrm_main.Create(nil);
     Frm_main.showmodal;
     Frm_main.Free;
-    close;
+end;
+
+procedure Tfrm_Login.edEmpresaExit(Sender: TObject);
+begin
+  if bSair.Focused         then exit;
+  if bAcessoRemoto.Focused then exit;
+
+    //Acessar a base de dados que o usuario deseja
+    try
+       Acesso := TAcesso.Create;
+    except
+       Acesso.Free;
+       Acesso := TAcesso.Create;
+    end;
+    Acesso.nomeDaConexao := edEmpresa.Text;
+    Acesso.Conectar;
+    if not Acesso.Conectado then
+    begin
+      Acesso.Free;
+      edEmpresa.SetFocus;
+      exit;
     end;
 
-procedure Tfrm_Login.btn_entrarExit(Sender: TObject);
+   edt_Usuario.Enabled := True;
+   edt_Usuario.SetFocus;
+end;
+
+procedure Tfrm_Login.edEmpresaKeyPress(Sender: TObject; var Key: Char);
 begin
-Close;
+     if key = #13 Then
+     begin
+        key := #0;
+        edEmpresaExit(nil);
+     end;
+end;
+
+procedure Tfrm_Login.edt_senhaExit(Sender: TObject);
+begin
+  if bSair.Focused         then exit;
+  if bAcessoRemoto.Focused then exit;
+  if edt_senha.Text = '' then exit;
+  //if edEmpresa.focused     then exit;
+  if edt_usuario.Focused   then
+  begin
+    edt_senha.Text := '';
+    exit;
+  end;
+
+  if edt_Senha.text <> Usuario.Senha then
+  begin
+     ShowMessage('Senha inválida.');
+     edt_Senha.SetFocus;
+     exit;
+  end;
+  btn_Entrar.Enabled  := True;
+  btn_Entrar.SetFocus;
+end;
+
+procedure Tfrm_Login.edt_senhaKeyPress(Sender: TObject; var Key: Char);
+begin
+     if key = #13 Then
+     begin
+        key := #0;
+        edt_senhaExit(nil);
+     end;
+end;
+
+procedure Tfrm_Login.edt_usuarioExit(Sender: TObject);
+begin
+  //if edEmpresa.focused     then exit;
+  //if bSair.Focused         then exit;
+  //if bAcessoRemoto.Focused then exit;
+  if edt_Usuario.Text = '' then exit;
+
+  try
+    Usuario := TUsuario.Create;
+  except
+    Usuario.Free;
+    Usuario := TUsuario.Create;
+  end;
+  if not Usuario.Existe(edt_Usuario.Text) then
+  begin
+     Usuario.Free;
+     ShowMessage('Usuário não cadastrado');
+     edt_Usuario.SetFocus;
+     exit;
+  end;
+  edt_Senha.Enabled   := True;
+  edt_Senha.SetFocus;
+end;
+
+procedure Tfrm_Login.edt_usuarioKeyPress(Sender: TObject; var Key: Char);
+begin
+     if key = #13 Then
+     begin
+        key := #0;
+        edt_usuarioExit(nil);
+     end;
+end;
+
+procedure Tfrm_Login.FormKeyPress(Sender: TObject; var Key: Char);
+begin
+     if key = #27 Then
+     begin
+        key := #0;
+        Exit;
+     end;
+{
+     if key = #13 Then
+     begin
+        key := #0;
+        Perform(Wm_NextDlgCtl,0,0);
+     end;
+     }
+end;
+
+procedure Tfrm_Login.FormShow(Sender: TObject);
+begin
+   Preencher_Dados_do_Ultimo_Acesso;
+   Desabilitar_Campos_e_Botão_Entrar;
+   edEmpresa.SetFocus;
+end;
+
+procedure Tfrm_Login.Preencher_Dados_do_Ultimo_Acesso;
+var ArquivoIni: TIniFile;
+    vSMC_INI:String;
+begin
+   edEmpresa.Text  := '';
+   edt_Usuario.Text:= '';
+
+   vSMC_INI := 'Arquivos\SMC_INI';
+   if not FileExists(vSMC_INI) then
+      exit;
+
+   ArquivoIni := TIniFile.Create(vSMC_INI);
+   edEmpresa.Text   := ArquivoIni.ReadString('LOGIN','EMPRESA','');
+   edt_Usuario.Text := ArquivoIni.ReadString('LOGIN','USUARIO','');
+   ArquivoIni.Free;
+end;
+
+procedure Tfrm_Login.Desabilitar_Campos_e_Botão_Entrar;
+begin
+   edt_Usuario.Enabled := False;
+   edt_Senha.Enabled   := False;
+   btn_Entrar.Enabled  := False;
 end;
 
 end.
-
-
-

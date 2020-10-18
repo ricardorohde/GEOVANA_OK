@@ -141,9 +141,9 @@ object frm_config_certificado: Tfrm_config_certificado
   object Label4: TLabel
     Left = 23
     Top = 7
-    Width = 260
+    Width = 255
     Height = 19
-    Caption = 'Configura'#231#227'o Certificado Digital'
+    Caption = 'Configura'#231#227'o certificado digital'
     Color = clHighlight
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clHighlight
@@ -240,19 +240,13 @@ object frm_config_certificado: Tfrm_config_certificado
       Font.Style = [fsBold]
       ParentFont = False
     end
-    object cb_certificados: TcxComboBox
+    object ComboBox1: TComboBox
       Left = 12
-      Top = 24
-      Style.LookAndFeel.NativeStyle = False
-      Style.LookAndFeel.SkinName = 'Metropolis'
-      StyleDisabled.LookAndFeel.NativeStyle = False
-      StyleDisabled.LookAndFeel.SkinName = 'Metropolis'
-      StyleFocused.LookAndFeel.NativeStyle = False
-      StyleFocused.LookAndFeel.SkinName = 'Metropolis'
-      StyleHot.LookAndFeel.NativeStyle = False
-      StyleHot.LookAndFeel.SkinName = 'Metropolis'
-      TabOrder = 0
+      Top = 23
       Width = 263
+      Height = 26
+      TabOrder = 0
+      Text = 'ComboBox1'
     end
   end
   object cxButton23: TcxButton
@@ -306,63 +300,12 @@ object frm_config_certificado: Tfrm_config_certificado
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object cxButton24: TcxButton
-    Left = 122
-    Top = 490
-    Width = 84
-    Height = 23
-    Caption = 'Alterar'
-    LookAndFeel.NativeStyle = False
-    LookAndFeel.SkinName = 'Metropolis'
-    OptionsImage.Glyph.Data = {
-      36040000424D3604000000000000360000002800000010000000100000000100
-      2000000000000004000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      00000000000000000000000000003827174DB8824DFF00000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      000000000000000000003827174DB8824DFFB8824DFF00000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000003827174DB8824DFFB8824DFFB8824DFFB5804CFB9F7042DC7955
-      32A747321E630E0A061400000000000000000000000000000000000000000000
-      00003827174DB8824DFFB8824DFFB8824DFFB8824DFFB8824DFFB8824DFFB882
-      4DFFB8824DFF7C5834AC2B1E123B000000000000000000000000000000000000
-      0000000000003827174DB8824DFFB8824DFFB8824DFFB8824DFFB8824DFFB882
-      4DFFB8824DFFB8824DFF855E38B91E150C290000000000000000000000000000
-      0000484F3879212419373827174DB8824DFFB8824DFF060402082A1E123A6144
-      2886A27344E1B8824DFFB8824DFF5D4227810000000000000000000000000000
-      000077845DC98E9D6FF0212419373827174DB8824DFF00000000000000000000
-      00004C36206AB8824DFFB8824DFF91663DC90000000000000000000000000000
-      000093A273F897A776FF8E9D6FF0020302040000000000000000000000000000
-      000003020104AD7A48F0B8824DFFB37E4BF80000000000000000000000000000
-      000077845DC997A776FF97A776FF3F45316A00000000000000000000000097A7
-      76FF2E32244D281C1137AD7A48F091663DC90000000000000000000000000000
-      00004C543C8197A776FF97A776FF859368E14F583E8622261B3A0505040897A7
-      76FF97A776FF2E32244D281C1137573E25790000000000000000000000000000
-      0000181B13296E7956B997A776FF97A776FF97A776FF97A776FF97A776FF97A7
-      76FF97A776FF97A776FF2E32244D000000000000000000000000000000000000
-      00000000000023271B3B667150AC97A776FF97A776FF97A776FF97A776FF97A7
-      76FF97A776FF97A776FF97A776FF2E32244D0000000000000000000000000000
-      000000000000000000000C0D09143B412E63636D4DA7829066DC95A474FB97A7
-      76FF97A776FF97A776FF2E32244D000000000000000000000000000000000000
-      00000000000000000000000000000000000000000000000000000000000097A7
-      76FF97A776FF2E32244D00000000000000000000000000000000000000000000
-      00000000000000000000000000000000000000000000000000000000000097A7
-      76FF2E32244D0000000000000000000000000000000000000000}
-    TabOrder = 2
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
   object cxButton25: TcxButton
     Left = 216
     Top = 490
     Width = 84
     Height = 23
-    Caption = 'Cancelar'
+    Caption = 'Sair'
     LookAndFeel.NativeStyle = False
     LookAndFeel.SkinName = 'Metropolis'
     OptionsImage.Glyph.Data = {
@@ -400,7 +343,7 @@ object frm_config_certificado: Tfrm_config_certificado
       0000000000000000000022316C7F4463D8FF4261D3F9151E424E00000000151E
       414D212F677A0000000000000000000000000000000000000000000000000000
       00000000000000000000000000002130687B151E414D00000000}
-    TabOrder = 3
+    TabOrder = 2
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -414,7 +357,7 @@ object frm_config_certificado: Tfrm_config_certificado
     Width = 160
     Height = 21
     Style = csDropDownList
-    TabOrder = 4
+    TabOrder = 3
   end
   object cbCryptLib: TComboBox
     Left = 140
@@ -422,7 +365,7 @@ object frm_config_certificado: Tfrm_config_certificado
     Width = 160
     Height = 21
     Style = csDropDownList
-    TabOrder = 5
+    TabOrder = 4
   end
   object cbHttpLib: TComboBox
     Left = 140
@@ -430,7 +373,7 @@ object frm_config_certificado: Tfrm_config_certificado
     Width = 160
     Height = 21
     Style = csDropDownList
-    TabOrder = 6
+    TabOrder = 5
   end
   object cbXmlSignLib: TComboBox
     Left = 140
@@ -438,14 +381,14 @@ object frm_config_certificado: Tfrm_config_certificado
     Width = 160
     Height = 21
     Style = csDropDownList
-    TabOrder = 7
+    TabOrder = 6
   end
   object edtCaminho: TEdit
     Left = 140
     Top = 277
     Width = 133
     Height = 21
-    TabOrder = 8
+    TabOrder = 7
   end
   object edtSenha: TEdit
     Left = 139
@@ -453,10 +396,10 @@ object frm_config_certificado: Tfrm_config_certificado
     Width = 161
     Height = 21
     PasswordChar = '*'
-    TabOrder = 9
+    TabOrder = 8
   end
   object edtNumSerie: TEdit
-    Left = 140
+    Left = 139
     Top = 304
     Width = 133
     Height = 21
@@ -466,7 +409,7 @@ object frm_config_certificado: Tfrm_config_certificado
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 10
+    TabOrder = 9
   end
   object cbxSSLType: TComboBox
     Left = 140
@@ -474,7 +417,7 @@ object frm_config_certificado: Tfrm_config_certificado
     Width = 160
     Height = 21
     Style = csDropDownList
-    TabOrder = 11
+    TabOrder = 10
   end
   object cxButton2: TcxButton
     Left = 273
@@ -518,7 +461,7 @@ object frm_config_certificado: Tfrm_config_certificado
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000}
-    TabOrder = 12
+    TabOrder = 11
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -664,7 +607,7 @@ object frm_config_certificado: Tfrm_config_certificado
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000}
-    TabOrder = 13
+    TabOrder = 12
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -692,7 +635,7 @@ object frm_config_certificado: Tfrm_config_certificado
     StyleDisabled.LookAndFeel.Kind = lfFlat
     StyleDisabled.LookAndFeel.NativeStyle = True
     StyleDisabled.TextColor = clSkyBlue
-    TabOrder = 14
+    TabOrder = 13
     Height = 2
     Width = 817
   end
@@ -834,7 +777,7 @@ object frm_config_certificado: Tfrm_config_certificado
       00070000000B00000013000000200000002B0000003300000030000000200000
       00150000000F0000000A00000006000000030000000100000001000000000000
       0000000000000000000000000000000000000000000000000000}
-    TabOrder = 15
+    TabOrder = 14
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -884,7 +827,7 @@ object frm_config_certificado: Tfrm_config_certificado
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000}
-    TabOrder = 16
+    TabOrder = 15
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12

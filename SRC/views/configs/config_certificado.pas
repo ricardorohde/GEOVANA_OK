@@ -8,30 +8,14 @@ uses
   cxLookAndFeelPainters, cxContainer, cxEdit, dxSkinsCore,
   dxSkinOffice2013White, Vcl.Menus, Vcl.StdCtrls, cxButtons, Vcl.Mask,
   Vcl.DBCtrls, cxTextEdit, cxMaskEdit, cxDropDownEdit, dxSkinOffice2007Silver,
-  dxSkinOffice2013LightGray, Vcl.ExtCtrls, Vcl.Buttons, cxGroupBox, dxSkinBlack,
-  dxSkinBlue, dxSkinBlueprint, dxSkinCaramel, dxSkinCoffee, dxSkinDarkRoom,
-  dxSkinDarkSide, dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle, dxSkinFoggy,
-  dxSkinGlassOceans, dxSkinHighContrast, dxSkiniMaginary, dxSkinLilian,
-  dxSkinLiquidSky, dxSkinLondonLiquidSky, dxSkinMcSkin, dxSkinMetropolis,
-  dxSkinMetropolisDark, dxSkinMoneyTwins, dxSkinOffice2007Black,
-  dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Pink,
-  dxSkinOffice2010Black, dxSkinOffice2010Blue, dxSkinOffice2010Silver,
-  dxSkinOffice2013DarkGray, dxSkinOffice2016Colorful, dxSkinOffice2016Dark,
-  dxSkinPumpkin, dxSkinSeven, dxSkinSevenClassic, dxSkinSharp, dxSkinSharpPlus,
-  dxSkinSilver, dxSkinSpringTime, dxSkinStardust, dxSkinSummer2008,
-  dxSkinTheAsphaltWorld, dxSkinsDefaultPainters, dxSkinValentine,
-  dxSkinVisualStudio2013Blue, dxSkinVisualStudio2013Dark,
-  dxSkinVisualStudio2013Light, dxSkinVS2010, dxSkinWhiteprint,
-  dxSkinXmas2008Blue;
+  dxSkinOffice2013LightGray, Vcl.ExtCtrls, Vcl.Buttons, cxGroupBox;
 
 type
   Tfrm_config_certificado = class(TForm)
     grp_certificado: TGroupBox;
     Label2: TLabel;
     Label3: TLabel;
-    cb_certificados: TcxComboBox;
     cxButton23: TcxButton;
-    cxButton24: TcxButton;
     cxButton25: TcxButton;
     lSSLLib: TLabel;
     lCryptLib: TLabel;
@@ -58,6 +42,7 @@ type
     cxButton3: TcxButton;
     Label7: TLabel;
     cxButton4: TcxButton;
+    ComboBox1: TComboBox;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }

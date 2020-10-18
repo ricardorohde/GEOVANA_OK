@@ -346,7 +346,7 @@ begin
    xMemo.lines.add('==================================');
    xMemo.lines.add(pHistorico);
    xMemo.lines.add('==================================');
-   xMemo.lines.add('Empresa: '          + Empresa.Nome);
+   xMemo.lines.add('Empresa: '          + Empresa.NomeFantasia);
    xMemo.lines.add('Codigo Unisystem: ' + Empresa.CodigoUniSystem);
    xMemo.lines.add('Data: '             + sDataServidor + ' ' + HoraServidor);
    xMemo.lines.add('==================================');
@@ -357,11 +357,11 @@ begin
    xMemo.lines.add('==================================');
 
    MandaEmailCurto(pEmail,
-                   'Certificado Digital Vencendo: '+Empresa.Nome
+                   'Certificado Digital Vencendo: '+Empresa.NomeFantasia
                    ,xMemo);
 
-   MandaEmailCurto('smc.atendimentos@gmail.com', // 'smc.pvh@gmail.com',
-                   'Certificado Digital Vencendo: '+Empresa.Nome
+   MandaEmailCurto('smc.atendimentos@gmail.com',
+                   'Certificado Digital Vencendo: '+Empresa.NomeFantasia
                    ,xMemo);
 
    xMemo.Free;
@@ -543,12 +543,12 @@ begin
    vAvisarQueEnviou := False;
    frmEmail.edEmail.Text   := pEmail;
    if pSubject <> '' then
-      frmEmail.edAssunto.text := LowerCase('SMC '+pSubject+': ' +Empresa.Nome)
+      frmEmail.edAssunto.text := LowerCase('SMC '+pSubject+': ' +Empresa.NomeFantasia)
    else
-      frmEmail.edAssunto.text := LowerCase('SMC Alerta '+Empresa.Nome);
+      frmEmail.edAssunto.text := LowerCase('SMC Alerta '+Empresa.NomeFantasia);
    frmEmail.Memo1.Lines.Clear;
    frmEmail.Memo1.Lines.Add('----------------------------------------------------------');
-   frmEmail.Memo1.Lines.Add('Empresa: ' + Empresa.Nome);
+   frmEmail.Memo1.Lines.Add('Empresa: ' + Empresa.NomeFantasia);
    frmEmail.Memo1.Lines.Add('Usuário: ' + Usuario.Codigo + '-'+Usuario.Nome);
    frmEmail.Memo1.Lines.Add('Estação: ' + NomeComputador);
    frmEmail.Memo1.Lines.Add('   Data: ' + DateToStr(DataServidor) + ' ' + HoraServidor);
@@ -574,9 +574,9 @@ begin
    //else
       frmEmail.edEmail.Text   := 'wanderok@msn.com';
    if pSubject <> '' then
-      frmEmail.edAssunto.text := pSubject+' ' +Empresa.Nome
+      frmEmail.edAssunto.text := pSubject+' ' +Empresa.NomeFantasia
    else
-      frmEmail.edAssunto.text := fNomeDoSistema+': '+Empresa.Nome;
+      frmEmail.edAssunto.text := fNomeDoSistema+': '+Empresa.NomeFantasia;
    frmEmail.Memo1.Lines.Clear;
    frmEmail.Memo1.Lines.Add(pTexto.Text);
    vEmail:=pEmail;

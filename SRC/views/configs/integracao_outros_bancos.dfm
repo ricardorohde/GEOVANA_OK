@@ -3,7 +3,7 @@ object frm_intagracao_outras_base_dados: Tfrm_intagracao_outras_base_dados
   Top = 0
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = 'Configura'#231#227'o Banco Integrado'
+  Caption = 'Configura'#231#227'o banco Integrado'
   ClientHeight = 217
   ClientWidth = 707
   Color = clMenuBar
@@ -22,7 +22,7 @@ object frm_intagracao_outras_base_dados: Tfrm_intagracao_outras_base_dados
     Top = 185
     Width = 93
     Height = 19
-    Caption = 'Responsavel:'
+    Caption = 'Respons'#225'vel:'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -46,9 +46,9 @@ object frm_intagracao_outras_base_dados: Tfrm_intagracao_outras_base_dados
   object Label4: TLabel
     Left = 190
     Top = 7
-    Width = 331
+    Width = 330
     Height = 19
-    Caption = 'Configura'#231#245'es Banco de dados integrado'
+    Caption = 'Configura'#231#245'es banco de dados integrado'
     Color = clHighlight
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clHighlight

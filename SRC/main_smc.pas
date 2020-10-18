@@ -8,42 +8,31 @@
     cxGraphics, cxLookAndFeels, cxLookAndFeelPainters, cxButtons, cxScrollBar,
     cxControls, cxScrollBox, dxRibbonSkins, dxRibbonCustomizationForm,
     dxRibbonBackstageView, cxClasses, dxRibbon, dxBar, dxSkinsCore,
-  dxSkinsdxRibbonPainter, dxSkinsdxBarPainter, dxSkinBlack, dxSkinBlue,
-  dxSkinBlueprint, dxSkinCaramel, dxSkinCoffee, dxSkinDarkRoom, dxSkinDarkSide,
-  dxSkinDevExpressDarkStyle, dxSkinDevExpressStyle, dxSkinFoggy,
-  dxSkinGlassOceans, dxSkinHighContrast, dxSkiniMaginary, dxSkinLilian,
-  dxSkinLiquidSky, dxSkinLondonLiquidSky, dxSkinMcSkin, dxSkinMetropolis,
-  dxSkinMetropolisDark, dxSkinMoneyTwins, dxSkinOffice2007Black,
-  dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Pink,
-  dxSkinOffice2007Silver, dxSkinOffice2010Black, dxSkinOffice2010Blue,
-  dxSkinOffice2010Silver, dxSkinOffice2013DarkGray, dxSkinOffice2013LightGray,
-  dxSkinOffice2013White, dxSkinOffice2016Colorful, dxSkinOffice2016Dark,
-  dxSkinPumpkin, dxSkinSeven, dxSkinSevenClassic, dxSkinSharp, dxSkinSharpPlus,
-  dxSkinSilver, dxSkinSpringTime, dxSkinStardust, dxSkinSummer2008,
-  dxSkinTheAsphaltWorld, dxSkinsDefaultPainters, dxSkinValentine,
-  dxSkinVisualStudio2013Blue, dxSkinVisualStudio2013Dark,
+  dxSkinsdxRibbonPainter, dxSkinsdxBarPainter, cxStyles, cxEdit,
+  cxInplaceContainer, cxVGrid, cxOI,
+  //vw_etiquetas,
+  //venda_pedido,
+  dxGDIPlusClasses, dxSkinBlack, dxSkinBlue, dxSkinBlueprint, dxSkinCaramel,
+  dxSkinCoffee, dxSkinDarkRoom, dxSkinDarkSide, dxSkinDevExpressDarkStyle,
+  dxSkinDevExpressStyle, dxSkinFoggy, dxSkinGlassOceans, dxSkinHighContrast,
+  dxSkiniMaginary, dxSkinLilian, dxSkinLiquidSky, dxSkinLondonLiquidSky,
+  dxSkinMcSkin, dxSkinMetropolis, dxSkinMetropolisDark, dxSkinMoneyTwins,
+  dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Green,
+  dxSkinOffice2007Pink, dxSkinOffice2007Silver, dxSkinOffice2010Black,
+  dxSkinOffice2010Blue, dxSkinOffice2010Silver, dxSkinOffice2013DarkGray,
+  dxSkinOffice2013LightGray, dxSkinOffice2013White, dxSkinOffice2016Colorful,
+  dxSkinOffice2016Dark, dxSkinPumpkin, dxSkinSeven, dxSkinSevenClassic,
+  dxSkinSharp, dxSkinSharpPlus, dxSkinSilver, dxSkinSpringTime, dxSkinStardust,
+  dxSkinSummer2008, dxSkinTheAsphaltWorld, dxSkinsDefaultPainters,
+  dxSkinValentine, dxSkinVisualStudio2013Blue, dxSkinVisualStudio2013Dark,
   dxSkinVisualStudio2013Light, dxSkinVS2010, dxSkinWhiteprint,
   dxSkinXmas2008Blue;
 
   type
     TFrm_main = class(TForm)
       cxScrollBox1: TcxScrollBox;
-      cxButton3: TcxButton;
-      cxButton4: TcxButton;
-      cxButton2: TcxButton;
       cxButton1: TcxButton;
-      cxButton5: TcxButton;
-      cxButton6: TcxButton;
-      cxButton7: TcxButton;
       cxButton8: TcxButton;
-      cxButton9: TcxButton;
-      PDV: TcxButton;
-      cxButton11: TcxButton;
-      cxButton12: TcxButton;
-      cxButton13: TcxButton;
-      cxButton14: TcxButton;
-      cxButton15: TcxButton;
-      cxButton16: TcxButton;
       dxRibbon1Tab1: TdxRibbonTab;
       dxRibbon1: TdxRibbon;
       dxBarManager1: TdxBarManager;
@@ -66,12 +55,6 @@
       dxBarLargeButton10: TdxBarLargeButton;
       dxBarLargeButton11: TdxBarLargeButton;
       dxBarLargeButton12: TdxBarLargeButton;
-      cxButton10: TcxButton;
-      cxButton17: TcxButton;
-      cxButton18: TcxButton;
-      cxButton19: TcxButton;
-      cxButton20: TcxButton;
-      cxButton21: TcxButton;
       dxBarSubItem1: TdxBarSubItem;
       dxBarLargeButton13: TdxBarLargeButton;
       dxBarLargeButton14: TdxBarLargeButton;
@@ -95,7 +78,6 @@
       dxBarLargeButton25: TdxBarLargeButton;
       dxBarLargeButton26: TdxBarLargeButton;
       dxBarLargeButton27: TdxBarLargeButton;
-      dxBarManager1Bar18: TdxBar;
       dxBarLargeButton28: TdxBarLargeButton;
       dxBarLargeButton29: TdxBarLargeButton;
       dxBarLargeButton30: TdxBarLargeButton;
@@ -308,72 +290,79 @@
     dxBarButton77: TdxBarButton;
     dxBarButton78: TdxBarButton;
     dxBarButton79: TdxBarButton;
+    dxBarLargeButton121: TdxBarLargeButton;
+    dxBarSubItem41: TdxBarSubItem;
+    dxBarButton80: TdxBarButton;
+    dxBarManager1Bar1: TdxBar;
+    dxBarManager1Bar8: TdxBar;
+    dxBarLargeButton122: TdxBarLargeButton;
+    dxBarSubItem42: TdxBarSubItem;
+    dxBarManager1Bar9: TdxBar;
+    dxBarSubItem43: TdxBarSubItem;
+    cxButton14: TcxButton;
+    cxButton20: TcxButton;
+    cxButton6: TcxButton;
+    PDV: TcxButton;
+    cxButton16: TcxButton;
+    dxBarSubItem44: TdxBarSubItem;
+    dxBarButton81: TdxBarButton;
+    dxBarButton82: TdxBarButton;
+    dxBarButton83: TdxBarButton;
+    dxBarButton84: TdxBarButton;
+    a: TdxBarButton;
+    dxBarButton85: TdxBarButton;
+    dxBarLargeButton123: TdxBarLargeButton;
+    dxBarLargeButton124: TdxBarLargeButton;
+    Image1: TImage;
     procedure dxBarLargeButton12Click(Sender: TObject);
     procedure dxBarLargeButton18Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure dxBarLargeButton113Click(Sender: TObject);
     procedure dxBarLargeButton114Click(Sender: TObject);
-  {    procedure dxBarLargeButton18Clickyyyyyyyyyyyyyyyyyyyyy(Sender: TObject);
-      procedure dxBarLargeButton12Click(Sender: TObject);
-      procedure cxButton4Click(Sender: TObject);
-      procedure cxButton2Click(Sender: TObject);
-      procedure cxButton1Click(Sender: TObject);
-      procedure cxButton7Click(Sender: TObject);
-      procedure cxButton6Click(Sender: TObject);
-      procedure cxButton14Click(Sender: TObject);
-      procedure cxButton16Click(Sender: TObject);
-      procedure dxBarLargeButton17Click(Sender: TObject);
-      procedure dxBarLargeButton16Click(Sender: TObject);
-      procedure dxBarLargeButton15Click(Sender: TObject);
-      procedure dxBarLargeButton35Click(Sender: TObject);
-      procedure dxBarLargeButton42Click(Sender: TObject);
-      procedure dxBarLargeButton40Click(Sender: TObject);
-      procedure dxBarLargeButton46Click(Sender: TObject);
-      procedure dxBarLargeButton47Click(Sender: TObject);
-      procedure dxBarLargeButton38Click(Sender: TObject);
-      procedure dxBarLargeButton39Click(Sender: TObject);
-      procedure dxBarLargeButton37Click(Sender: TObject);
-      procedure dxBarLargeButton36Click(Sender: TObject);
-      procedure cxButton12Click(Sender: TObject);
-      procedure cxButton19Click(Sender: TObject);
-      procedure cxButton10Click(Sender: TObject);
-      procedure cxButton5Click(Sender: TObject);
-      procedure cxButton15Click(Sender: TObject);
-      procedure cxButton9Click(Sender: TObject);
-      procedure dxBarButton2Click(Sender: TObject);
-      procedure dxBarButton3Click(Sender: TObject);
-      procedure cxButton17Click(Sender: TObject);
-      procedure dxBarLargeButton32Click(Sender: TObject);
-      procedure dxBarLargeButton45Click(Sender: TObject);
-      procedure dxBarLargeButton43Click(Sender: TObject);
-      procedure dxBarLargeButton33Click(Sender: TObject);
-      procedure dxBarLargeButton34Click(Sender: TObject);
-      procedure dxBarLargeButton50Click(Sender: TObject);
-      procedure dxBarLargeButton53Click(Sender: TObject);
-      procedure dxBarLargeButton52Click(Sender: TObject);
-      procedure dxBarLargeButton68Click(Sender: TObject);
-      procedure dxBarLargeButton76Click(Sender: TObject);
-      procedure dxBarLargeButton78Click(Sender: TObject);
-      procedure dxBarLargeButton88Click(Sender: TObject);
-      procedure dxBarLargeButton97Click(Sender: TObject);
-      procedure dxBarLargeButton96Click(Sender: TObject);
-      procedure dxBarLargeButton95Click(Sender: TObject);
-      procedure dxBarLargeButton94Click(Sender: TObject);
-    procedure dxBarLargeButton92Click(Sender: TObject);
-    procedure dxBarLargeButton91Click(Sender: TObject);
-    procedure dxBarLargeButton90Click(Sender: TObject);
-    procedure dxBarLargeButton86Click(Sender: TObject);
-    procedure dxBarLargeButton85Click(Sender: TObject);
-    procedure dxBarLargeButton103Click(Sender: TObject);
-    procedure dxBarLargeButton102Click(Sender: TObject);
-    procedure dxBarLargeButton101Click(Sender: TObject);
-    procedure dxBarLargeButton87Click(Sender: TObject);
-    procedure dxBarLargeButton82Click(Sender: TObject);
-    procedure dxBarLargeButton84Click(Sender: TObject);
-    procedure dxBarLargeButton83Click(Sender: TObject);
-    procedure dxBarLargeButton93Click(Sender: TObject);
-    procedure dxBarLargeButton104Click(Sender: TObject);
-    procedure dxBarLargeButton105Click(Sender: TObject); }
+    procedure cxButton8Click(Sender: TObject);
+    procedure dxBarLargeButton106Click(Sender: TObject);
+    procedure cxButton1Click(Sender: TObject);
+    procedure dxBarButton6Click(Sender: TObject);
+    procedure dxBarButton5Click(Sender: TObject);
+    procedure dxBarButton81Click(Sender: TObject);
+    procedure dxBarButton82Click(Sender: TObject);
+    procedure dxBarButton83Click(Sender: TObject);
+    procedure dxBarButton20Click(Sender: TObject);
+    procedure dxBarButton23Click(Sender: TObject);
+    procedure dxBarButton84Click(Sender: TObject);
+    procedure dxBarButton22Click(Sender: TObject);
+    procedure dxBarLargeButton109Click(Sender: TObject);
+    procedure dxBarButton70Click(Sender: TObject);
+    procedure dxBarButton68Click(Sender: TObject);
+    procedure dxBarButton29Click(Sender: TObject);
+    procedure dxBarLargeButton110Click(Sender: TObject);
+    procedure dxBarButton85Click(Sender: TObject);
+    procedure dxBarButton26Click(Sender: TObject);
+    procedure dxBarButton35Click(Sender: TObject);
+    procedure dxBarButton44Click(Sender: TObject);
+    procedure dxBarButton32Click(Sender: TObject);
+    procedure dxBarButton33Click(Sender: TObject);
+    procedure dxBarButton43Click(Sender: TObject);
+    procedure dxBarButton42Click(Sender: TObject);
+    procedure dxBarButton40Click(Sender: TObject);
+    procedure dxBarButton41Click(Sender: TObject);
+    procedure dxBarLargeButton112Click(Sender: TObject);
+    procedure dxBarButton39Click(Sender: TObject);
+    procedure dxBarButton38Click(Sender: TObject);
+    procedure dxBarButton37Click(Sender: TObject);
+    procedure dxBarButton48Click(Sender: TObject);
+    procedure dxBarButton49Click(Sender: TObject);
+    procedure dxBarButton50Click(Sender: TObject);
+    procedure dxBarButton52Click(Sender: TObject);
+    procedure dxBarButton51Click(Sender: TObject);
+    procedure dxBarButton34Click(Sender: TObject);
+    procedure dxBarButton76Click(Sender: TObject);
+    procedure dxBarButton77Click(Sender: TObject);
+    procedure dxBarButton46Click(Sender: TObject);
+    procedure dxBarButton78Click(Sender: TObject);
+    procedure dxBarButton21Click(Sender: TObject);
+    procedure dxBarButton4Click(Sender: TObject);
+  
     private
       { Private declarations }
     public
@@ -387,7 +376,21 @@
 implementation
 
 uses
-  cad_empresa, reg_tributario, cad_usuario_T2, alterar_senha;
+  cad_empresa, reg_tributario, cad_usuario, alterar_senha,
+  //cadastro_produto,
+  cad_cliente, cadastro_colaborador, cadastro_fornecedor, cad_transportadora, cad_motorista,
+  //cad_veiculos,
+  cad_consultor;
+  //cad_contador,
+  //cad_sistemas,
+  //estoque_localizacao,
+  //movimenta_estoque,
+  //vw_produto_precos,
+  //lote,
+  //os_mecanica,
+  //conta_receber, conta_pagar, cad_turnos, cad_centro_custo, forma_pagamento,
+  //cad_tipo_pagamento, cad_banco, vw_tipoDeMovimento, cad_historico, cad_plano_contas, cad_complementos, controle_taxa_cartao, gerar_boletos, boleto, vw_agrupar_venda_fiado, emissao_recibo, terceiros, proprio, historico_caixas, fluxo_caixa, cad_plano, cad_servico;
+
 
 {$R *.dfm}
 
@@ -397,10 +400,269 @@ begin
     frm_reg_tributaria.showmodal;
 end;
 
+procedure TFrm_main.cxButton1Click(Sender: TObject);
+begin
+    frm_cadastro_cliente := Tfrm_cadastro_cliente.Create(nil);
+    frm_cadastro_cliente.showmodal;
+end;
+
+procedure TFrm_main.cxButton8Click(Sender: TObject);
+begin
+    //Frm_Produto := TFrm_Produto.Create(nil);
+    //Frm_Produto.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton20Click(Sender: TObject);
+begin
+    //frm_cadastro_contador := Tfrm_cadastro_contador.Create(nil);
+    //frm_cadastro_contador.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton21Click(Sender: TObject);
+begin
+    //frm_cad_plano := Tfrm_cad_plano.Create(nil);
+    //frm_cad_plano.showmodal;
+
+end;
+
+procedure TFrm_main.dxBarButton22Click(Sender: TObject);
+begin
+    //FRM_cad_sistemas := TFRM_cad_sistemas.Create(nil);
+    //FRM_cad_sistemas.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton23Click(Sender: TObject);
+begin
+    Frm_consultor := TFrm_consultor.Create(nil);
+    Frm_consultor.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton26Click(Sender: TObject);
+begin
+    //frm_pedido_venda := Tfrm_pedido_venda.Create(nil);
+    //frm_pedido_venda.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton29Click(Sender: TObject);
+begin
+    //fmr_os_mecanica := Tfmr_os_mecanica.Create(nil);
+    //fmr_os_mecanica.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton32Click(Sender: TObject);
+begin
+    //Frm_contas_receber := TFrm_contas_receber.Create(nil);
+    //Frm_contas_receber.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton33Click(Sender: TObject);
+begin
+    //Frm_contas_pagar := TFrm_contas_pagar.Create(nil);
+    //Frm_contas_pagar.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton34Click(Sender: TObject);
+begin
+    //frm_agrupar_venda_fiado := Tfrm_agrupar_venda_fiado.Create(nil);
+    //frm_agrupar_venda_fiado.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton35Click(Sender: TObject);
+begin
+    //frm_cad_turnos := Tfrm_cad_turnos.Create(nil);
+    //frm_cad_turnos.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton37Click(Sender: TObject);
+begin
+    //Frm_contro_taxa_cartoes := TFrm_contro_taxa_cartoes.Create(nil);
+    //Frm_contro_taxa_cartoes.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton38Click(Sender: TObject);
+begin
+    //FRM_cad_complementos := TFRM_cad_complementos.Create(nil);
+    //FRM_cad_complementos.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton39Click(Sender: TObject);
+begin
+    //FRM_cad_historico := TFRM_cad_historico.Create(nil);
+    //FRM_cad_historico.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton40Click(Sender: TObject);
+begin
+    //FRM_cad_centro_custo := TFRM_cad_centro_custo.Create(nil);
+    //FRM_cad_centro_custo.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton41Click(Sender: TObject);
+begin
+    //FRM_cad_plano_contas := TFRM_cad_plano_contas.Create(nil);
+    //FRM_cad_plano_contas.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton42Click(Sender: TObject);
+begin
+    //FRM_forma_pagamento := TFRM_forma_pagamento.Create(nil);
+    //FRM_forma_pagamento.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton43Click(Sender: TObject);
+begin
+    //FMR_tipo_pagamento := TFMR_tipo_pagamento.Create(nil);
+    //FMR_tipo_pagamento.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton44Click(Sender: TObject);
+begin
+    //Frm_cad_banco := TFrm_cad_banco.Create(nil);
+    //Frm_cad_banco.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton46Click(Sender: TObject);
+begin
+    //Frm_resumo_de_caixas := TFrm_resumo_de_caixas.Create(nil);
+    //Frm_resumo_de_caixas.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton48Click(Sender: TObject);
+begin
+    //Frm_cheq_proprio := TFrm_cheq_proprio.Create(nil);
+    //Frm_cheq_proprio.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton49Click(Sender: TObject);
+begin
+    //frm_chq_terceiros := Tfrm_chq_terceiros.Create(nil);
+    //frm_chq_terceiros.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton4Click(Sender: TObject);
+begin
+    //frm_cad_servico := Tfrm_cad_servico.Create(nil);
+    //frm_cad_servico.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton50Click(Sender: TObject);
+begin
+   // frm_boleto := Tfrm_boleto.Create(nil);
+   // frm_boleto.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton51Click(Sender: TObject);
+begin
+    //frm_boleto := Tfrm_boleto.Create(nil);
+    //frm_boleto.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton52Click(Sender: TObject);
+begin
+    //frm_boleto := Tfrm_boleto.Create(nil);
+    //frm_boleto.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton5Click(Sender: TObject);
+begin
+    Frm_fornecedor := TFrm_fornecedor.Create(nil);
+    Frm_fornecedor.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton68Click(Sender: TObject);
+begin
+    //frm_Estoque := Tfrm_Estoque.Create(nil);
+    //frm_Estoque.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton6Click(Sender: TObject);
+begin
+    frm_colaborador := Tfrm_colaborador.Create(nil);
+    frm_colaborador.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton70Click(Sender: TObject);
+begin
+    //frm_Localizacao := Tfrm_Localizacao.Create(nil);
+    //frm_Localizacao.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton76Click(Sender: TObject);
+begin
+    //frm_emissao_recibo := Tfrm_emissao_recibo.Create(nil);
+    //frm_emissao_recibo.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton77Click(Sender: TObject);
+begin
+    //frm_emissao_recibo := Tfrm_emissao_recibo.Create(nil);
+    //frm_emissao_recibo.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton78Click(Sender: TObject);
+begin
+    //Frm_fluxo_caixa := TFrm_fluxo_caixa.Create(nil);
+    //Frm_fluxo_caixa.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton81Click(Sender: TObject);
+begin
+    Frm_transportadora := TFrm_transportadora.Create(nil);
+    Frm_transportadora.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton82Click(Sender: TObject);
+begin
+    //FRM_cad_veiculos_transportador := TFRM_cad_veiculos_transportador.Create(nil);
+    //FRM_cad_veiculos_transportador.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton83Click(Sender: TObject);
+begin
+    Frm_motorista := TFrm_motorista.Create(nil);
+    Frm_motorista.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton84Click(Sender: TObject);
+begin
+    frm_cadastro_cliente := Tfrm_cadastro_cliente.Create(nil);
+    frm_cadastro_cliente.showmodal;
+end;
+
+procedure TFrm_main.dxBarButton85Click(Sender: TObject);
+begin
+    //frm_controla_lote := Tfrm_controla_lote.Create(nil);
+    //frm_controla_lote.showmodal;
+end;
+
+procedure TFrm_main.dxBarLargeButton106Click(Sender: TObject);
+begin
+    //Frm_Produto := TFrm_Produto.Create(nil);
+    //Frm_Produto.showmodal;
+end;
+
+procedure TFrm_main.dxBarLargeButton109Click(Sender: TObject);
+begin
+    //frm_etiquetas := Tfrm_etiquetas.Create(nil);
+    //frm_etiquetas.showmodal;
+end;
+
+procedure TFrm_main.dxBarLargeButton110Click(Sender: TObject);
+begin
+    //frm_produto_precos := Tfrm_produto_precos.Create(nil);
+    //frm_produto_precos.showmodal;
+end;
+
+procedure TFrm_main.dxBarLargeButton112Click(Sender: TObject);
+begin
+    //frm_tipoDeMovimento := Tfrm_tipoDeMovimento.Create(nil);
+    //frm_tipoDeMovimento.showmodal;
+end;
+
 procedure TFrm_main.dxBarLargeButton113Click(Sender: TObject);
 begin
-    frm_cad_usuario_T2 := Tfrm_cad_usuario_T2.Create(nil);
-    frm_cad_usuario_T2.showmodal;
+    frm_cad_usuario := Tfrm_cad_usuario.Create(nil);
+    frm_cad_usuario.showmodal;
 end;
 
 procedure TFrm_main.dxBarLargeButton114Click(Sender: TObject);

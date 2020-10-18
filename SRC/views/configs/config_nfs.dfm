@@ -35,7 +35,7 @@ object frm_confi_nfs: Tfrm_confi_nfs
   end
   object Label11: TLabel
     Left = 264
-    Top = 56
+    Top = 55
     Width = 54
     Height = 17
     Caption = 'Usu'#225'rio:'
@@ -48,7 +48,7 @@ object frm_confi_nfs: Tfrm_confi_nfs
   end
   object Label12: TLabel
     Left = 465
-    Top = 56
+    Top = 55
     Width = 46
     Height = 17
     Caption = 'Senha:'
@@ -87,12 +87,12 @@ object frm_confi_nfs: Tfrm_confi_nfs
     object lbl1: TLabel
       Left = 13
       Top = 8
-      Width = 138
-      Height = 16
+      Width = 155
+      Height = 18
       Caption = 'Logomarca | Prefeitura:'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -13
+      Font.Height = -15
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
@@ -100,12 +100,12 @@ object frm_confi_nfs: Tfrm_confi_nfs
     object Label1: TLabel
       Left = 13
       Top = 62
-      Width = 189
-      Height = 16
+      Width = 213
+      Height = 18
       Caption = 'Logomarca | Prestador Servi'#231'os:'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -13
+      Font.Height = -15
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
@@ -113,12 +113,12 @@ object frm_confi_nfs: Tfrm_confi_nfs
     object Label2: TLabel
       Left = 13
       Top = 114
-      Width = 98
-      Height = 16
+      Width = 111
+      Height = 18
       Caption = 'Nome Prefeitura:'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -13
+      Font.Height = -15
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
@@ -282,7 +282,7 @@ object frm_confi_nfs: Tfrm_confi_nfs
     Caption = '  Confi. Schema | Arquivo .INI  '
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -15
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
@@ -290,12 +290,12 @@ object frm_confi_nfs: Tfrm_confi_nfs
     object Label3: TLabel
       Left = 15
       Top = 24
-      Width = 112
-      Height = 16
+      Width = 127
+      Height = 18
       Caption = 'Schemas Provedor:'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -13
+      Font.Height = -15
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
@@ -303,12 +303,12 @@ object frm_confi_nfs: Tfrm_confi_nfs
     object Label5: TLabel
       Left = 15
       Top = 84
-      Width = 133
-      Height = 16
+      Width = 155
+      Height = 18
       Caption = 'Arquivos Provedor .INI:'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -13
+      Font.Height = -15
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
@@ -419,7 +419,7 @@ object frm_confi_nfs: Tfrm_confi_nfs
       Left = 15
       Top = 106
       Width = 177
-      Height = 24
+      Height = 26
       Enabled = False
       TabOrder = 2
     end
@@ -427,47 +427,10 @@ object frm_confi_nfs: Tfrm_confi_nfs
       Left = 15
       Top = 46
       Width = 177
-      Height = 24
+      Height = 26
       Enabled = False
       TabOrder = 3
     end
-  end
-  object TDBEdit
-    Left = 334
-    Top = 55
-    Width = 121
-    Height = 21
-    CharCase = ecUpperCase
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clNone
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 3
-  end
-  object edSMTP_SENHA: TDBEdit
-    Left = 523
-    Top = 55
-    Width = 100
-    Height = 21
-    DataField = 'SMTP_SENHA'
-    PasswordChar = '*'
-    TabOrder = 4
-  end
-  object TDBEdit
-    Left = 389
-    Top = 96
-    Width = 234
-    Height = 21
-    CharCase = ecUpperCase
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clNone
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 5
   end
   object cxGroupBox1: TcxGroupBox
     Left = 264
@@ -476,22 +439,22 @@ object frm_confi_nfs: Tfrm_confi_nfs
     ParentFont = False
     Style.Font.Charset = DEFAULT_CHARSET
     Style.Font.Color = clWindowText
-    Style.Font.Height = -12
+    Style.Font.Height = -15
     Style.Font.Name = 'Tahoma'
     Style.Font.Style = [fsBold]
     Style.IsFontAssigned = True
-    TabOrder = 6
+    TabOrder = 3
     Height = 243
     Width = 359
     object Label6: TLabel
       Left = 13
       Top = 21
-      Width = 124
-      Height = 14
+      Width = 148
+      Height = 18
       Caption = 'Regime de Tributa'#231#227'o:'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -12
+      Font.Height = -15
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
@@ -499,12 +462,12 @@ object frm_confi_nfs: Tfrm_confi_nfs
     object Label7: TLabel
       Left = 13
       Top = 77
-      Width = 90
-      Height = 14
+      Width = 106
+      Height = 18
       Caption = 'Exigibilidade ISS:'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -12
+      Font.Height = -15
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
@@ -512,12 +475,12 @@ object frm_confi_nfs: Tfrm_confi_nfs
     object Label8: TLabel
       Left = 13
       Top = 132
-      Width = 62
-      Height = 14
+      Width = 74
+      Height = 18
       Caption = 'Tributa'#231#227'o:'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -12
+      Font.Height = -15
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
@@ -525,90 +488,86 @@ object frm_confi_nfs: Tfrm_confi_nfs
     object Label9: TLabel
       Left = 13
       Top = 187
-      Width = 81
-      Height = 13
+      Width = 108
+      Height = 18
       Caption = 'Al'#237'quota Fixa ISS'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
     end
     object Label10: TLabel
-      Left = 173
+      Left = 149
       Top = 187
-      Width = 142
-      Height = 13
+      Width = 192
+      Height = 18
       Caption = 'C'#243'd. Tributa'#231#227'o do Munic'#237'pio:'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-    end
-    object cxComboBox2: TcxComboBox
-      Left = 13
-      Top = 41
-      Properties.Items.Strings = (
-        '1 - Microempresa Municipal'
-        '2 - Estimativa'
-        '3 - Sociedade de Profissionais'
-        '4 - Cooperativa'
-        '5 - Microempres'#225'rio Individual (MEI)'
-        '6 - Microempres'#225'rio e Empresa de Pequeno Porte (ME EPP)')
-      TabOrder = 0
-      Text = 'cxComboBox2'
-      Width = 324
-    end
-    object cxComboBox3: TcxComboBox
-      Left = 13
-      Top = 97
-      Properties.Items.Strings = (
-        '1 - Exig'#237'vel'
-        '2 - N'#227'o incid'#234'ncia'
-        '3 - Isen'#231#227'o'
-        '4 - Exporta'#231#227'o'
-        '5 - Imunidade'
-        '6 - Exigibilidade Suspensa por Decis'#227'o Judicial'
-        '7 - Exigibilidade Suspensa por Processo Administrativo')
-      TabOrder = 1
-      Text = 'cxComboBox2'
-      Width = 324
-    end
-    object cxComboBox4: TcxComboBox
-      Left = 13
-      Top = 152
-      Properties.Items.Strings = (
-        'C - Isenta de ISS'
-        'E - N'#227'o Incid'#234'ncia no Munic'#237'pio'
-        'F - Imune'
-        'K - Exigibilidade Susp. Dec. J/Proc.A'
-        'N - N'#227'o Tribut'#225'vel'
-        'T '#8211' Tribut'#225'vel'
-        'G - Tribut'#225'vel Fixo'
-        'H - Tribut'#225'vel S.N.'
-        'M -  MEI')
-      TabOrder = 2
-      Text = 'cxComboBox2'
-      Width = 324
     end
     object Edit2: TEdit
       Left = 13
       Top = 209
       Width = 83
-      Height = 22
+      Height = 26
       Enabled = False
-      TabOrder = 3
+      TabOrder = 0
     end
     object Edit6: TEdit
-      Left = 173
+      Left = 149
       Top = 209
       Width = 81
-      Height = 22
+      Height = 26
       Enabled = False
+      TabOrder = 1
+    end
+    object ComboBox1: TComboBox
+      Left = 13
+      Top = 155
+      Width = 303
+      Height = 26
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 2
+      Text = 'ComboBox1'
+    end
+    object ComboBox2: TComboBox
+      Left = 13
+      Top = 101
+      Width = 303
+      Height = 26
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 3
+      Text = 'ComboBox1'
+    end
+    object ComboBox3: TComboBox
+      Left = 13
+      Top = 45
+      Width = 303
+      Height = 26
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
       TabOrder = 4
+      Text = 'ComboBox1'
     end
   end
   object GroupBox1: TGroupBox
@@ -619,33 +578,33 @@ object frm_confi_nfs: Tfrm_confi_nfs
     Caption = '  Sequ'#234'ncia NFS'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -15
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 7
+    TabOrder = 4
     object Label14: TLabel
       Left = 13
       Top = 19
-      Width = 85
-      Height = 16
+      Width = 98
+      Height = 18
       Caption = 'N'#186' '#218'ltima NF-e'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -13
+      Font.Height = -15
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
     end
     object Label15: TLabel
       Left = 126
-      Top = 16
-      Width = 90
-      Height = 16
+      Top = 19
+      Width = 101
+      Height = 18
       Caption = 'Sequ'#234'ncia NF-e'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -13
+      Font.Height = -15
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
@@ -653,25 +612,25 @@ object frm_confi_nfs: Tfrm_confi_nfs
     object Label16: TLabel
       Left = 256
       Top = 7
-      Width = 33
-      Height = 16
+      Width = 40
+      Height = 18
       Caption = 'S'#233'rie'
       Color = 10436400
       ParentColor = False
     end
     object Edit7: TEdit
       Left = 13
-      Top = 38
+      Top = 42
       Width = 102
-      Height = 24
+      Height = 26
       Enabled = False
       TabOrder = 0
     end
     object Edit8: TEdit
       Left = 126
-      Top = 38
+      Top = 42
       Width = 104
-      Height = 24
+      Height = 26
       TabOrder = 1
     end
   end
@@ -718,58 +677,7 @@ object frm_confi_nfs: Tfrm_confi_nfs
       89FFAB5989FFAB5989FFAB5989FFAB5989FFAB5989FF00000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000}
-    TabOrder = 8
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object cxButton24: TcxButton
-    Left = 401
-    Top = 413
-    Width = 84
-    Height = 23
-    Caption = 'Alterar'
-    LookAndFeel.NativeStyle = False
-    LookAndFeel.SkinName = 'Metropolis'
-    OptionsImage.Glyph.Data = {
-      36040000424D3604000000000000360000002800000010000000100000000100
-      2000000000000004000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      00000000000000000000000000003827174DB8824DFF00000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      000000000000000000003827174DB8824DFFB8824DFF00000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000003827174DB8824DFFB8824DFFB8824DFFB5804CFB9F7042DC7955
-      32A747321E630E0A061400000000000000000000000000000000000000000000
-      00003827174DB8824DFFB8824DFFB8824DFFB8824DFFB8824DFFB8824DFFB882
-      4DFFB8824DFF7C5834AC2B1E123B000000000000000000000000000000000000
-      0000000000003827174DB8824DFFB8824DFFB8824DFFB8824DFFB8824DFFB882
-      4DFFB8824DFFB8824DFF855E38B91E150C290000000000000000000000000000
-      0000484F3879212419373827174DB8824DFFB8824DFF060402082A1E123A6144
-      2886A27344E1B8824DFFB8824DFF5D4227810000000000000000000000000000
-      000077845DC98E9D6FF0212419373827174DB8824DFF00000000000000000000
-      00004C36206AB8824DFFB8824DFF91663DC90000000000000000000000000000
-      000093A273F897A776FF8E9D6FF0020302040000000000000000000000000000
-      000003020104AD7A48F0B8824DFFB37E4BF80000000000000000000000000000
-      000077845DC997A776FF97A776FF3F45316A00000000000000000000000097A7
-      76FF2E32244D281C1137AD7A48F091663DC90000000000000000000000000000
-      00004C543C8197A776FF97A776FF859368E14F583E8622261B3A0505040897A7
-      76FF97A776FF2E32244D281C1137573E25790000000000000000000000000000
-      0000181B13296E7956B997A776FF97A776FF97A776FF97A776FF97A776FF97A7
-      76FF97A776FF97A776FF2E32244D000000000000000000000000000000000000
-      00000000000023271B3B667150AC97A776FF97A776FF97A776FF97A776FF97A7
-      76FF97A776FF97A776FF97A776FF2E32244D0000000000000000000000000000
-      000000000000000000000C0D09143B412E63636D4DA7829066DC95A474FB97A7
-      76FF97A776FF97A776FF2E32244D000000000000000000000000000000000000
-      00000000000000000000000000000000000000000000000000000000000097A7
-      76FF97A776FF2E32244D00000000000000000000000000000000000000000000
-      00000000000000000000000000000000000000000000000000000000000097A7
-      76FF2E32244D0000000000000000000000000000000000000000}
-    TabOrder = 9
+    TabOrder = 5
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -782,7 +690,7 @@ object frm_confi_nfs: Tfrm_confi_nfs
     Top = 413
     Width = 84
     Height = 23
-    Caption = 'Cancelar'
+    Caption = 'Sair'
     LookAndFeel.NativeStyle = False
     LookAndFeel.SkinName = 'Metropolis'
     OptionsImage.Glyph.Data = {
@@ -820,12 +728,36 @@ object frm_confi_nfs: Tfrm_confi_nfs
       0000000000000000000022316C7F4463D8FF4261D3F9151E424E00000000151E
       414D212F677A0000000000000000000000000000000000000000000000000000
       00000000000000000000000000002130687B151E414D00000000}
-    TabOrder = 10
+    TabOrder = 6
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
+  end
+  object Edit9: TEdit
+    Left = 324
+    Top = 51
+    Width = 135
+    Height = 24
+    Enabled = False
+    TabOrder = 7
+  end
+  object Edit10: TEdit
+    Left = 382
+    Top = 93
+    Width = 241
+    Height = 24
+    Enabled = False
+    TabOrder = 8
+  end
+  object Edit11: TEdit
+    Left = 517
+    Top = 51
+    Width = 106
+    Height = 24
+    Enabled = False
+    TabOrder = 9
   end
 end

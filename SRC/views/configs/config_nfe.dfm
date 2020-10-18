@@ -5,23 +5,23 @@ object Frmconfig_NFe: TFrmconfig_NFe
   BorderStyle = bsSingle
   Caption = 'Configura'#231#245'es | NF-e'
   ClientHeight = 706
-  ClientWidth = 343
+  ClientWidth = 345
   Color = clMenuBar
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -11
+  Font.Height = -15
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
   Position = poMainFormCenter
   PixelsPerInch = 96
-  TextHeight = 13
+  TextHeight = 18
   object Label4: TLabel
     Left = 3
     Top = 5
     Width = 335
     Height = 19
-    Caption = 'Configura'#231#227'o para a Emiss'#227'o de NFe (55)'
+    Caption = 'Configura'#231#227'o para a emiss'#227'o de NFe (55)'
     Color = clHighlight
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clHighlight
@@ -40,7 +40,7 @@ object Frmconfig_NFe: TFrmconfig_NFe
     Color = clBtnFace
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -15
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentBackground = False
@@ -127,7 +127,7 @@ object Frmconfig_NFe: TFrmconfig_NFe
     Color = clBtnFace
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -15
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentBackground = False
@@ -138,7 +138,7 @@ object Frmconfig_NFe: TFrmconfig_NFe
       Left = 15
       Top = 23
       Width = 259
-      Height = 24
+      Height = 26
       TabOrder = 0
     end
     object btn_buscar_xml: TcxButton
@@ -200,24 +200,18 @@ object Frmconfig_NFe: TFrmconfig_NFe
     Caption = '  Impressora - A4 DANFE  '
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -15
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 2
-    object cxComboBox1: TcxComboBox
-      Left = 13
-      Top = 25
-      Style.LookAndFeel.NativeStyle = False
-      Style.LookAndFeel.SkinName = 'Metropolis'
-      StyleDisabled.LookAndFeel.NativeStyle = False
-      StyleDisabled.LookAndFeel.SkinName = 'Metropolis'
-      StyleFocused.LookAndFeel.NativeStyle = False
-      StyleFocused.LookAndFeel.SkinName = 'Metropolis'
-      StyleHot.LookAndFeel.NativeStyle = False
-      StyleHot.LookAndFeel.SkinName = 'Metropolis'
+    object ComboBox1: TComboBox
+      Left = 15
+      Top = 22
+      Width = 293
+      Height = 26
       TabOrder = 0
-      Width = 299
+      Text = 'ComboBox1'
     end
   end
   object grp_sequencia_nfce: TGroupBox
@@ -228,7 +222,7 @@ object Frmconfig_NFe: TFrmconfig_NFe
     Caption = '  Sequ'#234'ncia NF-e  '
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -15
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
@@ -236,41 +230,41 @@ object Frmconfig_NFe: TFrmconfig_NFe
     object lbl1: TLabel
       Left = 6
       Top = 24
-      Width = 90
-      Height = 16
+      Width = 103
+      Height = 18
       Caption = 'N'#186' '#218'ltima NF-e:'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -13
+      Font.Height = -15
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
     end
     object Label3: TLabel
-      Left = 175
+      Left = 176
       Top = 24
-      Width = 66
-      Height = 16
+      Width = 72
+      Height = 18
       Caption = 'S'#233'rie NF-e:'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -13
+      Font.Height = -15
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
     end
     object edt_NFeC_nNF: TEdit
-      Left = 103
+      Left = 114
       Top = 20
-      Width = 64
-      Height = 24
+      Width = 53
+      Height = 26
       TabOrder = 0
     end
     object Edit1: TEdit
-      Left = 248
+      Left = 255
       Top = 20
-      Width = 64
-      Height = 24
+      Width = 56
+      Height = 26
       TabOrder = 1
     end
   end
@@ -283,7 +277,7 @@ object Frmconfig_NFe: TFrmconfig_NFe
     Color = clBtnFace
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -15
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentBackground = False
@@ -294,7 +288,7 @@ object Frmconfig_NFe: TFrmconfig_NFe
       Left = 15
       Top = 23
       Width = 259
-      Height = 24
+      Height = 26
       TabOrder = 0
     end
     object cxButton1: TcxButton
@@ -356,7 +350,7 @@ object Frmconfig_NFe: TFrmconfig_NFe
     Caption = '  Geral   '
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -15
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
@@ -398,7 +392,7 @@ object Frmconfig_NFe: TFrmconfig_NFe
     Caption = '  Web Service  '
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -15
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
@@ -475,7 +469,7 @@ object Frmconfig_NFe: TFrmconfig_NFe
     Caption = '  Ambiente de Emiss'#227'o  '
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -15
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
@@ -517,7 +511,7 @@ object Frmconfig_NFe: TFrmconfig_NFe
     Caption = '  Ambiente de Emiss'#227'o  '
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -15
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
@@ -602,63 +596,12 @@ object Frmconfig_NFe: TFrmconfig_NFe
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object cxButton24: TcxButton
-    Left = 125
-    Top = 668
-    Width = 84
-    Height = 25
-    Caption = 'Alterar'
-    LookAndFeel.NativeStyle = False
-    LookAndFeel.SkinName = 'Metropolis'
-    OptionsImage.Glyph.Data = {
-      36040000424D3604000000000000360000002800000010000000100000000100
-      2000000000000004000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      00000000000000000000000000003827174DB8824DFF00000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      000000000000000000003827174DB8824DFFB8824DFF00000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000003827174DB8824DFFB8824DFFB8824DFFB5804CFB9F7042DC7955
-      32A747321E630E0A061400000000000000000000000000000000000000000000
-      00003827174DB8824DFFB8824DFFB8824DFFB8824DFFB8824DFFB8824DFFB882
-      4DFFB8824DFF7C5834AC2B1E123B000000000000000000000000000000000000
-      0000000000003827174DB8824DFFB8824DFFB8824DFFB8824DFFB8824DFFB882
-      4DFFB8824DFFB8824DFF855E38B91E150C290000000000000000000000000000
-      0000484F3879212419373827174DB8824DFFB8824DFF060402082A1E123A6144
-      2886A27344E1B8824DFFB8824DFF5D4227810000000000000000000000000000
-      000077845DC98E9D6FF0212419373827174DB8824DFF00000000000000000000
-      00004C36206AB8824DFFB8824DFF91663DC90000000000000000000000000000
-      000093A273F897A776FF8E9D6FF0020302040000000000000000000000000000
-      000003020104AD7A48F0B8824DFFB37E4BF80000000000000000000000000000
-      000077845DC997A776FF97A776FF3F45316A00000000000000000000000097A7
-      76FF2E32244D281C1137AD7A48F091663DC90000000000000000000000000000
-      00004C543C8197A776FF97A776FF859368E14F583E8622261B3A0505040897A7
-      76FF97A776FF2E32244D281C1137573E25790000000000000000000000000000
-      0000181B13296E7956B997A776FF97A776FF97A776FF97A776FF97A776FF97A7
-      76FF97A776FF97A776FF2E32244D000000000000000000000000000000000000
-      00000000000023271B3B667150AC97A776FF97A776FF97A776FF97A776FF97A7
-      76FF97A776FF97A776FF97A776FF2E32244D0000000000000000000000000000
-      000000000000000000000C0D09143B412E63636D4DA7829066DC95A474FB97A7
-      76FF97A776FF97A776FF2E32244D000000000000000000000000000000000000
-      00000000000000000000000000000000000000000000000000000000000097A7
-      76FF97A776FF2E32244D00000000000000000000000000000000000000000000
-      00000000000000000000000000000000000000000000000000000000000097A7
-      76FF2E32244D0000000000000000000000000000000000000000}
-    TabOrder = 10
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
   object cxButton25: TcxButton
     Left = 249
     Top = 669
     Width = 84
     Height = 23
-    Caption = 'Cancelar'
+    Caption = 'Sair'
     LookAndFeel.NativeStyle = False
     LookAndFeel.SkinName = 'Metropolis'
     OptionsImage.Glyph.Data = {
@@ -696,7 +639,7 @@ object Frmconfig_NFe: TFrmconfig_NFe
       0000000000000000000022316C7F4463D8FF4261D3F9151E424E00000000151E
       414D212F677A0000000000000000000000000000000000000000000000000000
       00000000000000000000000000002130687B151E414D00000000}
-    TabOrder = 11
+    TabOrder = 10
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -724,34 +667,8 @@ object Frmconfig_NFe: TFrmconfig_NFe
     StyleDisabled.LookAndFeel.Kind = lfFlat
     StyleDisabled.LookAndFeel.NativeStyle = True
     StyleDisabled.TextColor = clSkyBlue
-    TabOrder = 12
+    TabOrder = 11
     Height = 2
     Width = 817
-  end
-  object ACBrNFe1: TACBrNFe
-    Configuracoes.Geral.SSLLib = libNone
-    Configuracoes.Geral.SSLCryptLib = cryNone
-    Configuracoes.Geral.SSLHttpLib = httpNone
-    Configuracoes.Geral.SSLXmlSignLib = xsNone
-    Configuracoes.Geral.FormatoAlerta = 'TAG:%TAGNIVEL% ID:%ID%/%TAG%(%DESCRICAO%) - %MSG%.'
-    Configuracoes.Geral.VersaoQRCode = veqr000
-    Configuracoes.Arquivos.OrdenacaoPath = <>
-    Configuracoes.WebServices.Visualizar = True
-    Configuracoes.WebServices.UF = 'RO'
-    Configuracoes.WebServices.AguardarConsultaRet = 0
-    Configuracoes.WebServices.QuebradeLinha = '|'
-    Configuracoes.WebServices.SSLType = LT_SSLv2
-    Configuracoes.RespTec.IdCSRT = 0
-    Left = 512
-    Top = 58
-  end
-  object OpenDialog1: TOpenDialog
-    DefaultExt = '*-nfe.XML'
-    Filter = 
-      'Arquivos NFE (*-nfe.XML)|*-nfe.XML|Arquivos XML (*.XML)|*.XML|To' +
-      'dos os Arquivos (*.*)|*.*'
-    Title = 'Selecione a NFe'
-    Left = 356
-    Top = 629
   end
 end

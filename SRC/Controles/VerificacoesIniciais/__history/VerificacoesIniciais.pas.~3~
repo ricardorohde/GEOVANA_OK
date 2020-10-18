@@ -1,0 +1,57 @@
+unit VerificacoesIniciais;
+
+interface
+
+uses Dialogs, SysUtils;
+
+type
+   TVerificacao = class
+   protected
+      FValidadeDoSistema: TDateTime;
+      FStatusInternet   :
+      FConectado       : Boolean;
+      function conexaoExiste:Boolean;
+      function carregarConfiguracaoDeAcesso:Boolean;
+      function acessarBaseDeDados:Boolean;
+   public
+      procedure Conectar;
+      procedure Desconectar;
+      function Conectado:Boolean;
+      property nomeDaConexao: String read  FNomeDaConexao
+                                     write FNomeDaConexao;
+   end;
+function Realizar_Verificacoes_Iniciais:Boolean;
+procedure Conferir_Validade_Da_Licenca_Do_Sistema;
+procedure Conferir_Status_Internet;
+procedure Verificar_Validade_Certificado_Digital;
+procedure Atualizar_Sistema;
+procedure Conferir_Copia_de_Segurança;
+
+implementation
+
+uses funcoes;
+
+function Realizar_Verificacoes_Iniciais:Boolean;
+begin
+   result := false;
+   Conferir_Validade_Da_Licenca_Do_Sistema;
+   Conferir_Status_Internet;
+   Verificar_Validade_Certificado_Digital;
+   Atualizar_Sistema;
+   Conferir_Copia_de_Segurança;
+end;
+
+
+{
+1)	Conferência da validade da liberação do sistema no período de 30 dias, o mesmo precisa ser verificado num período de 24 horas, mesmo que o sistema não seja fechado pelo cliente.
+
+2)	Conferência do status da internet, (normal, ociosa, não tem) a fim de colocar de maneira automática a emissão de NF-e | NFC-e em contingência automática.
+
+3)	Verificação da validade do certificado digital, 30 dias antes do vencimento precisa começar a informar o cliente do vencimento, na abertura do sistema.
+
+4)	Atualizações automáticas do sistema.
+
+5)	Conferência se foi feito cópia de segurança e a mesma enviada para nuvem e local específico (pendrive, partição do hd, outro pc ou vários locais) configurado nas dependências do cliente.
+}
+
+end.

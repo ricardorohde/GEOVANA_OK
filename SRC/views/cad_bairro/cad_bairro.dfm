@@ -6,7 +6,7 @@ object frm_cad_bairro: Tfrm_cad_bairro
   Caption = 'Cadastro | Bairro'
   ClientHeight = 271
   ClientWidth = 290
-  Color = clWhite
+  Color = clBtnFace
   DefaultMonitor = dmMainForm
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

@@ -14,6 +14,7 @@ type
       FValidadeCertificado : TDateTime;
       FStatusInternet      : TStatusInternet;
       FAcessoNegado        : Boolean;
+      procedure Verificar_Se_HD_Homologado;
       procedure Conferir_Validade_Da_Licenca_Do_Sistema;
       procedure Conferir_Status_Internet;
       procedure Verificar_Validade_Certificado_Digital;
@@ -34,12 +35,8 @@ uses funcoes;
 
 procedure TVerificacaoInicial.Atualizar_Sistema;
 begin
-    //Realizar Atualizações automáticas do sistema.
-    //Executa('ALTER EMPRESA_EMP ADD EMP_CODIGO_UNISYSTEM VARCHAR(10) NULL');
-    Executar_Script('TRUNCATE TABLE CORPOEMAIL_CEMAIL');
-    Executar_Script('TRUNCATE TABLE EMAIL_EMAIL');
-    Executar_Script('TRUNCATE TABLE FUSADA_FUS');
-    Executar_Script('TRUNCATE TABLE FUNCOES_FUN');
+  //Realizar Atualizações automáticas do sistema.
+  //Executa('ALTER EMPRESA_EMP ADD EMP_CODIGO_UNISYSTEM VARCHAR(10) NULL');
 
 end;
 
@@ -85,6 +82,22 @@ begin
    Verificar_Validade_Certificado_Digital;
    Atualizar_Sistema;
    Conferir_Copia_de_Segurança;
+end;
+
+procedure TVerificacaoInicial.Verificar_Se_HD_Homologado;
+begin
+   //Pegar o numero do HD da maquina
+   //Procurar na tabela HD_HD se existe este HD (criptografado)
+   //Se existe, ok... sair
+   //Se nao existir:
+   {
+   ShowMessage('Esta máquina não está homologada para usar o Sistema.'+#13+#13+
+               'Por favor entre em contato com o Suporte.'+
+               Dados_de_Contato_do_Suporte);
+   Application.Terminate;
+   }
+   //OBS: A nuvem é que inclui/retira HDs na tabela HD_HD
+
 end;
 
 procedure TVerificacaoInicial.Verificar_Validade_Certificado_Digital;

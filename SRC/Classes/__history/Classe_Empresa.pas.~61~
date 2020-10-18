@@ -1,0 +1,387 @@
+unit Classe_Empresa;
+
+interface
+
+uses Classes, Dialogs, SysUtils, IniFiles,
+     FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+     FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet,
+     FireDAC.Comp.Client,
+     FireDAC.Stan.Intf, FireDAC.Stan.Option;
+
+type
+   TEmpresa = class
+  private
+	  FAtiva               : Boolean;   // EMP_BLOQUEADA        varchar(1) NULL
+    FNomeFantasia        : String;    // EMP_NOME_FANTASIA    varchar(50) NULL
+    FCodigoUniSystem     : String;    // EMP_CODIGO_UNISYSTEM varchar(10) NULL
+	  FRazaoSocial         : String;    // EMP_RAZAOSOCIAL      varchar(30) NULL
+    FPessoaJuridica      : Boolean;   // EMP_PESSOAJF         varchar(1)  NULL
+    FDataInicioAtividades: TDateTime; // EMP_INICIOATIVIDADES DATETIME    NULL
+    FInscricaoEstadual   : String;    // EMP_IE               varchar(20) NULL,
+    FCodigoSuframa       : String;    // EMP_SUFRAMA          NAO TEM********************************************************
+
+
+  //  FNomeDecente         : String;   // EMP_SEI LA O  QUE.....
+//PASSO 3
+{
+
+
+
+EMP_CNPJCPF] [varchar](20) NULL,
+	[EMP_CORTELA] [int] NULL,
+	[EMP_CORLETRA] [int] NULL,
+	[EMP_DISCIPLINAS] [int] NULL,
+	[EMP_QTDMESAS] [int] NULL,
+	[EMP_FONTEMAPAMESAS] [int] NULL,
+	[EMP_NOME_FANTASIA] [varchar](50) NULL,
+	[EMP_UF] [varchar](2) NULL,
+	[EMP_CODIGOINTERFACE] [varchar](3) NULL,
+	[EMP_CIDADE] [varchar](40) NULL,
+	[EMP_ENDERECO] [varchar](40) NULL,
+	[EMP_CEP] [varchar](20) NULL,
+	[EMP_FONES] [varchar](40) NULL,
+	[EMP_FAX] [varchar](40) NULL,
+	[EMP_EMAIL] [varchar](40) NULL,
+	[EMP_GERENTE] [varchar](40) NULL,
+	[EMP_FONESGERENTE] [varchar](40) NULL,
+	[EMP_FAXGERENTE] [varchar](40) NULL,
+	[EMP_EMAILGERENTE] [varchar](40) NULL,
+	[EMP_CNPJ] [varchar](20) NULL,
+	[EMP_ALMOXARIFADOPARADIESEL] [varchar](10) NULL,
+	[EMP_IBGEUF] [varchar](2) NULL,
+	[EMP_IBGECIDADE] [varchar](10) NULL,
+
+	[EMP_ENDERECO_NUMERO] [varchar](10) NULL,
+	[EMP_BAIRRO] [varchar](50) NULL,
+	[EMP_ENDERECO_COMPLEMENTO] [varchar](60) NULL,
+	[EMP_CIDADENOME] [varchar](40) NULL,
+	[EMP_EMPRESA_SIMPLES_NACIONAL] [int] NULL,
+	[EMP_CERTIFICADOVENCE] [datetime] NULL,
+	[EMP_INSCRICAOMUNICIPAL] [varchar](20) NULL,
+	[EMP_ALIQ_CREDITO_ICMS] [numeric](12, 2) NULL,
+	[EMP_CSOSN] [varchar](3) NULL,
+	[EMP_CRT] [varchar](1) NULL,
+	[EMP_CNAE] [varchar](10) NULL,
+	[EMP_BOLETO] [int] NULL,
+	[EMP_BANCO] [varchar](20) NULL,
+	[EMP_CDBANCO] [varchar](3) NULL,
+	[EMP_NMBANCO] [varchar](40) NULL,
+	[EMP_CDCEDENTE] [varchar](20) NULL,
+	[EMP_DGCEDENTE] [varchar](1) NULL,
+	[EMP_CARTEIRA] [varchar](20) NULL,
+	[EMP_AGENCIA] [varchar](20) NULL,
+	[EMP_DGAGENCIA] [varchar](2) NULL,
+	[EMP_CONTACORRENTE] [varchar](20) NULL,
+	[EMP_DIGITOCC] [varchar](2) NULL,
+	[EMP_ESPECIE] [varchar](10) NULL,
+	[EMP_MULTAATRASO] [numeric](12, 2) NULL,
+	[EMP_JUROSDIA] [numeric](12, 2) NULL,
+	[EMP_ACRESCIMOBOLETO] [numeric](12, 2) NULL,
+	[EMP_PRINTER_COMANDA] [varchar](40) NULL,
+	[EMP_PRINTER_COZINHA] [varchar](40) NULL,
+	[EMP_PRINTER_NFCE] [varchar](40) NULL,
+	[EMP_LINHASAPOSCUPOM] [int] NULL,
+	[EMP_TEMPOSEMCOMANDARMESA] [varchar](5) NULL,
+	[EMP_MSGRODAPECOMANDA] [varchar](40) NULL,
+	[EMP_MSGRODAPERECIBO] [varchar](40) NULL,
+	[EMP_TAXAGARCOM] [numeric](12, 2) NULL,
+	[EMP_COUVERT] [numeric](12, 2) NULL,
+  }
+    FExiste         : Boolean;
+
+
+
+    function getFNomeFantasia: String;
+    function getFExiste: Boolean;
+    function getFCodigoUniSystem: String;
+    function getFAtiva: Boolean;
+    procedure setFAtiva(const Value: Boolean);
+    procedure setFCodigoUniSystem(const Value: String);
+    procedure setFNomeFantasia(const Value: String);
+    function getFPessoaJuridica: Boolean;
+    procedure setFPessoaJuridica(const Value: Boolean);
+    function getFRazaoSocial: String;
+    procedure setFRazaoSocial(const Value: String);
+    function getFDataInicioAtividades: TDateTime;
+    procedure setFDataInicioAtividades(const Value: TDateTime);
+    procedure Insert;
+    procedure Update;
+    function DadosCorretos:Boolean;
+    function NaoInformadoString(pCampo,pDescricao:String):Boolean;
+    function getFInscricaoEstadual: String;
+    procedure setFInscricaoEstadual(const Value: String);
+    function getFCodigoSuframa: String;
+    procedure setFCodigoSuframa(const Value: String);
+   public
+      property NomeFantasia    : String  read  getFNomeFantasia
+                                         write setFNomeFantasia;
+      property RazaoSocial     : String  read  getFRazaoSocial
+                                         write setFRazaoSocial;
+      property CodigoUniSystem : String  read  getFCodigoUniSystem
+                                         write setFCodigoUniSystem;
+      property DataInicioAtividades : TDateTime read  getFDataInicioAtividades
+                                                write setFDataInicioAtividades;
+	    property Ativa           : Boolean read  getFAtiva
+                                         write setFAtiva;
+      property PessoaJuridica  : Boolean read  getFPessoaJuridica
+                                         write setFPessoaJuridica;
+      property Existe          : Boolean read  getFExiste;
+
+      property InscricaoEstadual: String read  getFInscricaoEstadual
+                                         write setFInscricaoEstadual;
+
+      property CodigoSuframa:     String read  getFCodigoSuframa
+                                         write setFCodigoSuframa;
+//PASSO 4
+      procedure Abrir;
+      procedure Gravar;
+   end;
+
+implementation
+{ TEmpresa }
+
+var qEmpresa: TFDQuery;
+
+procedure TEmpresa.Abrir;
+var qLocal: TFDQuery;
+begin
+    qLocal := TFDQuery.Create(nil);
+    qLocal.ConnectionName :='X';
+    qLocal.Close;
+    qLocal.SQL.Clear;
+    qLocal.SQL.Add('SELECT * FROM EMPRESA_EMP');
+    qLocal.Open;
+    FNomeFantasia   := '';
+    FCodigoUniSystem:= '';
+    FRazaoSocial    := '';
+    if qLocal.eof then
+    begin
+       FExiste:=False;
+       qLocal.Free;
+       exit;
+    end;
+    FExiste              := True;
+    FNomeFantasia        := qLocal.FieldByName('EMP_NOME_FANTASIA'   ).AsString;
+    FRazaoSocial         := qLocal.FieldByName('EMP_RAZAOSOCIAL'     ).AsString;
+    FCodigoUniSystem     := qLocal.FieldByName('EMP_CODIGO_UNISYSTEM').AsString;
+    FDataInicioAtividades:= qLocal.FieldByName('EMP_INICIOATIVIDADES').AsDateTime;
+    FAtiva               :=(qLocal.FieldByName('EMP_BLOQUEADA'       ).AsString = 'N');
+    FPessoaJuridica      :=(qLocal.FieldByName('EMP_PESSOAJF'        ).AsString = 'J');
+    FInscricaoEstadual   := qLocal.FieldByName('EMP_IE'              ).AsString;
+    FCodigoSuframa       := 'NÃO TEM';  //EMP_SUFRAMA (pra eu saber q nome criar)
+
+    //PASSO 9
+    Qlocal.Free;
+end;
+
+function TEmpresa.DadosCorretos: Boolean;
+begin
+    Result := False;
+    if NaoInformadoString(FNomeFantasia   ,'Nome Fantasia'   ) or
+       NaoInformadoString(FCodigoUniSystem,'Código Unisystem') or
+	     NaoInformadoString(FRazaoSocial    ,'Razão Social'    ) then
+       exit;
+
+    Result := True;
+end;
+
+function TEmpresa.getFAtiva: Boolean;
+begin
+  result := FAtiva;
+end;
+
+function TEmpresa.getFCodigoSuframa: String;
+begin
+   result :=FCodigoSuframa;
+end;
+
+function TEmpresa.getFCodigoUniSystem: String;
+begin
+   result := FCodigoUniSystem;
+end;
+
+function TEmpresa.getFDataInicioAtividades: TDateTime;
+begin
+   result := self.FDataInicioAtividades;
+end;
+
+function TEmpresa.getFExiste: Boolean;
+begin
+   result := self.FExiste;
+end;
+
+function TEmpresa.getFInscricaoEstadual: String;
+begin
+   result := self.FInscricaoEstadual;
+end;
+
+function TEmpresa.getFNomeFantasia: String;
+begin
+   result := Copy(self.FNomeFantasia,1,50);
+end;
+
+function TEmpresa.getFPessoaJuridica: Boolean;
+begin
+   Result := FPessoaJuridica;
+end;
+
+function TEmpresa.getFRazaoSocial: String;
+begin
+   Result := FRazaoSocial;
+end;
+
+procedure TEmpresa.Gravar;
+begin
+   if not DadosCorretos then
+      exit;
+
+   if not Existe then
+      Insert
+   else
+      Update;
+
+end;
+
+procedure TEmpresa.Insert;
+var qEmpresa: TFDQuery;
+begin
+    qEmpresa := TFDQuery.Create(nil);
+    qEmpresa.ConnectionName :='X';
+    qEmpresa.Close;
+    qEmpresa.SQL.Clear;
+    qEmpresa.SQL.Add('INSERT INTO EMPRESA_EMP     ');
+    qEmpresa.SQL.Add('     (                      ');
+    qEmpresa.SQL.Add('       EMP_NOME_FANTASIA,   ');
+    qEmpresa.SQL.Add('       EMP_RAZAOSOCIAL,     ');
+    qEmpresa.SQL.Add('       EMP_CODIGO_UNISYSTEM,');
+    qEmpresa.SQL.Add('       EMP_INICIOATIVIDADES,');
+    qEmpresa.SQL.Add('       EMP_BLOQUEADA,       ');
+    qEmpresa.SQL.Add('       EMP_PESSOAJF,        ');
+    qEmpresa.SQL.Add('       EMP_IE,              ');
+    qEmpresa.SQL.Add('       EMP_SUFRAMA          ');
+    //passo10
+    qEmpresa.SQL.Add('     )                      ');
+    qEmpresa.SQL.Add('VALUES                      ');
+    qEmpresa.SQL.Add('     (                      ');
+    qEmpresa.SQL.Add('      :EMP_NOME_FANTASIA,   ');
+    qEmpresa.SQL.Add('      :EMP_RAZAOSOCIAL,     ');
+    qEmpresa.SQL.Add('      :EMP_CODIGO_UNISYSTEM,');
+    qEmpresa.SQL.Add('      :EMP_INICIOATIVIDADES,');
+    qEmpresa.SQL.Add('      :EMP_BLOQUEADA,       ');
+    qEmpresa.SQL.Add('      :EMP_PESSOAJF,        ');
+    qEmpresa.SQL.Add('      :EMP_IE,              ');
+    qEmpresa.SQL.Add('      :EMP_SUFRAMA          ');
+    qEmpresa.SQL.Add('     )                      ');
+    //passo 11
+    qEmpresa.ParamByName('EMP_NOME_FANTASIA'   ).AsString   := FNomeFantasia;
+    qEmpresa.ParamByName('EMP_RAZAOSOCIAL'     ).AsString   := FRazaoSocial;
+    qEmpresa.ParamByName('EMP_CODIGO_UNISYSTEM').AsString   := FCodigoUniSystem;
+    qEmpresa.ParamByName('EMP_INICIOATIVIDADES').AsDateTime := FDataInicioAtividades;
+    if FAtiva then
+       qEmpresa.ParamByName('EMP_BLOQUEADA'    ).AsString   := 'N'
+    else
+       qEmpresa.ParamByName('EMP_BLOQUEADA'    ).AsString   := 'S';
+    qEmpresa.ParamByName('EMP_IE'              ).AsString   := FInscricaoEstadual;
+    qEmpresa.ParamByName('EMP_SUFRAMA'         ).AsString   := FCodigoSuframa;
+    //passo12
+    qEmpresa.ExecSql;
+end;
+
+function TEmpresa.NaoInformadoString(pCampo, pDescricao: String): Boolean;
+begin
+   Result := False;
+   if pCampo = '' then
+   begin
+     ShowMessage('Informe '+pDescricao);
+     exit;
+   end;
+   Result := True;
+end;
+
+procedure TEmpresa.setFAtiva(const Value: Boolean);
+begin
+   FAtiva := Value;
+end;
+
+procedure TEmpresa.setFCodigoSuframa(const Value: String);
+begin
+   FAtiva := Value;
+end;
+
+procedure TEmpresa.setFCodigoUniSystem(const Value: String);
+begin
+  FCodigoUniSystem := Copy(Value,10);
+end;
+
+procedure TEmpresa.setFDataInicioAtividades(const Value: TDateTime);
+begin
+   self.FDataInicioAtividades := Value;
+end;
+
+procedure TEmpresa.setFInscricaoEstadual(const Value: String);
+begin
+   self.FInscricaoEstadual := Value;
+end;
+
+procedure TEmpresa.setFNomeFantasia(const Value: String);
+begin
+  FNomeFantasia := Copy(Value,1,50);
+end;
+
+procedure TEmpresa.setFPessoaJuridica(const Value: Boolean);
+begin
+   FPessoaJuridica := Value;
+end;
+
+procedure TEmpresa.setFRazaoSocial(const Value: String);
+begin
+   FRazaoSocial := Copy(Value,1,30);
+end;
+
+procedure TEmpresa.Update;
+var qEmpresa: TFDQuery;
+begin
+    qEmpresa := TFDQuery.Create(nil);
+    qEmpresa.ConnectionName :='X';
+    qEmpresa.Close;
+    qEmpresa.SQL.Clear;
+    qEmpresa.SQL.Add('UPDATE EMPRESA_EMP     ');
+    qEmpresa.SQL.Add('     (                      ');
+    qEmpresa.SQL.Add('       EMP_NOME_FANTASIA,   ');
+    qEmpresa.SQL.Add('       EMP_RAZAOSOCIAL,     ');
+    qEmpresa.SQL.Add('       EMP_CODIGO_UNISYSTEM,');
+    qEmpresa.SQL.Add('       EMP_INICIOATIVIDADES,');
+    qEmpresa.SQL.Add('       EMP_BLOQUEADA,       ');
+    qEmpresa.SQL.Add('       EMP_PESSOAJF,        ');
+    qEmpresa.SQL.Add('       EMP_IE,              ');
+    qEmpresa.SQL.Add('       EMP_SUFRAMA          ');
+    //passo10
+    qEmpresa.SQL.Add('     )                      ');
+    qEmpresa.SQL.Add('VALUES                      ');
+    qEmpresa.SQL.Add('     (                      ');
+    qEmpresa.SQL.Add('      :EMP_NOME_FANTASIA,   ');
+    qEmpresa.SQL.Add('      :EMP_RAZAOSOCIAL,     ');
+    qEmpresa.SQL.Add('      :EMP_CODIGO_UNISYSTEM,');
+    qEmpresa.SQL.Add('      :EMP_INICIOATIVIDADES,');
+    qEmpresa.SQL.Add('      :EMP_BLOQUEADA,       ');
+    qEmpresa.SQL.Add('      :EMP_PESSOAJF,        ');
+    qEmpresa.SQL.Add('      :EMP_IE,              ');
+    qEmpresa.SQL.Add('      :EMP_SUFRAMA          ');
+    qEmpresa.SQL.Add('     )                      ');
+    //passo 11
+    qEmpresa.ParamByName('EMP_NOME_FANTASIA'   ).AsString   := FNomeFantasia;
+    qEmpresa.ParamByName('EMP_RAZAOSOCIAL'     ).AsString   := FRazaoSocial;
+    qEmpresa.ParamByName('EMP_CODIGO_UNISYSTEM').AsString   := FCodigoUniSystem;
+    qEmpresa.ParamByName('EMP_INICIOATIVIDADES').AsDateTime := FDataInicioAtividades;
+    if FAtiva then
+       qEmpresa.ParamByName('EMP_BLOQUEADA'    ).AsString   := 'N'
+    else
+       qEmpresa.ParamByName('EMP_BLOQUEADA'    ).AsString   := 'S';
+    qEmpresa.ParamByName('EMP_IE'              ).AsString   := FInscricaoEstadual;
+    qEmpresa.ParamByName('EMP_SUFRAMA'         ).AsString   := FCodigoSuframa;
+    //passo12
+    qEmpresa.ExecSql;
+end;
+
+end.
+

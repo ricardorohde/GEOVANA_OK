@@ -30,20 +30,19 @@ uses
 type
   Tfrm_config_email = class(TForm)
     Label2: TLabel;
-    edSMTP: TDBEdit;
     Label3: TLabel;
-    edSMTP_PORTA: TDBEdit;
-    edSMTP_SENHA: TDBEdit;
     Label5: TLabel;
-    edSMTP_CONTA: TDBEdit;
     Label4: TLabel;
     cxButton23: TcxButton;
-    cxButton24: TcxButton;
     cxButton25: TcxButton;
     RadioButton1: TRadioButton;
     RadioButton2: TRadioButton;
     Label6: TLabel;
     cxGroupBox1: TcxGroupBox;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Edit4: TEdit;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }

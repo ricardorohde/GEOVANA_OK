@@ -1,0 +1,204 @@
+unit Classe_Empresa;
+
+interface
+
+uses Classes, Dialogs, SysUtils, IniFiles,
+     FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+     FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet,
+     FireDAC.Comp.Client,
+     FireDAC.Stan.Intf, FireDAC.Stan.Option;
+
+type
+   TEmpresa = class
+  private
+    FNomeFantasia        : String;   // EMP_NOME_FANTASIA varchar(50) NULL
+    FCodigoUniSystem     : String;	 // EMP_CODIGO_UNISYSTEM varchar(10) NULL
+	  FRazaoSocial         : String;   // EMP_RAZAOSOCIAL varchar(30) NULL
+    FPessoaJuridica      : Boolean;  // EMP_PESSOAJF varchar(1) NULL
+    FDataInicioAtividades: DateTime; // EMP_INICIOATIVIDADES DATETIME NULL
+
+	  FAtiva          : Boolean; // EMP_BLOQUEADA varchar(1) NULL
+
+{
+
+Executar_Script(ALTER TABLE EMPRESA_EMP DROP COLUMN EMP_DESCRICAO');
+Executar_Script(ALTER TABLE EMPRESA_EMP ADD  EMP_INICIOATIVIDADES DATETIME NULL');
+
+EMP_CNPJCPF] [varchar](20) NULL,
+	[EMP_CORTELA] [int] NULL,
+	[EMP_CORLETRA] [int] NULL,
+	[EMP_DISCIPLINAS] [int] NULL,
+	[EMP_QTDMESAS] [int] NULL,
+	[EMP_FONTEMAPAMESAS] [int] NULL,
+	[EMP_NOME_FANTASIA] [varchar](50) NULL,
+	[EMP_UF] [varchar](2) NULL,
+	[EMP_CODIGOINTERFACE] [varchar](3) NULL,
+	[EMP_CIDADE] [varchar](40) NULL,
+	[EMP_ENDERECO] [varchar](40) NULL,
+	[EMP_CEP] [varchar](20) NULL,
+	[EMP_FONES] [varchar](40) NULL,
+	[EMP_FAX] [varchar](40) NULL,
+	[EMP_EMAIL] [varchar](40) NULL,
+	[EMP_GERENTE] [varchar](40) NULL,
+	[EMP_FONESGERENTE] [varchar](40) NULL,
+	[EMP_FAXGERENTE] [varchar](40) NULL,
+	[EMP_EMAILGERENTE] [varchar](40) NULL,
+	[EMP_CNPJ] [varchar](20) NULL,
+	[EMP_ALMOXARIFADOPARADIESEL] [varchar](10) NULL,
+	[EMP_IBGEUF] [varchar](2) NULL,
+	[EMP_IBGECIDADE] [varchar](10) NULL,
+	[EMP_IE] [varchar](20) NULL,
+	[EMP_ENDERECO_NUMERO] [varchar](10) NULL,
+	[EMP_BAIRRO] [varchar](50) NULL,
+	[EMP_ENDERECO_COMPLEMENTO] [varchar](60) NULL,
+	[EMP_CIDADENOME] [varchar](40) NULL,
+	[EMP_EMPRESA_SIMPLES_NACIONAL] [int] NULL,
+	[EMP_CERTIFICADOVENCE] [datetime] NULL,
+	[EMP_INSCRICAOMUNICIPAL] [varchar](20) NULL,
+	[EMP_ALIQ_CREDITO_ICMS] [numeric](12, 2) NULL,
+	[EMP_CSOSN] [varchar](3) NULL,
+	[EMP_CRT] [varchar](1) NULL,
+	[EMP_CNAE] [varchar](10) NULL,
+	[EMP_BOLETO] [int] NULL,
+	[EMP_BANCO] [varchar](20) NULL,
+	[EMP_CDBANCO] [varchar](3) NULL,
+	[EMP_NMBANCO] [varchar](40) NULL,
+	[EMP_CDCEDENTE] [varchar](20) NULL,
+	[EMP_DGCEDENTE] [varchar](1) NULL,
+	[EMP_CARTEIRA] [varchar](20) NULL,
+	[EMP_AGENCIA] [varchar](20) NULL,
+	[EMP_DGAGENCIA] [varchar](2) NULL,
+	[EMP_CONTACORRENTE] [varchar](20) NULL,
+	[EMP_DIGITOCC] [varchar](2) NULL,
+	[EMP_ESPECIE] [varchar](10) NULL,
+	[EMP_MULTAATRASO] [numeric](12, 2) NULL,
+	[EMP_JUROSDIA] [numeric](12, 2) NULL,
+	[EMP_ACRESCIMOBOLETO] [numeric](12, 2) NULL,
+	[EMP_PRINTER_COMANDA] [varchar](40) NULL,
+	[EMP_PRINTER_COZINHA] [varchar](40) NULL,
+	[EMP_PRINTER_NFCE] [varchar](40) NULL,
+	[EMP_LINHASAPOSCUPOM] [int] NULL,
+	[EMP_TEMPOSEMCOMANDARMESA] [varchar](5) NULL,
+	[EMP_MSGRODAPECOMANDA] [varchar](40) NULL,
+	[EMP_MSGRODAPERECIBO] [varchar](40) NULL,
+	[EMP_TAXAGARCOM] [numeric](12, 2) NULL,
+	[EMP_COUVERT] [numeric](12, 2) NULL,
+  }
+    FExiste         : Boolean;
+
+
+
+    function getFNomeFantasia: String;
+    function getFExiste: Boolean;
+    function getFCodigoUniSystem: String;
+    function getFAtiva: Boolean;
+    procedure setFAtiva(const Value: Boolean);
+    procedure setFCodigoUniSystem(const Value: String);
+    procedure setFNomeFantasia(const Value: String);
+    function getFPessoaJuridica: Boolean;
+    procedure setFPessoaJuridica(const Value: Boolean);
+    function getFRazaoSocial: String;
+    procedure setFRazaoSocial(const Value: String);
+   public
+      procedure Abrir;
+      property NomeFantasia    : String  read  getFNomeFantasia
+                                         write setFNomeFantasia;
+      property RazaoSocial     : String  read  getFRazaoSocial
+                                         write setFRazaoSocial;
+      property CodigoUniSystem : String  read  getFCodigoUniSystem
+                                         write setFCodigoUniSystem;
+	    property Ativa           : Boolean read  getFAtiva
+                                         write setFAtiva;
+      property PessoaJuridica  : Boolean read  getFPessoaJuridica
+                                         write setFPessoaJuridica;
+      property Existe          : Boolean read  getFExiste;
+   end;
+
+implementation
+{ TEmpresa }
+
+procedure TEmpresa.Abrir;
+var qLocal: TFDQuery;
+begin
+    qLocal := TFDQuery.Create(nil);
+    qLocal.ConnectionName :='X';
+    qLocal.Close;
+    qLocal.SQL.Clear;
+    qLocal.SQL.Add('SELECT * FROM EMPRESA_EMP');
+    qLocal.Open;
+    FNomeFantasia   := '';
+    FCodigoUniSystem:= '';
+    FRazaoSocial    := '';
+    if qLocal.eof then
+    begin
+       FExiste:=False;
+       qLocal.Free;
+       exit;
+    end;
+    FExiste         := True;
+    FNomeFantasia   := qLocal.FieldByName('EMP_NOME_FANTASIA'   ).AsString;
+    FRazaoSocial    := qLocal.FieldByName('EMP_RAZAOSOCIAL'     ).AsString;
+    FCodigoUniSystem:= qLocal.FieldByName('EMP_CODIGO_UNISYSTEM').AsString;
+    FAtiva          :=(qLocal.FieldByName('EMP_BLOQUEADA'       ).AsString = 'N');
+    FPessoaJuridica :=(qLocal.FieldByName('EMP_PESSOAJF'        ).AsString = 'J');
+
+    Qlocal.Free;
+end;
+
+function TEmpresa.getFAtiva: Boolean;
+begin
+  result := FAtiva;
+end;
+
+function TEmpresa.getFCodigoUniSystem: String;
+begin
+   result := FCodigoUniSystem;
+end;
+
+function TEmpresa.getFExiste: Boolean;
+begin
+   result := self.FExiste;
+end;
+
+function TEmpresa.getFNomeFantasia: String;
+begin
+   result := Copy(self.FNomeFantasia,1,50);
+end;
+
+function TEmpresa.getFPessoaJuridica: Boolean;
+begin
+   Result := FPessoaJuridica;
+end;
+
+function TEmpresa.getFRazaoSocial: String;
+begin
+   Result := FRazaoSocial;
+end;
+
+procedure TEmpresa.setFAtiva(const Value: Boolean);
+begin
+   FAtiva := Value;
+end;
+
+procedure TEmpresa.setFCodigoUniSystem(const Value: String);
+begin
+  FCodigoUniSystem := Copy(Value,10);
+end;
+
+procedure TEmpresa.setFNomeFantasia(const Value: String);
+begin
+  FNomeFantasia := Copy(Value,1,50);
+end;
+
+procedure TEmpresa.setFPessoaJuridica(const Value: Boolean);
+begin
+   FPessoaJuridica := Value;
+end;
+
+procedure TEmpresa.setFRazaoSocial(const Value: String);
+begin
+   FRazaoSocial := Copy(Value,1,30);
+end;
+
+end.
+

@@ -20,9 +20,9 @@ object Frm_Conf_mde: TFrm_Conf_mde
   object Label4: TLabel
     Left = 111
     Top = 7
-    Width = 213
+    Width = 211
     Height = 19
-    Caption = 'Configura'#231#245'es Gerais MDe'
+    Caption = 'Configura'#231#245'es gerais MDe'
     Color = clHighlight
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clHighlight
@@ -34,11 +34,11 @@ object Frm_Conf_mde: TFrm_Conf_mde
   end
   object GroupBox1: TGroupBox
     Left = 25
-    Top = 338
+    Top = 344
     Width = 388
     Height = 58
     Caption = '  Caminhos Notas  (Selecione MDe)  '
-    Color = clBtnFace
+    Color = clMenuBar
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
@@ -138,27 +138,27 @@ object Frm_Conf_mde: TFrm_Conf_mde
     Caption = '  Automa'#231#227'o  '
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -12
+    Font.Height = -15
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 2
     object Label9: TLabel
       Left = 28
-      Top = 75
-      Width = 140
-      Height = 14
+      Top = 70
+      Width = 169
+      Height = 18
       Caption = 'Temporizador Verifica'#231#227'o:'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -12
+      Font.Height = -15
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
     end
     object cxCheckBox1: TcxCheckBox
       Left = 8
-      Top = 17
+      Top = 20
       Caption = 'Efetuar verifica'#231#227'o de novas notas fiscais automaticamente.'
       ParentFont = False
       Style.Font.Charset = DEFAULT_CHARSET
@@ -184,30 +184,23 @@ object Frm_Conf_mde: TFrm_Conf_mde
       Style.IsFontAssigned = True
       TabOrder = 1
     end
-    object DBEdit1: TDBEdit
-      Left = 174
-      Top = 72
-      Width = 62
-      Height = 21
-      DataField = 'SMTP_CONTA'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentFont = False
+    object Edit7: TEdit
+      Left = 206
+      Top = 66
+      Width = 35
+      Height = 26
       TabOrder = 2
     end
   end
   object GroupBox2: TGroupBox
     Left = 25
-    Top = 153
+    Top = 152
     Width = 388
-    Height = 178
+    Height = 182
     Caption = '  Email Arquivos Fiscais S.M.C.  '
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -12
+    Font.Height = -15
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
@@ -215,170 +208,127 @@ object Frm_Conf_mde: TFrm_Conf_mde
     object Label2: TLabel
       Left = 16
       Top = 24
-      Width = 31
-      Height = 14
+      Width = 38
+      Height = 18
       Caption = 'SMTP'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -12
+      Font.Height = -15
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
     end
     object Label3: TLabel
-      Left = 320
+      Left = 294
       Top = 24
-      Width = 29
-      Height = 14
+      Width = 34
+      Height = 18
       Caption = 'Porta'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -12
+      Font.Height = -15
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
     end
     object Label1: TLabel
       Left = 16
-      Top = 72
-      Width = 127
-      Height = 14
+      Top = 76
+      Width = 151
+      Height = 18
       Caption = 'Nome da conta (Login)'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -12
+      Font.Height = -15
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
     end
     object Label5: TLabel
       Left = 273
-      Top = 72
-      Width = 86
-      Height = 14
+      Top = 76
+      Width = 102
+      Height = 18
       Caption = 'Senha da conta'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -12
+      Font.Height = -15
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
     end
     object Label6: TLabel
       Left = 16
-      Top = 120
-      Width = 113
-      Height = 14
+      Top = 125
+      Width = 133
+      Height = 18
       Caption = 'Nome do remetente'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -12
+      Font.Height = -15
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
     end
     object Label7: TLabel
       Left = 162
-      Top = 120
-      Width = 108
-      Height = 14
+      Top = 125
+      Width = 127
+      Height = 18
       Caption = 'Email do remetente'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -12
+      Font.Height = -15
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
     end
-    object edSMTP: TDBEdit
+    object Edit1: TEdit
       Left = 16
-      Top = 43
-      Width = 297
-      Height = 21
-      DataField = 'SMTP'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentFont = False
+      Top = 48
+      Width = 225
+      Height = 26
       TabOrder = 0
     end
-    object edSMTP_PORTA: TDBEdit
-      Left = 319
-      Top = 43
-      Width = 54
-      Height = 21
-      DataField = 'SMTP_PORTA'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentFont = False
+    object Edit2: TEdit
+      Left = 16
+      Top = 99
+      Width = 225
+      Height = 26
       TabOrder = 1
     end
-    object edSMTP_CONTA: TDBEdit
+    object Edit3: TEdit
       Left = 16
-      Top = 91
-      Width = 249
-      Height = 21
-      DataField = 'SMTP_CONTA'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentFont = False
+      Top = 147
+      Width = 133
+      Height = 26
       TabOrder = 2
     end
-    object edSMTP_SENHA: TDBEdit
-      Left = 273
-      Top = 91
-      Width = 100
-      Height = 21
-      DataField = 'SMTP_SENHA'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentFont = False
-      PasswordChar = '*'
+    object Edit4: TEdit
+      Left = 294
+      Top = 44
+      Width = 81
+      Height = 26
       TabOrder = 3
     end
-    object edSMTP_REMETENTE: TDBEdit
-      Left = 16
-      Top = 139
-      Width = 140
-      Height = 21
-      DataField = 'SMTP_REMETENTE'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentFont = False
+    object Edit5: TEdit
+      Left = 273
+      Top = 99
+      Width = 102
+      Height = 26
       TabOrder = 4
     end
-    object edSMTP_EMAIL: TDBEdit
-      Left = 162
-      Top = 139
+    object Edit6: TEdit
+      Left = 164
+      Top = 147
       Width = 211
-      Height = 21
-      DataField = 'SMTP_EMAIL'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentFont = False
+      Height = 26
       TabOrder = 5
     end
   end
   object cxButton23: TcxButton
     Left = 25
-    Top = 406
+    Top = 410
     Width = 84
     Height = 23
     Caption = 'Gravar'
@@ -427,63 +377,12 @@ object Frm_Conf_mde: TFrm_Conf_mde
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object cxButton24: TcxButton
-    Left = 177
-    Top = 406
-    Width = 84
-    Height = 23
-    Caption = 'Alterar'
-    LookAndFeel.NativeStyle = False
-    LookAndFeel.SkinName = 'Metropolis'
-    OptionsImage.Glyph.Data = {
-      36040000424D3604000000000000360000002800000010000000100000000100
-      2000000000000004000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      00000000000000000000000000003827174DB8824DFF00000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      000000000000000000003827174DB8824DFFB8824DFF00000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000003827174DB8824DFFB8824DFFB8824DFFB5804CFB9F7042DC7955
-      32A747321E630E0A061400000000000000000000000000000000000000000000
-      00003827174DB8824DFFB8824DFFB8824DFFB8824DFFB8824DFFB8824DFFB882
-      4DFFB8824DFF7C5834AC2B1E123B000000000000000000000000000000000000
-      0000000000003827174DB8824DFFB8824DFFB8824DFFB8824DFFB8824DFFB882
-      4DFFB8824DFFB8824DFF855E38B91E150C290000000000000000000000000000
-      0000484F3879212419373827174DB8824DFFB8824DFF060402082A1E123A6144
-      2886A27344E1B8824DFFB8824DFF5D4227810000000000000000000000000000
-      000077845DC98E9D6FF0212419373827174DB8824DFF00000000000000000000
-      00004C36206AB8824DFFB8824DFF91663DC90000000000000000000000000000
-      000093A273F897A776FF8E9D6FF0020302040000000000000000000000000000
-      000003020104AD7A48F0B8824DFFB37E4BF80000000000000000000000000000
-      000077845DC997A776FF97A776FF3F45316A00000000000000000000000097A7
-      76FF2E32244D281C1137AD7A48F091663DC90000000000000000000000000000
-      00004C543C8197A776FF97A776FF859368E14F583E8622261B3A0505040897A7
-      76FF97A776FF2E32244D281C1137573E25790000000000000000000000000000
-      0000181B13296E7956B997A776FF97A776FF97A776FF97A776FF97A776FF97A7
-      76FF97A776FF97A776FF2E32244D000000000000000000000000000000000000
-      00000000000023271B3B667150AC97A776FF97A776FF97A776FF97A776FF97A7
-      76FF97A776FF97A776FF97A776FF2E32244D0000000000000000000000000000
-      000000000000000000000C0D09143B412E63636D4DA7829066DC95A474FB97A7
-      76FF97A776FF97A776FF2E32244D000000000000000000000000000000000000
-      00000000000000000000000000000000000000000000000000000000000097A7
-      76FF97A776FF2E32244D00000000000000000000000000000000000000000000
-      00000000000000000000000000000000000000000000000000000000000097A7
-      76FF2E32244D0000000000000000000000000000000000000000}
-    TabOrder = 5
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
   object cxButton25: TcxButton
     Left = 329
-    Top = 406
+    Top = 410
     Width = 84
     Height = 23
-    Caption = 'Cancelar'
+    Caption = 'Sair'
     LookAndFeel.NativeStyle = False
     LookAndFeel.SkinName = 'Metropolis'
     OptionsImage.Glyph.Data = {
@@ -521,7 +420,7 @@ object Frm_Conf_mde: TFrm_Conf_mde
       0000000000000000000022316C7F4463D8FF4261D3F9151E424E00000000151E
       414D212F677A0000000000000000000000000000000000000000000000000000
       00000000000000000000000000002130687B151E414D00000000}
-    TabOrder = 6
+    TabOrder = 5
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
