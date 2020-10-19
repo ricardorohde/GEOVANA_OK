@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<TgConfig Version="3" SubLevelDisabled="False">
+  <Option Name="namespaceFolder.Classe_Usuario" Type="System.String" Value="Classe_Usuario" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.Classe_Acesso" Type="System.String" Value="Classe_Acesso" Category="General" IsBrowsable="False" />
+</TgConfig>
