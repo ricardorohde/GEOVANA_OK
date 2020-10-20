@@ -15,11 +15,11 @@ File_12=TSourceModule,'C:\wander\Sistemas\Delphi\unisystem\SMC_PLUS\src\Controle
 File_13=TSourceModule,'C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\views\cadastro_empresa\cad_empresa.pas',0,1,1,1,25,0,0,,
 
 [Modules]
-Module0=C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\views\cad_empresa\cad_empresa.pas
-Module1=default.htm
-Module2=C:\wander\sistemas\delphi\unisystem\SMC_PLUS\built\SMC_SISTEMA\SMC_PLUS_.dproj
-Module3=C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\Classes\Classe_Empresa.pas
-Module4=C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\Classes\Classe_Acesso.pas
+Module0=C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\Classes\Classe_Acesso.pas
+Module1=C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\Classes\Classe_Empresa.pas
+Module2=C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\views\cad_empresa\cad_empresa.pas
+Module3=default.htm
+Module4=C:\wander\sistemas\delphi\unisystem\SMC_PLUS\built\SMC_SISTEMA\SMC_PLUS_.dproj
 Module5=C:\wander\Sistemas\Delphi\brenaw10\SISTEMAS\Brena\FontesBrena\Codigo2020\Utilitarios\Funcoes.pas
 Module6=C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\Funcoes\Funcoes.pas
 Module7=C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\views\cad_clientes\cad_cliente.pas
@@ -32,6 +32,12 @@ Module13=C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\views\cad_consultor\ca
 Count=14
 EditWindowCount=1
 
+[C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\Classes\Classe_Acesso.pas]
+ModuleType=TSourceModule
+
+[C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\Classes\Classe_Empresa.pas]
+ModuleType=TSourceModule
+
 [C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\views\cad_empresa\cad_empresa.pas]
 ModuleType=TSourceModule
 
@@ -40,12 +46,6 @@ ModuleType=TURLModule
 
 [C:\wander\sistemas\delphi\unisystem\SMC_PLUS\built\SMC_SISTEMA\SMC_PLUS_.dproj]
 ModuleType=TBaseProject
-
-[C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\Classes\Classe_Empresa.pas]
-ModuleType=TSourceModule
-
-[C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\Classes\Classe_Acesso.pas]
-ModuleType=TSourceModule
 
 [C:\wander\Sistemas\Delphi\brenaw10\SISTEMAS\Brena\FontesBrena\Codigo2020\Utilitarios\Funcoes.pas]
 ModuleType=TSourceModule
@@ -76,7 +76,7 @@ ModuleType=TSourceModule
 
 [EditWindow0]
 ViewCount=14
-CurrentEditView=C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\views\cad_empresa\cad_empresa.pas
+CurrentEditView=C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\Classes\Classe_Acesso.pas
 View0=0
 View1=1
 View2=2
@@ -109,16 +109,17 @@ BorlandEditorCodeExplorer=BorlandEditorCodeExplorer@EditWindow0
 TopPanelSize=0
 LeftPanelSize=1897
 LeftPanelClients=PropertyInspector,DockSite3
-LeftPanelData=0000080001010100000009000000446F636B53697465336A0D0000000000000169070000000000000100000000580E000009000000446F636B53697465330100000000C11700001100000050726F7065727479496E73706563746F72FFFFFFFF
-RightPanelSize=2000
-RightPanelClients=DockSite2,DockSite4
-RightPanelData=000008000101000000006A0D00000000000001D00700000000000001000000004212000009000000446F636B53697465320100000000C117000009000000446F636B5369746534FFFFFFFF
+LeftPanelData=000008000101000000006A0D0000000000000169070000000000000100000000580E000009000000446F636B53697465330100000000C11700001100000050726F7065727479496E73706563746F72FFFFFFFF
+RightPanelSize=0
+RightPanelClients=DockSite4
+RightPanelData=0000080001010100000009000000446F636B5369746534011100000000000001D00700000000000001000000001C1E000009000000446F636B5369746534FFFFFFFF
 BottomPanelSize=1549
 BottomPanelClients=DockSite1,MessageView
 BottomPanelData=0000080001020100000009000000446F636B53697465312C45000000000000020D0600000000000001000000002C4500000F0000004D65737361676556696577466F726DFFFFFFFF
 BottomMiddlePanelSize=0
 BottomMiddlePanelClients=DockSite0,GraphDrawingModel
 BottomMiddelPanelData=0000080001020200000009000000446F636B536974653010000000477261706844726177696E67566965779A1D00000000000002F806000000000000FFFFFFFF
+TabDockRightClients=DockSite2=0
 
 [View0]
 CustomEditViewType=TWelcomePageView
@@ -138,12 +139,12 @@ EditViewName=C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\views\Login\vw_Log
 [View2]
 CustomEditViewType=TEditView
 Module=C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\Classes\Classe_Empresa.pas
-CursorX=6
-CursorY=302
-TopLine=301
+CursorX=1
+CursorY=65
+TopLine=65
 LeftCol=1
 Elisions=
-Bookmarks={0,255,1}{1,1041,24}
+Bookmarks={0,210,1}{1,996,24}
 EditViewName=C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\Classes\Classe_Empresa.pas
 
 [View3]
@@ -215,9 +216,9 @@ EditViewName=C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\Funcoes\Funcoes.pa
 [View9]
 CustomEditViewType=TEditView
 Module=C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\Classes\Classe_Acesso.pas
-CursorX=74
-CursorY=100
-TopLine=86
+CursorX=71
+CursorY=140
+TopLine=112
 LeftCol=1
 Elisions=
 Bookmarks=
@@ -385,11 +386,11 @@ State=0
 Left=0
 Top=0
 Width=2000
-Height=1236
+Height=7885
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2000
-ClientHeight=1236
+ClientHeight=7885
 TBDockHeight=7157
 LRDockWidth=2000
 Dockable=1
@@ -440,13 +441,13 @@ Visible=1
 Docked=1
 State=0
 Left=0
-Top=18
+Top=300
 Width=1897
-Height=6168
+Height=2294
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1897
-ClientHeight=6168
+ClientHeight=2294
 TBDockHeight=6909
 LRDockWidth=1897
 Dockable=1
@@ -455,8 +456,8 @@ SplitPos=111
 
 [PropInspDesignerSelection]
 ArrangeBy=Name
-SelectedItem=Color,
-ExpandedItems=Constraints=0,Font=0,LiveBindings=0,"LiveBindings Designer=0",Margins=0,Padding=0,StyleElements=0,Touch=0
+SelectedItem=,
+ExpandedItems=
 
 [ClassBrowserTool]
 PercentageSizes=1
@@ -912,11 +913,11 @@ ActiveTabID=DebugLogView
 TabDockClients=DebugLogView,BreakpointWindow,ThreadStatusWindow,CallStackWindow,WatchWindow,LocalVarsWindow
 
 [DockSite2]
-HostDockSite=DockRightPanel
+HostDockSite=RightTabDock
 DockSiteType=1
 PercentageSizes=1
 Create=1
-Visible=1
+Visible=0
 Docked=1
 State=0
 Left=0
@@ -940,7 +941,7 @@ HostDockSite=DockLeftPanel
 DockSiteType=1
 PercentageSizes=1
 Create=1
-Visible=0
+Visible=1
 Docked=1
 State=0
 Left=0
@@ -964,17 +965,17 @@ HostDockSite=DockRightPanel
 DockSiteType=1
 PercentageSizes=1
 Create=1
-Visible=1
+Visible=0
 Docked=1
 State=0
 Left=0
-Top=377
+Top=18
 Width=2000
-Height=1236
+Height=7885
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2000
-ClientHeight=1236
+ClientHeight=7885
 TBDockHeight=6909
 LRDockWidth=2000
 Dockable=1
