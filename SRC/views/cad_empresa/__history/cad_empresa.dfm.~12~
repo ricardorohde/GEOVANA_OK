@@ -4591,7 +4591,6 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Top = 26
       Width = 153
       Height = 26
-      Color = 8454016
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNone
       Font.Height = -15
@@ -4607,7 +4606,6 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Width = 83
       Height = 26
       TabStop = False
-      Color = 8454016
       EditMask = '!99/99/00;1;_'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText

@@ -312,7 +312,6 @@ begin
         Empresa.ContadorCelular2            := edContadorCelular2.Text;
         Empresa.ContadorEmail               := edContadorEmail.Text;
         Empresa.DataCadastro                := StrToDate(edDataCadastro.text);
-        Empresa.CodigoUniSystem             := edCodigoUniSystem.Text;
         result := Empresa.Gravar;
     Except
 

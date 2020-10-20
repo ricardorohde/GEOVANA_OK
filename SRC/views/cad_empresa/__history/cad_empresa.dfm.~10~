@@ -322,7 +322,6 @@ object frm_cad_empresa: Tfrm_cad_empresa
     Width = 625
     Height = 228
     Caption = '  Par'#226'metros de Tributa'#231#227'o'
-    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clNone
     Font.Height = -15
@@ -4585,13 +4584,12 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Style = []
       ParentFont = False
     end
-    object edCodigoUniSystem: TEdit
+    object Edit8: TEdit
       Tag = 100
       Left = 449
       Top = 26
       Width = 153
       Height = 26
-      Color = 8454016
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNone
       Font.Height = -15
@@ -4607,7 +4605,6 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Width = 83
       Height = 26
       TabStop = False
-      Color = 8454016
       EditMask = '!99/99/00;1;_'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
