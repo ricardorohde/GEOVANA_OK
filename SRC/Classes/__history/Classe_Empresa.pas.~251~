@@ -597,10 +597,6 @@ begin
     qEmpresa.ParamByName('EMP_WHATSAPP'             ).AsString   := FWhatsApp;
     qEmpresa.ParamByName('EMP_EMAIL'                ).AsString   := FEmail;
     qEmpresa.ParamByName('EMP_CONTRIBUINTE_IPI'     ).AsInteger  := f0ou1(FContribuinteIPI);
-    qEmpresa.ParamByName('EMP_RESPONSAVEL_NOME'     ).AsString   := FResponsavelNome;
-    qEmpresa.ParamByName('EMP_RESPONSAVEL_TELEFONE' ).AsString   := FResponsavelTelefone;
-    qEmpresa.ParamByName('EMP_RESPONSAVEL_CELULAR'  ).AsString   := FResponsavelCelular;
-    qEmpresa.ParamByName('EMP_RESPONSAVEL_EMAIL'    ).AsString   := FResponsavelEmail;
 
     //passo12
 end;
@@ -806,10 +802,6 @@ begin
         qEmpresa.SQL.Add('       EMP_WHATSAPP              = :EMP_WHATSAPP,              ');
         qEmpresa.SQL.Add('       EMP_EMAIL                 = :EMP_EMAIL,                 ');
         qEmpresa.SQL.Add('       EMP_CONTRIBUINTE_IPI      = :EMP_CONTRIBUINTE_IPI,      ');
-        qEmpresa.SQL.Add('       EMP_RESPONSAVEL_NOME      = :EMP_RESPONSAVEL_NOME,      ');
-        qEmpresa.SQL.Add('       EMP_RESPONSAVEL_TELEFONE  = :EMP_RESPONSAVEL_TELEFONE,  ');
-        qEmpresa.SQL.Add('       EMP_RESPONSAVEL_CELULAR   = :EMP_RESPONSAVEL_CELULAR,   ');
-        qEmpresa.SQL.Add('       EMP_RESPONSAVEL_EMAIL     = :EMP_RESPONSAVEL_EMAIL,     ');
 
         //passo11
         Preencher_Parametros_Empresa;

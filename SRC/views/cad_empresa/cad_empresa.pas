@@ -103,10 +103,10 @@ type
     edEnderecoCEP: TEdit;
     edIESubstTributario: TEdit;
     GroupBox5: TGroupBox;
-    Edit33: TEdit;
-    Edit34: TEdit;
-    Edit35: TEdit;
-    Edit36: TEdit;
+    edResponsavelNome: TEdit;
+    edResponsavelTelefone: TEdit;
+    edResponsavelCelular: TEdit;
+    edResponsavelEmail: TEdit;
     Edit37: TEdit;
     Edit38: TEdit;
     Edit39: TEdit;
@@ -297,6 +297,10 @@ begin
         Empresa.Celular                     := edCelular.Text;
         Empresa.WhatsApp                    := edWhatsApp.Text;
         Empresa.ContribuinteIPI             := cbContribuinteIPI.Checked;
+        Empresa.ResponsavelNome             := edResponsavelNome.Text;
+        Empresa.ResponsavelTelefone         := edResponsavelTelefone.Text;
+        Empresa.ResponsavelCelular          := edResponsavelCelular.Text;
+        Empresa.ResponsavelEmail            := edResponsavelEmail.Text;
         result := Empresa.Gravar;
     Except
 
@@ -328,6 +332,10 @@ begin
    edCelular.Text                     := Empresa.Celular;
    edWhatsApp.Text                    := Empresa.WhatsApp;
    cbContribuinteIPI.Checked          := Empresa.ContribuinteIPI;
+   edResponsavelNome.Text             := Empresa.ResponsavelNome;
+   edResponsavelTelefone.Text         := Empresa.ResponsavelTelefone;
+   edResponsavelCelular.Text          := Empresa.ResponsavelCelular;
+   edResponsavelEmail.Text            := Empresa.ResponsavelEmail;
 
 //PASSO 9 :)
    {

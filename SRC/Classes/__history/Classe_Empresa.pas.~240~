@@ -165,14 +165,6 @@ EMP_CNPJCPF] [varchar](20) NULL,
     procedure setFEnderecoUFIBGE(const Value: String);
     procedure setFTelefone(const Value: String);
     procedure setFWhatsApp(const Value: String);
-    function getFResponsavelCelular: String;
-    function getFResponsavelEmail: String;
-    function getFResponsavelNome: String;
-    function getFResponsavelTelefone: String;
-    procedure setFResponsavelCelular(const Value: String);
-    procedure setFResponsavelEmail(const Value: String);
-    procedure setFResponsavelNome(const Value: String);
-    procedure setFResponsavelTelefone(const Value: String);
    public
       property NomeFantasia                : String    read getFNomeFantasia                write setFNomeFantasia;
       property RazaoSocial                 : String    read getFRazaoSocial                 write setFRazaoSocial;
@@ -203,10 +195,10 @@ EMP_CNPJCPF] [varchar](20) NULL,
       property WhatsApp                    : String    read getFWhatsApp                    write setFWhatsApp;
       property Email                       : String    read getFEmail                       write setFEmail;
       property ContribuinteIPI             : Boolean   read getFContribuinteIPI             write setFContribuinteIPI;
-      property ResponsavelNome             : String    read getFResponsavelNome             write setFResponsavelNome;
-      property ResponsavelTelefone         : String    read getFResponsavelTelefone         write setFResponsavelTelefone;
-      property ResponsavelCelular          : String    read getFResponsavelCelular          write setFResponsavelCelular;
-      property ResponsavelEmail            : String    read getFResponsavelEmail            write setFResponsavelEmail;
+      property ResponsavelNome             : String    read getFResponsavelNome             ;    // EMP_RESPONSAVEL_NOME       varchar(40) NULL
+      property ResponsavelTelefone         : String    read getFResponsavelTelefone         ;    // EMP_RESPONSAVEL_TELEFONE   varchar(40) NULL
+      property ResponsavelCelular          : String    read getFResponsavelCelular          ;    // EMP_RESPONSAVEL_CELULAR    varchar(40) NULL
+      property ResponsavelEmail            : String    read getFResponsavelEmail            ;    // EMP_RESPONSAVEL_EMAIL      varchar(40) NULL
 
      //PASSO 4
       procedure Abrir;
@@ -270,10 +262,6 @@ begin
     FEnderecoMunicipioIBGE       := qLocal.FieldByname('EMP_IBGECIDADE'           ).AsString;
     FEnderecoUF                  := qLocal.FieldByname('EMP_UF'                   ).AsString;
     FContribuinteIPI             :=(qLocal.FieldByname('EMP_CONTRIBUINTE_IPI'     ).AsInteger = 1);
-    FResponsavelNome             := qLocal.FieldByname('EMP_RESPONSAVEL_NOME'     ).AsString;
-    FResponsavelTelefone         := qLocal.FieldByname('EMP_RESPONSAVEL_TELEFONE' ).AsString;
-    FResponsavelCelular          := qLocal.FieldByname('EMP_RESPONSAVEL_CELULAR'  ).AsString;
-    FResponsavelEmail            := qLocal.FieldByname('EMP_RESPONSAVEL_EMAIL'    ).AsString;
 
     //PASSO 9
     Qlocal.Free;
@@ -435,26 +423,6 @@ begin
    Result := self.FRazaoSocial;
 end;
 
-function TEmpresa.getFResponsavelCelular: String;
-begin
-   Result := self.FResponsavelCelular;
-end;
-
-function TEmpresa.getFResponsavelEmail: String;
-begin
-   Result := self.FResponsavelEmail;
-end;
-
-function TEmpresa.getFResponsavelNome: String;
-begin
-   Result := self.FResponsavelNome;
-end;
-
-function TEmpresa.getFResponsavelTelefone: String;
-begin
-   Result := self.FResponsavelTelefone;
-end;
-
 function TEmpresa.Gravar:Boolean;
 begin
    result := False;
@@ -512,10 +480,6 @@ begin
         qEmpresa.SQL.Add('       EMP_WHATSAPP,              ');
         qEmpresa.SQL.Add('       EMP_EMAIL,                 ');
         qEmpresa.SQL.Add('       EMP_CONTRIBUINTE_IPI,      ');
-        qEmpresa.SQL.Add('       EMP_RESPONSAVEL_NOME,      ');
-        qEmpresa.SQL.Add('       EMP_RESPONSAVEL_TELEFONE,  ');
-        qEmpresa.SQL.Add('       EMP_RESPONSAVEL_CELULAR,   ');
-        qEmpresa.SQL.Add('       EMP_RESPONSAVEL_EMAIL,     ');
         //passo10
         qEmpresa.SQL.Add('     )                            ');
         qEmpresa.SQL.Add('VALUES                            ');
@@ -547,11 +511,6 @@ begin
         qEmpresa.SQL.Add('      :EMP_WHATSAPP,              ');
         qEmpresa.SQL.Add('      :EMP_EMAIL,                 ');
         qEmpresa.SQL.Add('      :EMP_CONTRIBUINTE_IPI,      ');
-        qEmpresa.SQL.Add('      :EMP_RESPONSAVEL_NOME,      ');
-        qEmpresa.SQL.Add('      :EMP_RESPONSAVEL_TELEFONE,  ');
-        qEmpresa.SQL.Add('      :EMP_RESPONSAVEL_CELULAR,   ');
-        qEmpresa.SQL.Add('      :EMP_RESPONSAVEL_EMAIL,     ');
-
         qEmpresa.SQL.Add('     )                            ');
 
         //passo 11
@@ -597,10 +556,6 @@ begin
     qEmpresa.ParamByName('EMP_WHATSAPP'             ).AsString   := FWhatsApp;
     qEmpresa.ParamByName('EMP_EMAIL'                ).AsString   := FEmail;
     qEmpresa.ParamByName('EMP_CONTRIBUINTE_IPI'     ).AsInteger  := f0ou1(FContribuinteIPI);
-    qEmpresa.ParamByName('EMP_RESPONSAVEL_NOME'     ).AsString   := FResponsavelNome;
-    qEmpresa.ParamByName('EMP_RESPONSAVEL_TELEFONE' ).AsString   := FResponsavelTelefone;
-    qEmpresa.ParamByName('EMP_RESPONSAVEL_CELULAR'  ).AsString   := FResponsavelCelular;
-    qEmpresa.ParamByName('EMP_RESPONSAVEL_EMAIL'    ).AsString   := FResponsavelEmail;
 
     //passo12
 end;
@@ -751,26 +706,6 @@ begin
    FRazaoSocial := Copy(Value,1,30);
 end;
 
-procedure TEmpresa.setFResponsavelCelular(const Value: String);
-begin
-   FResponsavelCelular := Copy(Value,1,40);
-end;
-
-procedure TEmpresa.setFResponsavelEmail(const Value: String);
-begin
-   FResponsavelEmail := Copy(Value,1,40);
-end;
-
-procedure TEmpresa.setFResponsavelNome(const Value: String);
-begin
-   FResponsavelNome := Copy(Value,1,40);
-end;
-
-procedure TEmpresa.setFResponsavelTelefone(const Value: String);
-begin
-   FResponsavelTelefone := Copy(Value,1,40);
-end;
-
 function TEmpresa.Update:Boolean;
 begin
     try
@@ -806,10 +741,6 @@ begin
         qEmpresa.SQL.Add('       EMP_WHATSAPP              = :EMP_WHATSAPP,              ');
         qEmpresa.SQL.Add('       EMP_EMAIL                 = :EMP_EMAIL,                 ');
         qEmpresa.SQL.Add('       EMP_CONTRIBUINTE_IPI      = :EMP_CONTRIBUINTE_IPI,      ');
-        qEmpresa.SQL.Add('       EMP_RESPONSAVEL_NOME      = :EMP_RESPONSAVEL_NOME,      ');
-        qEmpresa.SQL.Add('       EMP_RESPONSAVEL_TELEFONE  = :EMP_RESPONSAVEL_TELEFONE,  ');
-        qEmpresa.SQL.Add('       EMP_RESPONSAVEL_CELULAR   = :EMP_RESPONSAVEL_CELULAR,   ');
-        qEmpresa.SQL.Add('       EMP_RESPONSAVEL_EMAIL     = :EMP_RESPONSAVEL_EMAIL,     ');
 
         //passo11
         Preencher_Parametros_Empresa;

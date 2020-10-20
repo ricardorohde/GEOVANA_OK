@@ -143,8 +143,6 @@ begin
        begin
           (pTela.Components[vComponents] as TEdit).Text := '';
           (pTela.Components[vComponents] as TEdit).Color := clWhite;
-          if (pTela.Components[vComponents] as TEdit).CharCase <> ecLowerCase then
-             (pTela.Components[vComponents] as TEdit).CharCase := ecUpperCase;
        end;
        if (pTela.Components[vComponents] is TMaskEdit) then
        begin

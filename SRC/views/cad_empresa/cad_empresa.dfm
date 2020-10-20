@@ -3078,7 +3078,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       ParentFont = False
     end
     object TLabel
-      Left = 11
+      Left = 3
       Top = 60
       Width = 89
       Height = 17
@@ -4068,7 +4068,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Top = 124
       Width = 64
       Height = 17
-      Caption = 'Mun'#237'cipio:'
+      Caption = 'Munic'#237'pio:'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -15
@@ -4364,6 +4364,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Top = 119
       Width = 49
       Height = 26
+      Color = 8454016
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNone
       Font.Height = -15
@@ -4458,12 +4459,13 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Style = []
       ParentFont = False
     end
-    object Edit33: TEdit
+    object edResponsavelNome: TEdit
       Tag = 100
       Left = 76
       Top = 21
       Width = 118
       Height = 26
+      Color = 8454016
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNone
       Font.Height = -15
@@ -4471,13 +4473,13 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Style = []
       ParentFont = False
       TabOrder = 0
-      Text = 'Edit1'
     end
-    object Edit34: TEdit
+    object edResponsavelTelefone: TEdit
       Left = 76
       Top = 53
       Width = 118
       Height = 26
+      Color = 8454016
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNone
       Font.Height = -15
@@ -4487,12 +4489,13 @@ object frm_cad_empresa: Tfrm_cad_empresa
       TabOrder = 1
       Text = 'Edit1'
     end
-    object Edit35: TEdit
+    object edResponsavelCelular: TEdit
       Tag = 100
       Left = 76
       Top = 85
       Width = 118
       Height = 26
+      Color = 8454016
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNone
       Font.Height = -15
@@ -4502,11 +4505,13 @@ object frm_cad_empresa: Tfrm_cad_empresa
       TabOrder = 2
       Text = 'Edit1'
     end
-    object Edit36: TEdit
+    object edResponsavelEmail: TEdit
       Left = 76
       Top = 117
       Width = 118
       Height = 26
+      CharCase = ecLowerCase
+      Color = 8454016
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNone
       Font.Height = -15
@@ -4514,7 +4519,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Style = []
       ParentFont = False
       TabOrder = 3
-      Text = 'Edit1'
+      Text = 'edit1'
     end
   end
   object grpOutras: TGroupBox

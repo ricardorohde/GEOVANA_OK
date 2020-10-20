@@ -810,6 +810,9 @@ object frm_cadastro_cliente: Tfrm_cadastro_cliente
       Font.Style = [fsBold]
       ImageIndex = 1
       ParentFont = False
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
       ExplicitHeight = 106
       object lbl3: TLabel
         Left = 9
