@@ -11,25 +11,40 @@ uses Classes, Dialogs, SysUtils, IniFiles,
 type
    TEmpresa = class
   private
-	  FAtiva               : Boolean;   // EMP_BLOQUEADA        varchar(1)  NULL
-    FNomeFantasia        : String;    // EMP_NOME_FANTASIA    varchar(50) NULL
-    FCodigoUniSystem     : String;    // EMP_CODIGO_UNISYSTEM varchar(10) NULL
-	  FRazaoSocial         : String;    // EMP_RAZAOSOCIAL      varchar(30) NULL
-    FPessoaJuridica      : Boolean;   // EMP_PESSOAJF         varchar(1)  NULL
-    FDataInicioAtividades: TDateTime; // EMP_INICIOATIVIDADES DATETIME    NULL
-    FDataInicioAtividadesString:String;
-    FInscricaoEstadual   : String;    // EMP_INSCRICAO_ESTADUAL  varchar(20) NULL
-    FInscricaoMunicipal  : String;    // EMP_INSCRICAO_MUNICIPAL varchar(20) NULL
+	  FAtiva                       : Boolean;   // EMP_BLOQUEADA        varchar(1)  NULL
+    FNomeFantasia                : String;    // EMP_NOME_FANTASIA    varchar(50) NULL
+    FCodigoUniSystem             : String;    // EMP_CODIGO_UNISYSTEM varchar(10) NULL
+	  FRazaoSocial                 : String;    // EMP_RAZAOSOCIAL      varchar(30) NULL
+    FPessoaJuridica              : Boolean;   // EMP_PESSOAJF         varchar(1)  NULL
+    FDataInicioAtividades        : TDateTime; // EMP_INICIOATIVIDADES DATETIME    NULL
+    FDataInicioAtividadesString  : String;
+    FInscricaoEstadual           : String;    // EMP_INSCRICAO_ESTADUAL    varchar(20) NULL
+    FInscricaoMunicipal          : String;    // EMP_INSCRICAO_MUNICIPAL   varchar(20) NULL
+    FSUFRAMA                     : String;    // EMP_SUFRAMA               varchar(10) NULL
+    FCNAE                        : String;    // EMP_CNAE 	               varchar(10) NULL
+    FCNPJ                        : String;    // EMP_CNPJ 	               varchar(20) NULL
+    FNIRE                        : String;    // EMP_NIRE 	               varchar(11) NULL
+    FIESubstTributario           : String;    // EMP_INSCRICAO_ESTADUAL_ST varchar(20) NULL
+    FEnderecoRua                 : String;    // EMP_ENDERECO              varchar(40) NULL
+    FEnderecoCEP                 : String;    // EMP_CEP                   varchar(20) NULL,
+    FEnderecoNumero              : String;    // EMP_ENDERECO_NUMERO        varchar(10) NULL,
+    FEnderecoBairro              : String;    // EMP_BAIRRO                 varchar(50) NULL,
+    FEnderecoComplemento         : String;    // EMP_ENDERECO_COMPLEMENTO   varchar(60) NULL,
+    FEnderecoMunicipio           : String;    // EMP_CIDADE                 varchar(40) NULL,
+    FEnderecoMunicipioIBGE       : String;    // EMP_IBGECIDADE             varchar(10) NULL,
+    FEnderecoUF                  : String;    // EMP_UF                     varchar(2) NULL,
+    FEnderecoUFIBGE              : String;    // EMP_IBGEUF                 varchar(2)  NULL
+    FTelefone                    : String;    // EMP_FONES                  varchar(40) NULL
+    FCelular                     : String;    // EMP_CELULAR                varchar(40) NULL
+    FWhatsApp                    : String;    // EMP_WHATSAPP               varchar(40) NULL
+    FEmail                       : String;    // EMP_EMAIL                  varchar(40) NULL
+    FContribuinteIPI             : Boolean;   //EMP_CONTRIBUINTE_IPI       integer null
+{21H07
 
-    FSUFRAMA             : String;    // EMP_SUFRAMA          varchar(10) NULL
-    FCNAE                : String;    // EMP_CNAE 	          varchar(10) NULL
-    FCNPJ                : String;    // EMP_CNPJ 	          varchar(20) NULL
-    FNIRE                : String;    // EMP_NIRE 	          varchar(11) NULL
 
-  //  FNomeDecente         : String;   // EMP_SEI LA O  QUE.....
+//  FNomeDecente         : String;   // EMP_SEI LA O  QUE.....
 //PASSO 3
 {
-
 
 
 EMP_CNPJCPF] [varchar](20) NULL,
@@ -41,27 +56,25 @@ EMP_CNPJCPF] [varchar](20) NULL,
 	[EMP_NOME_FANTASIA] [varchar](50) NULL,
 	[EMP_UF] [varchar](2) NULL,
 	[EMP_CODIGOINTERFACE] [varchar](3) NULL,
-	[EMP_CIDADE] [varchar](40) NULL,
-	[EMP_ENDERECO] [varchar](40) NULL,
-	[EMP_CEP] [varchar](20) NULL,
-	[EMP_FONES] [varchar](40) NULL,
+
+
 	[EMP_FAX] [varchar](40) NULL,
-	[EMP_EMAIL] [varchar](40) NULL,
+
 	[EMP_GERENTE] [varchar](40) NULL,
 	[EMP_FONESGERENTE] [varchar](40) NULL,
 	[EMP_FAXGERENTE] [varchar](40) NULL,
 	[EMP_EMAILGERENTE] [varchar](40) NULL,
 	[EMP_ALMOXARIFADOPARADIESEL] [varchar](10) NULL,
-	[EMP_IBGEUF] [varchar](2) NULL,
-	[EMP_IBGECIDADE] [varchar](10) NULL,
 
-	[EMP_ENDERECO_NUMERO] [varchar](10) NULL,
-	[EMP_BAIRRO] [varchar](50) NULL,
-	[EMP_ENDERECO_COMPLEMENTO] [varchar](60) NULL,
+
+  //EMP_INSCRICAOMUNICIPAL     varchar(20) NULL,
+
+
+
 	[EMP_CIDADENOME] [varchar](40) NULL,
 	[EMP_EMPRESA_SIMPLES_NACIONAL] [int] NULL,
 	[EMP_CERTIFICADOVENCE] [datetime] NULL,
-	[EMP_INSCRICAOMUNICIPAL] [varchar](20) NULL,
+
 	[EMP_ALIQ_CREDITO_ICMS] [numeric](12, 2) NULL,
 	[EMP_CSOSN] [varchar](3) NULL,
 	[EMP_CRT] [varchar](1) NULL,
@@ -91,6 +104,9 @@ EMP_CNPJCPF] [varchar](20) NULL,
 	[EMP_TAXAGARCOM] [numeric](12, 2) NULL,
 	[EMP_COUVERT] [numeric](12, 2) NULL,
   }
+
+
+
     FExiste         : Boolean;
 
 
@@ -126,41 +142,78 @@ EMP_CNPJCPF] [varchar](20) NULL,
     function getDataInicioAtividadesString: String;
     function getFNIRE: String;
     procedure setFNIRE(const Value: String);
+    function getFIESubstTributario: String;
+    procedure setFIESubstTributario(const Value: String);
+    function getFEnderecoRua: String;
+    procedure setFEnderecoRua(const Value: String);
+    function getFEnderecoCEP: String;
+    procedure setFEnderecoCEP(const Value: String);
+    function getFEnderecoNumero: String;
+    procedure setFEnderecoNumero(const Value: String);
+    function getFEnderecoBairro: String;
+    procedure setFEnderecoBairro(const Value: String);
+    function getFEnderecoComplemento: String;
+    procedure setFEnderecoComplemento(const Value: String);
+    function getFEnderecoMunicipio: String;
+    procedure setFEnderecoMunicipio(const Value: String);
+    function getFEnderecoMunicipioIBGE: String;
+    procedure setFEnderecoMunicipioIBGE(const Value: String);
+    function getFEnderecoUF: String;
+    procedure setFEnderecoUF(const Value: String);
+    function getFContribuinteIPI: Boolean;
+    procedure setFContribuinteIPI(const Value: Boolean);
+    function getFCelular: String;
+    function getFEmail: String;
+    function getFEnderecoUFIBGE: String;
+    function getFTelefone: String;
+    function getFWhatsApp: String;
+    procedure setFCelular(const Value: String);
+    procedure setFEmail(const Value: String);
+    procedure setFEnderecoUFIBGE(const Value: String);
+    procedure setFTelefone(const Value: String);
+    procedure setFWhatsApp(const Value: String);
    public
-      property NomeFantasia     : String  read  getFNomeFantasia
-                                          write setFNomeFantasia;
-      property RazaoSocial      : String  read  getFRazaoSocial
-                                          write setFRazaoSocial;
-      property CodigoUniSystem  : String  read  getFCodigoUniSystem
-                                          write setFCodigoUniSystem;
-      property DataInicioAtividades: TDateTime
-                                          read  getFDataInicioAtividades
-                                          write setFDataInicioAtividades;
-      property DataInicioAtividadesString: String
-                                          read  getDataInicioAtividadesString;
-	    property Ativa            : Boolean read  getFAtiva
-                                          write setFAtiva;
-      property PessoaJuridica   : Boolean read  getFPessoaJuridica
-                                          write setFPessoaJuridica;
-      property Existe           : Boolean read  getFExiste;
-
-      property InscricaoEstadual: String  read  getFInscricaoEstadual
-                                          write setFInscricaoEstadual;
-      property InscricaoMunicipal: String  read  getFInscricaoMunicipal
-                                          write setFInscricaoMunicipal;
-      property SUFRAMA          : String  read  getFSUFRAMA
-                                          write setFSUFRAMA;
-      property CNAE             : String  read  getFCNAE
-                                          write setFCNAE;
-      property CNPJ             : String  read  getFCNPJ
-                                          write setFCNPJ;
-      property NIRE             : String  read  getFNIRE
-                                          write setFNIRE;
-
-      //PASSO 4
+      property NomeFantasia                : String    read getFNomeFantasia                write setFNomeFantasia;
+      property RazaoSocial                 : String    read getFRazaoSocial                 write setFRazaoSocial;
+      property CodigoUniSystem             : String    read getFCodigoUniSystem             write setFCodigoUniSystem;
+      property DataInicioAtividades        : TDateTime read getFDataInicioAtividades        write setFDataInicioAtividades;
+      property DataInicioAtividadesString  : String    read getDataInicioAtividadesString;
+	    property Ativa                       : Boolean   read getFAtiva                       write setFAtiva;
+      property PessoaJuridica              : Boolean   read getFPessoaJuridica              write setFPessoaJuridica;
+      property Existe                      : Boolean   read getFExiste;
+      property InscricaoEstadual           : String    read getFInscricaoEstadual           write setFInscricaoEstadual;
+      property InscricaoMunicipal          : String    read getFInscricaoMunicipal          write setFInscricaoMunicipal;
+      property SUFRAMA                     : String    read getFSUFRAMA                     write setFSUFRAMA;
+      property CNAE                        : String    read getFCNAE                        write setFCNAE;
+      property CNPJ                        : String    read getFCNPJ                        write setFCNPJ;
+      property NIRE                        : String    read getFNIRE                        write setFNIRE;
+      property IESubstTributario           : String    read getFIESubstTributario           write setFIESubstTributario;
+      property EnderecoRua                 : String    read getFEnderecoRua                 write setFEnderecoRua;
+      property EnderecoCEP                 : String    read getFEnderecoCEP                 write setFEnderecoCEP;
+      property EnderecoNumero              : String    read getFEnderecoNumero              write setFEnderecoNumero;
+      property EnderecoBairro              : String    read getFEnderecoBairro              write setFEnderecoBairro;
+      property EnderecoComplemento         : String    read getFEnderecoComplemento         write setFEnderecoComplemento;
+      property EnderecoMunicipio           : String    read getFEnderecoMunicipio           write setFEnderecoMunicipio;
+      property EnderecoMunicipioIBGE       : String    read getFEnderecoMunicipioIBGE       write setFEnderecoMunicipioIBGE;
+      property EnderecoUF                  : String    read getFEnderecoUF                  write setFEnderecoUF;
+      property EnderecoUFIBGE              : String    read getFEnderecoUFIBGE              write setFEnderecoUFIBGE;
+      property Telefone                    : String    read getFTelefone                    write setFTelefone;
+      property Celular                     : String    read getFCelular                     write setFCelular;
+      property WhatsApp                    : String    read getFWhatsApp                    write setFWhatsApp;
+      property Email                       : String    read getFEmail                       write setFEmail;
+      property ContribuinteIPI             : Boolean   read getFContribuinteIPI             write setFContribuinteIPI;
+     //PASSO 4
       procedure Abrir;
       Function Gravar:Boolean;
    end;
+
+{
+UPDATE EMPRESA_EMP SET EMP_CONTRIBUINTE_IPI = 1
+UPDATE EMPRESA_EMP SET EMP_APURACAO_MENSAL = 1
+UPDATE EMPRESA_EMP SET EMP_CELULAR = 'CEL TEST'
+UPDATE EMPRESA_EMP SET EMP_WHATSAPP = 'ZAP TEST'
+
+}
 
 implementation
 { TEmpresa }
@@ -187,20 +240,30 @@ begin
        qLocal.Free;
        exit;
     end;
-    FExiste              := True;
-    FNomeFantasia        := qLocal.FieldByName('EMP_NOME_FANTASIA'      ).AsString;
-    FRazaoSocial         := qLocal.FieldByName('EMP_RAZAOSOCIAL'        ).AsString;
-    FCodigoUniSystem     := qLocal.FieldByName('EMP_CODIGO_UNISYSTEM'   ).AsString;
-    FDataInicioAtividades:= qLocal.FieldByName('EMP_INICIOATIVIDADES'   ).AsDateTime;
-    FDataInicioAtividadesString := qLocal.FieldByName('EMP_INICIOATIVIDADES').AsString;
-    FAtiva               :=(qLocal.FieldByName('EMP_BLOQUEADA'          ).AsString = 'N');
-    FPessoaJuridica      :=(qLocal.FieldByName('EMP_PESSOAJF'           ).AsString = 'J');
-    FInscricaoEstadual   := qLocal.FieldByName('EMP_INSCRICAO_ESTADUAL' ).AsString;
-    FInscricaoMunicipal  := qLocal.FieldByName('EMP_INSCRICAO_MUNICIPAL').AsString;
-    FSUFRAMA             := qLocal.FieldByName('EMP_SUFRAMA'            ).AsString;
-    FCNAE                := qLocal.FieldByName('EMP_CNAE'               ).AsString;
-    FCNPJ                := qLocal.FieldByName('EMP_CNPJ'               ).AsString;
-    FNIRE                := qLocal.FieldByName('EMP_NIRE'               ).AsString;
+    FExiste                      := True;
+    FNomeFantasia                := qLocal.FieldByName('EMP_NOME_FANTASIA'        ).AsString;
+    FRazaoSocial                 := qLocal.FieldByName('EMP_RAZAOSOCIAL'          ).AsString;
+    FCodigoUniSystem             := qLocal.FieldByName('EMP_CODIGO_UNISYSTEM'     ).AsString;
+    FDataInicioAtividades        := qLocal.FieldByName('EMP_INICIOATIVIDADES'     ).AsDateTime;
+    FDataInicioAtividadesString  := qLocal.FieldByName('EMP_INICIOATIVIDADES'     ).AsString;
+    FAtiva                       :=(qLocal.FieldByName('EMP_BLOQUEADA'            ).AsString = 'N');
+    FPessoaJuridica              :=(qLocal.FieldByName('EMP_PESSOAJF'             ).AsString = 'J');
+    FInscricaoEstadual           := qLocal.FieldByName('EMP_INSCRICAO_ESTADUAL'   ).AsString;
+    FInscricaoMunicipal          := qLocal.FieldByName('EMP_INSCRICAO_MUNICIPAL'  ).AsString;
+    FSUFRAMA                     := qLocal.FieldByName('EMP_SUFRAMA'              ).AsString;
+    FCNAE                        := qLocal.FieldByName('EMP_CNAE'                 ).AsString;
+    FCNPJ                        := qLocal.FieldByName('EMP_CNPJ'                 ).AsString;
+    FNIRE                        := qLocal.FieldByName('EMP_NIRE'                 ).AsString;
+    FIESubstTributario           := qLocal.FieldByName('EMP_INSCRICAO_ESTADUAL_ST').AsString;
+    FEnderecoRua                 := qLocal.FieldByName('EMP_ENDERECO'             ).AsString;
+    FEnderecoCEP                 := qLocal.FieldByName('EMP_CEP'                  ).AsString;
+    FEnderecoNumero              := qLocal.FieldByName('EMP_ENDERECO_NUMERO'      ).AsString;
+    FEnderecoBairro              := qLocal.FieldByName('EMP_BAIRRO'               ).AsString;
+    FEnderecoComplemento         := qLocal.FieldByname('EMP_ENDERECO_COMPLEMENTO' ).AsString;
+    FEnderecoMunicipio           := qLocal.FieldByname('EMP_CIDADE'               ).AsString;
+    FEnderecoMunicipioIBGE       := qLocal.FieldByname('EMP_IBGECIDADE'           ).AsString;
+    FEnderecoUF                  := qLocal.FieldByname('EMP_UF'                   ).AsString;
+    FContribuinteIPI             :=(qLocal.FieldByname('EMP_CONTRIBUINTE_IPI'     ).AsInteger = 1);
 
     //PASSO 9
     Qlocal.Free;
@@ -232,6 +295,56 @@ begin
    result := Copy(self.FSUFRAMA,1,10);
 end;
 
+function TEmpresa.getFEmail: String;
+begin
+   result := self.Email;
+end;
+
+function TEmpresa.getFTelefone: String;
+begin
+   result := self.FTelefone;
+end;
+
+function TEmpresa.getFWhatsApp: String;
+begin
+   result := self.FWhatsApp;
+end;
+
+function TEmpresa.getFEnderecoBairro: String;
+begin
+   result := self.FEnderecoBairro;
+end;
+
+function TEmpresa.getFEnderecoCEP: String;
+begin
+   result := self.FEnderecoCEP;
+end;
+
+function TEmpresa.getFEnderecoMunicipioIBGE: String;
+begin
+   result := self.FEnderecoMunicipioIBGE;
+end;
+
+function TEmpresa.getFEnderecoComplemento: String;
+begin
+   result := self.FEnderecoComplemento;
+end;
+
+function TEmpresa.getFEnderecoMunicipio: String;
+begin
+   result := self.FEnderecoMunicipio;
+end;
+
+function TEmpresa.getFEnderecoNumero: String;
+begin
+   result := self.FEnderecoNumero;
+end;
+
+function TEmpresa.getFCelular: String;
+begin
+   result := self.FCelular;
+end;
+
 function TEmpresa.getFCNAE: String;
 begin
    result := self.FCNAE;
@@ -239,7 +352,7 @@ end;
 
 function TEmpresa.getFCNPJ: String;
 begin
-   result := FormataCPF_CGC(self.FCNPJ);
+   result := self.FCNPJ; // FormataCPF_CGC(self.FCNPJ);
 end;
 
 function TEmpresa.getFCodigoUniSystem: String;
@@ -247,14 +360,39 @@ begin
    result := self.FCodigoUniSystem;
 end;
 
+function TEmpresa.getFContribuinteIPI: Boolean;
+begin
+   result := self.FContribuinteIPI
+end;
+
 function TEmpresa.getFDataInicioAtividades: TDateTime;
 begin
    result := self.FDataInicioAtividades;
 end;
 
+function TEmpresa.getFEnderecoRua: String;
+begin
+   result := self.FEnderecoRua;
+end;
+
+function TEmpresa.getFEnderecoUF: String;
+begin
+   result:= self.FEnderecoUF;
+end;
+
+function TEmpresa.getFEnderecoUFIBGE: String;
+begin
+   result := self.FEnderecoUFIBGE;
+end;
+
 function TEmpresa.getFExiste: Boolean;
 begin
    result := self.FExiste;
+end;
+
+function TEmpresa.getFIESubstTributario: String;
+begin
+   result := self.FIESubstTributario;
 end;
 
 function TEmpresa.getFInscricaoEstadual: String;
@@ -315,39 +453,68 @@ begin
         qEmpresa.ConnectionName :='X';
         qEmpresa.Close;
         qEmpresa.SQL.Clear;
-        qEmpresa.SQL.Add('INSERT INTO EMPRESA_EMP        ');
-        qEmpresa.SQL.Add('     (                         ');
-        qEmpresa.SQL.Add('       EMP_NOME_FANTASIA,      ');
-        qEmpresa.SQL.Add('       EMP_RAZAOSOCIAL,        ');
-        qEmpresa.SQL.Add('       EMP_CODIGO_UNISYSTEM,   ');
-        qEmpresa.SQL.Add('       EMP_INICIOATIVIDADES,   ');
-        qEmpresa.SQL.Add('       EMP_BLOQUEADA,          ');
-        qEmpresa.SQL.Add('       EMP_PESSOAJF,           ');
-        qEmpresa.SQL.Add('       EMP_INSCRICAO_ESTADUAL, ');
-        qEmpresa.SQL.Add('       EMP_INSCRICAO_MUNICIPAL,');
-        qEmpresa.SQL.Add('       EMP_SUFRAMA,            ');
-        qEmpresa.SQL.Add('       EMP_CNAE,               ');
-        qEmpresa.SQL.Add('       EMP_CNPJ,               ');
-        qEmpresa.SQL.Add('       EMP_NIRE,               ');
-
+        qEmpresa.SQL.Add('INSERT INTO EMPRESA_EMP           ');
+        qEmpresa.SQL.Add('     (                            ');
+        qEmpresa.SQL.Add('       EMP_NOME_FANTASIA,         ');
+        qEmpresa.SQL.Add('       EMP_RAZAOSOCIAL,           ');
+        qEmpresa.SQL.Add('       EMP_CODIGO_UNISYSTEM,      ');
+        qEmpresa.SQL.Add('       EMP_INICIOATIVIDADES,      ');
+        qEmpresa.SQL.Add('       EMP_BLOQUEADA,             ');
+        qEmpresa.SQL.Add('       EMP_PESSOAJF,              ');
+        qEmpresa.SQL.Add('       EMP_INSCRICAO_ESTADUAL,    ');
+        qEmpresa.SQL.Add('       EMP_INSCRICAO_MUNICIPAL,   ');
+        qEmpresa.SQL.Add('       EMP_SUFRAMA,               ');
+        qEmpresa.SQL.Add('       EMP_CNAE,                  ');
+        qEmpresa.SQL.Add('       EMP_CNPJ,                  ');
+        qEmpresa.SQL.Add('       EMP_NIRE,                  ');
+        qEmpresa.SQL.Add('       EMP_INSCRICAO_ESTADUAL_ST, ');
+        qEmpresa.SQL.Add('       EMP_ENDERECO,              ');
+        qEmpresa.SQL.Add('       EMP_CEP,                   ');
+        qEmpresa.SQL.Add('       EMP_ENDERECO_NUMERO,       ');
+        qEmpresa.SQL.Add('       EMP_BAIRRO,                ');
+        qEmpresa.SQL.Add('       EMP_ENDERECO_COMPLEMENTO,  ');
+        qEmpresa.SQL.Add('       EMP_CIDADE,                ');
+        qEmpresa.SQL.Add('       EMP_IBGECIDADE,            ');
+        qEmpresa.SQL.Add('       EMP_UF,                    ');
+        qEmpresa.SQL.Add('       EMP_IBGEUF,                ');
+        qEmpresa.SQL.Add('       EMP_FONES,                 ');
+        qEmpresa.SQL.Add('       EMP_CELULAR,               ');
+        qEmpresa.SQL.Add('       EMP_WHATSAPP,              ');
+        qEmpresa.SQL.Add('       EMP_EMAIL,                 ');
+        qEmpresa.SQL.Add('       EMP_CONTRIBUINTE_IPI,      ');
         //passo10
-        qEmpresa.SQL.Add('     )                         ');
-        qEmpresa.SQL.Add('VALUES                         ');
-        qEmpresa.SQL.Add('     (                         ');
-        qEmpresa.SQL.Add('      :EMP_NOME_FANTASIA,      ');
-        qEmpresa.SQL.Add('      :EMP_RAZAOSOCIAL,        ');
-        qEmpresa.SQL.Add('      :EMP_CODIGO_UNISYSTEM,   ');
-        qEmpresa.SQL.Add('      :EMP_INICIOATIVIDADES,   ');
-        qEmpresa.SQL.Add('      :EMP_BLOQUEADA,          ');
-        qEmpresa.SQL.Add('      :EMP_PESSOAJF,           ');
-        qEmpresa.SQL.Add('      :EMP_INSCRICAO_ESTADUAL, ');
-        qEmpresa.SQL.Add('      :EMP_INSCRICAO_MUNICIPAL,');
-        qEmpresa.SQL.Add('      :EMP_SUFRAMA,            ');
-        qEmpresa.SQL.Add('      :EMP_CNAE,               ');
-        qEmpresa.SQL.Add('      :EMP_CNPJ,               ');
-        qEmpresa.SQL.Add('      :EMP_NIRE,               ');
+        qEmpresa.SQL.Add('     )                            ');
+        qEmpresa.SQL.Add('VALUES                            ');
+        qEmpresa.SQL.Add('     (                            ');
+        qEmpresa.SQL.Add('      :EMP_NOME_FANTASIA,         ');
+        qEmpresa.SQL.Add('      :EMP_RAZAOSOCIAL,           ');
+        qEmpresa.SQL.Add('      :EMP_CODIGO_UNISYSTEM,      ');
+        qEmpresa.SQL.Add('      :EMP_INICIOATIVIDADES,      ');
+        qEmpresa.SQL.Add('      :EMP_BLOQUEADA,             ');
+        qEmpresa.SQL.Add('      :EMP_PESSOAJF,              ');
+        qEmpresa.SQL.Add('      :EMP_INSCRICAO_ESTADUAL,    ');
+        qEmpresa.SQL.Add('      :EMP_INSCRICAO_MUNICIPAL,   ');
+        qEmpresa.SQL.Add('      :EMP_SUFRAMA,               ');
+        qEmpresa.SQL.Add('      :EMP_CNAE,                  ');
+        qEmpresa.SQL.Add('      :EMP_CNPJ,                  ');
+        qEmpresa.SQL.Add('      :EMP_NIRE,                  ');
+        qEmpresa.SQL.Add('      :EMP_INSCRICAO_ESTADUAL_ST, ');
+        qEmpresa.SQL.Add('      :EMP_ENDERECO,              ');
+        qEmpresa.SQL.Add('      :EMP_CEP,                   ');
+        qEmpresa.SQL.Add('      :EMP_ENDERECO_NUMERO,       ');
+        qEmpresa.SQL.Add('      :EMP_BAIRRO,                ');
+        qEmpresa.SQL.Add('      :EMP_ENDERECO_COMPLEMENTO,  ');
+        qEmpresa.SQL.Add('      :EMP_CIDADE,                ');
+        qEmpresa.SQL.Add('      :EMP_IBGECIDADE,            ');
+        qEmpresa.SQL.Add('      :EMP_UF,                    ');
+        qEmpresa.SQL.Add('      :EMP_IBGEUF,                ');
+        qEmpresa.SQL.Add('      :EMP_FONES,                 ');
+        qEmpresa.SQL.Add('      :EMP_CELULAR,               ');
+        qEmpresa.SQL.Add('      :EMP_WHATSAPP,              ');
+        qEmpresa.SQL.Add('      :EMP_EMAIL,                 ');
+        qEmpresa.SQL.Add('      :EMP_CONTRIBUINTE_IPI,      ');
+        qEmpresa.SQL.Add('     )                            ');
 
-        qEmpresa.SQL.Add('     )                        ');
         //passo 11
         Preencher_Parametros_Empresa;
         qEmpresa.ExecSql;
@@ -362,20 +529,35 @@ end;
 
 procedure TEmpresa.Preencher_Parametros_Empresa;
 begin
-    qEmpresa.ParamByName('EMP_NOME_FANTASIA'      ).AsString   := FNomeFantasia;
-    qEmpresa.ParamByName('EMP_RAZAOSOCIAL'        ).AsString   := FRazaoSocial;
-    qEmpresa.ParamByName('EMP_CODIGO_UNISYSTEM'   ).AsString   := FCodigoUniSystem;
-    qEmpresa.ParamByName('EMP_INICIOATIVIDADES'   ).AsDateTime := FDataInicioAtividades;
+    qEmpresa.ParamByName('EMP_NOME_FANTASIA'        ).AsString   := FNomeFantasia;
+    qEmpresa.ParamByName('EMP_RAZAOSOCIAL'          ).AsString   := FRazaoSocial;
+    qEmpresa.ParamByName('EMP_CODIGO_UNISYSTEM'     ).AsString   := FCodigoUniSystem;
+    qEmpresa.ParamByName('EMP_INICIOATIVIDADES'     ).AsDateTime := FDataInicioAtividades;
     if FAtiva then
-       qEmpresa.ParamByName('EMP_BLOQUEADA'       ).AsString   := 'N'
+       qEmpresa.ParamByName('EMP_BLOQUEADA'         ).AsString   := 'N'
     else
-       qEmpresa.ParamByName('EMP_BLOQUEADA'       ).AsString   := 'S';
-    qEmpresa.ParamByName('EMP_INSCRICAO_ESTADUAL' ).AsString   := FInscricaoEstadual;
-    qEmpresa.ParamByName('EMP_INSCRICAO_MUNICIPAL').AsString   := FInscricaoMunicipal;
-    qEmpresa.ParamByName('EMP_SUFRAMA'            ).AsString   := FSUFRAMA;
-    qEmpresa.ParamByName('EMP_CNAE'               ).AsString   := FCNAE;
-    qEmpresa.ParamByName('EMP_CNPJ'               ).AsString   := FCNPJ;
-    qEmpresa.ParamByName('EMP_NIRE'               ).AsString   := FNIRE;
+       qEmpresa.ParamByName('EMP_BLOQUEADA'         ).AsString   := 'S';
+    qEmpresa.ParamByName('EMP_INSCRICAO_ESTADUAL'   ).AsString   := FInscricaoEstadual;
+    qEmpresa.ParamByName('EMP_INSCRICAO_MUNICIPAL'  ).AsString   := FInscricaoMunicipal;
+    qEmpresa.ParamByName('EMP_SUFRAMA'              ).AsString   := FSUFRAMA;
+    qEmpresa.ParamByName('EMP_CNAE'                 ).AsString   := FCNAE;
+    qEmpresa.ParamByName('EMP_CNPJ'                 ).AsString   := FCNPJ;
+    qEmpresa.ParamByName('EMP_NIRE'                 ).AsString   := FNIRE;
+    qEmpresa.ParamByName('EMP_INSCRICAO_ESTADUAL_ST').AsString   := FIESubstTributario;
+    qEmpresa.ParamByName('EMP_ENDERECO'             ).AsString   := FEnderecoRua;
+    qEmpresa.ParamByName('EMP_CEP'                  ).AsString   := FEnderecoCEP;
+    qEmpresa.ParamByName('EMP_ENDERECO_NUMERO'      ).AsString   := FEnderecoNumero;
+    qEmpresa.ParamByName('EMP_BAIRRO'               ).AsString   := FEnderecoBairro;
+    qEmpresa.ParamByName('EMP_ENDERECO_COMPLEMENTO' ).AsString   := FEnderecoComplemento;
+    qEmpresa.ParamByName('EMP_CIDADE'               ).AsString   := FEnderecoMunicipio;
+    qEmpresa.ParamByName('EMP_IBGECIDADE'           ).AsString   := FEnderecoMunicipioIBGE;
+    qEmpresa.ParamByName('EMP_UF'                   ).AsString   := FEnderecoUF;
+    qEmpresa.ParamByName('EMP_IBGEUF'               ).AsString   := FEnderecoUFIBGE;
+    qEmpresa.ParamByName('EMP_FONES'                ).AsString   := FTelefone;
+    qEmpresa.ParamByName('EMP_CELULAR'              ).AsString   := FCelular;
+    qEmpresa.ParamByName('EMP_WHATSAPP'             ).AsString   := FWhatsApp;
+    qEmpresa.ParamByName('EMP_EMAIL'                ).AsString   := FEmail;
+    qEmpresa.ParamByName('EMP_CONTRIBUINTE_IPI'     ).AsInteger  := f0ou1(FContribuinteIPI);
 
     //passo12
 end;
@@ -398,7 +580,62 @@ end;
 
 procedure TEmpresa.setFSUFRAMA(const Value: String);
 begin
-   fSUFRAMA := Value;
+   FSUFRAMA := Copy(Value,1,11);
+end;
+
+procedure TEmpresa.setFEmail(const Value: String);
+begin
+   FEmail := Copy(Value,1,40);
+end;
+
+procedure TEmpresa.setFTelefone(const Value: String);
+begin
+   FTelefone := Copy(Value,1,40);
+end;
+
+procedure TEmpresa.setFWhatsApp(const Value: String);
+begin
+   FWhatsApp := Copy(Value,1,40);
+end;
+
+procedure TEmpresa.setFEnderecoBairro(const Value: String);
+begin
+   FEnderecoBairro := Copy(Value,1,50)
+end;
+
+procedure TEmpresa.setFEnderecoCEP(const Value: String);
+begin
+   FEnderecoCEP := Copy(Value,1,20);
+end;
+
+procedure TEmpresa.setFEnderecoMunicipioIBGE(const Value: String);
+begin
+   EnderecoMunicipioIBGE := Copy(Value,1,10)
+end;
+
+procedure TEmpresa.setFEnderecoComplemento(const Value: String);
+begin
+   FEnderecoComplemento := Copy(Value,1,60);
+end;
+
+procedure TEmpresa.setFEnderecoUFIBGE(const Value: String);
+begin
+   FEnderecoUFIBGE := Copy(Value,1,2);
+end;
+
+procedure TEmpresa.setFEnderecoMunicipio(const Value: String);
+begin
+   FEnderecoMunicipio := Copy(Value,1,40);
+end;
+
+procedure TEmpresa.setFEnderecoNumero(const Value: String);
+begin
+   FEnderecoNumero := Copy(Value,1,10);
+end;
+
+procedure TEmpresa.setFCelular(const Value: String);
+begin
+   FCelular := Copy(Value,1,40);
 end;
 
 procedure TEmpresa.setFCNAE(const Value: String);
@@ -416,9 +653,29 @@ begin
   FCodigoUniSystem := Copy(Value,10);
 end;
 
+procedure TEmpresa.setFContribuinteIPI(const Value: Boolean);
+begin
+  self.FContribuinteIPI := Value;
+end;
+
 procedure TEmpresa.setFDataInicioAtividades(const Value: TDateTime);
 begin
-   self.FDataInicioAtividades := Value;
+   self.FDataInicioAtividades := Value; // este é data, nao precisaok
+end;
+
+procedure TEmpresa.setFEnderecoRua(const Value: String);
+begin
+   self.FEnderecoRua := Value;
+end;
+
+procedure TEmpresa.setFEnderecoUF(const Value: String);
+begin
+   self.FEnderecoUF := copy(value,1,2);
+end;
+
+procedure TEmpresa.setFIESubstTributario(const Value: String);
+begin
+   self.FIESubstTributario := Copy(Value,1,20);
 end;
 
 procedure TEmpresa.setFInscricaoEstadual(const Value: String);
@@ -458,19 +715,34 @@ begin
         qEmpresa.ConnectionName :='X';
         qEmpresa.Close;
         qEmpresa.SQL.Clear;
-        qEmpresa.SQL.Add('UPDATE EMPRESA_EMP                                        ');
-        qEmpresa.SQL.Add('   SET EMP_NOME_FANTASIA       = :EMP_NOME_FANTASIA,      ');
-        qEmpresa.SQL.Add('       EMP_RAZAOSOCIAL         = :EMP_RAZAOSOCIAL,        ');
-        qEmpresa.SQL.Add('       EMP_CODIGO_UNISYSTEM    = :EMP_CODIGO_UNISYSTEM,   ');
-        qEmpresa.SQL.Add('       EMP_INICIOATIVIDADES    = :EMP_INICIOATIVIDADES,   ');
-        qEmpresa.SQL.Add('       EMP_BLOQUEADA           = :EMP_BLOQUEADA,          ');
-        qEmpresa.SQL.Add('       EMP_PESSOAJF            = :EMP_PESSOAJF,           ');
-        qEmpresa.SQL.Add('       EMP_INSCRICAO_ESTADUAL  = :EMP_INSCRICAO_ESTADUAL, ');
-        qEmpresa.SQL.Add('       EMP_INSCRICAO_MUNICIPAL = :EMP_INSCRICAO_MUNICIPAL,');
-        qEmpresa.SQL.Add('       EMP_SUFRAMA             = :EMP_SUFRAMA,            ');
-        qEmpresa.SQL.Add('       EMP_CNAE                = :EMP_CNAE,               ');
-        qEmpresa.SQL.Add('       EMP_CNPJ                = :EMP_CNPJ,               ');
-        qEmpresa.SQL.Add('       EMP_NIRE                = :EMP_NIRE,               ');
+        qEmpresa.SQL.Add('UPDATE EMPRESA_EMP                                             ');
+        qEmpresa.SQL.Add('   SET EMP_NOME_FANTASIA         = :EMP_NOME_FANTASIA,         ');
+        qEmpresa.SQL.Add('       EMP_RAZAOSOCIAL           = :EMP_RAZAOSOCIAL,           ');
+        qEmpresa.SQL.Add('       EMP_CODIGO_UNISYSTEM      = :EMP_CODIGO_UNISYSTEM,      ');
+        qEmpresa.SQL.Add('       EMP_INICIOATIVIDADES      = :EMP_INICIOATIVIDADES,      ');
+        qEmpresa.SQL.Add('       EMP_BLOQUEADA             = :EMP_BLOQUEADA,             ');
+        qEmpresa.SQL.Add('       EMP_PESSOAJF              = :EMP_PESSOAJF,              ');
+        qEmpresa.SQL.Add('       EMP_INSCRICAO_ESTADUAL    = :EMP_INSCRICAO_ESTADUAL,    ');
+        qEmpresa.SQL.Add('       EMP_INSCRICAO_MUNICIPAL   = :EMP_INSCRICAO_MUNICIPAL,   ');
+        qEmpresa.SQL.Add('       EMP_SUFRAMA               = :EMP_SUFRAMA,               ');
+        qEmpresa.SQL.Add('       EMP_CNAE                  = :EMP_CNAE,                  ');
+        qEmpresa.SQL.Add('       EMP_CNPJ                  = :EMP_CNPJ,                  ');
+        qEmpresa.SQL.Add('       EMP_NIRE                  = :EMP_NIRE,                  ');
+        qEmpresa.SQL.Add('       EMP_INSCRICAO_ESTADUAL_ST = :EMP_INSCRICAO_ESTADUAL_ST, ');
+        qEmpresa.SQL.Add('       EMP_ENDERECO              = :EMP_ENDERECO,              ');
+        qEmpresa.SQL.Add('       EMP_CEP                   = :EMP_CEP,                   ');
+        qEmpresa.SQL.Add('       EMP_ENDERECO_NUMERO       = :EMP_ENDERECO_NUMERO,       ');
+        qEmpresa.SQL.Add('       EMP_BAIRRO                = :EMP_BAIRRO,                ');
+        qEmpresa.SQL.Add('       EMP_ENDERECO_COMPLEMENTO  = :EMP_ENDERECO_COMPLEMENTO,  ');
+        qEmpresa.SQL.Add('       EMP_CIDADE                = :EMP_CIDADE,                ');
+        qEmpresa.SQL.Add('       EMP_IBGECIDADE            = :EMP_IBGECIDADE,            ');
+        qEmpresa.SQL.Add('       EMP_UF                    = :EMP_UF,                    ');
+        qEmpresa.SQL.Add('       EMP_IBGEUF                = :EMP_IBGEUF,                ');
+        qEmpresa.SQL.Add('       EMP_FONES                 = :EMP_FONES,                 ');
+        qEmpresa.SQL.Add('       EMP_CELULAR               = :EMP_CELULAR,               ');
+        qEmpresa.SQL.Add('       EMP_WHATSAPP              = :EMP_WHATSAPP,              ');
+        qEmpresa.SQL.Add('       EMP_EMAIL                 = :EMP_EMAIL,                 ');
+        qEmpresa.SQL.Add('       EMP_CONTRIBUINTE_IPI      = :EMP_CONTRIBUINTE_IPI,      ');
 
         //passo11
         Preencher_Parametros_Empresa;

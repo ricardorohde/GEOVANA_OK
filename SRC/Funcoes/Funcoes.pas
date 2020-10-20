@@ -43,6 +43,7 @@ var Acesso : TAcesso;
     xxxAtualizado,
     globalFuncoes_Atualizado:String;
 
+function f0ou1(pBoolean:Boolean):Integer;
 function SoNumeros(pnumero:String):String;
 function SoNumerosI(pnumero:String):Integer;
 function Eh_CPF(pNumero:String):Boolean;
@@ -79,6 +80,14 @@ procedure Destroi_Objetos_das_Classes;
 procedure Gravar_Dados_do_Ultimo_Acesso(pEmpresa:String);
 
 implementation
+
+function f0ou1(pBoolean:Boolean):Integer;
+begin
+  if pBoolean then
+     result := 1
+  else
+     result := 0;
+end;
 
 procedure AtualizaFUSADA_FUS(pUSUARIO,pfuncao:String);
 var qLocal : TFDQuery;

@@ -78,6 +78,12 @@ begin
    Executar_Script('ALTER TABLE EMPRESA_EMP DROP COLUMN EMP_IE');
    Executar_Script('ALTER TABLE EMPRESA_EMP DROP COLUMN EMP_INSCRICAOMUNICIPAL');
    Executar_Script('ALTER TABLE EMPRESA_EMP ADD EMP_NIRE VARCHAR(11) NULL');
+   Executar_Script('ALTER TABLE EMPRESA_EMP ADD EMP_INSCRICAO_ESTADUAL_ST varchar(20) NULL');
+   Executar_Script('ALTER TABLE EMPRESA_EMP ADD EMP_CONTRIBUINTE_IPI INTEGER NULL DEFAULT 0');
+   Executar_Script('ALTER TABLE EMPRESA_EMP ADD EMP_APURACAO_MENSAL INTEGER NULL DEFAULT 0');
+   Executar_Script('ALTER TABLE EMPRESA_EMP ADD EMP_CELULAR VARCHAR(40) NULL');
+   Executar_Script('ALTER TABLE EMPRESA_EMP ADD EMP_WHATSAPP VARCHAR(40) NULL');
+
 
    globalFuncoes_Atualizado:='S';
 
@@ -101,7 +107,6 @@ begin
    BANCO    := Descriptografar(ArquivoIni.ReadString('CONEXAO','DATABASE',''));
    USERNAME := Descriptografar(ArquivoIni.ReadString('CONEXAO','USERNAME',''));
    PASSWORD := Descriptografar(ArquivoIni.ReadString('CONEXAO','PASSWORD',''));
-
    ArquivoIni.Free;
 
    try

@@ -321,7 +321,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
     Top = 388
     Width = 625
     Height = 228
-    Caption = '  Parametros de Tributa'#231#227'o'
+    Caption = '  Par'#226'metros de Tributa'#231#227'o'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clNone
     Font.Height = -15
@@ -329,104 +329,6 @@ object frm_cad_empresa: Tfrm_cad_empresa
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 2
-    object GroupBox2: TGroupBox
-      Left = 10
-      Top = 80
-      Width = 143
-      Height = 113
-      Caption = '  ICMS  '
-      Color = clWhite
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clNone
-      Font.Height = -12
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      ParentBackground = False
-      ParentColor = False
-      ParentFont = False
-      TabOrder = 0
-      object Label2: TLabel
-        Left = 60
-        Top = 46
-        Width = 20
-        Height = 18
-        Caption = '%:'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clNone
-        Font.Height = -15
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
-      end
-      object Label9: TLabel
-        Left = 7
-        Top = 83
-        Width = 73
-        Height = 18
-        Caption = 'Simples %:'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clNone
-        Font.Height = -15
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
-      end
-      object Edit1: TEdit
-        Left = 86
-        Top = 42
-        Width = 49
-        Height = 26
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clNone
-        Font.Height = -15
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
-        TabOrder = 0
-        Text = 'Edit1'
-      end
-      object Edit2: TEdit
-        Left = 86
-        Top = 79
-        Width = 49
-        Height = 26
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clNone
-        Font.Height = -15
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
-        TabOrder = 1
-        Text = 'Edit1'
-      end
-      object cxCONTRIBUINTE_ICMS: TcxCheckBox
-        Left = 11
-        Top = 18
-        Caption = 'Contribuinte'
-        ParentBackground = False
-        ParentColor = False
-        ParentFont = False
-        Properties.Alignment = taRightJustify
-        Style.BorderColor = clWindow
-        Style.Color = clBtnHighlight
-        Style.Font.Charset = DEFAULT_CHARSET
-        Style.Font.Color = clNone
-        Style.Font.Height = -12
-        Style.Font.Name = 'Tahoma'
-        Style.Font.Style = [fsBold]
-        Style.LookAndFeel.NativeStyle = False
-        Style.LookAndFeel.SkinName = 'Office2013White'
-        Style.Shadow = False
-        Style.IsFontAssigned = True
-        StyleDisabled.LookAndFeel.NativeStyle = False
-        StyleDisabled.LookAndFeel.SkinName = 'Office2013White'
-        StyleFocused.LookAndFeel.NativeStyle = False
-        StyleFocused.LookAndFeel.SkinName = 'Office2013White'
-        StyleHot.LookAndFeel.NativeStyle = False
-        StyleHot.LookAndFeel.SkinName = 'Office2013White'
-        TabOrder = 2
-      end
-    end
     object grpPisCofins: TGroupBox
       Left = 162
       Top = 80
@@ -439,7 +341,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 1
+      TabOrder = 0
       object chk_2: TcxCheckBox
         Left = 6
         Top = 53
@@ -574,7 +476,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       StyleFocused.LookAndFeel.SkinName = 'Office2013White'
       StyleHot.LookAndFeel.NativeStyle = False
       StyleHot.LookAndFeel.SkinName = 'Office2013White'
-      TabOrder = 2
+      TabOrder = 1
     end
     object GroupBox3: TGroupBox
       Left = 453
@@ -591,7 +493,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       ParentBackground = False
       ParentColor = False
       ParentFont = False
-      TabOrder = 3
+      TabOrder = 2
       object Label11: TLabel
         Left = 59
         Top = 20
@@ -632,8 +534,8 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 4
-      object chk_3: TcxCheckBox
+      TabOrder = 3
+      object cbContribuinteIPI: TcxCheckBox
         Left = 20
         Top = 21
         Caption = 'Contribuinte'
@@ -658,84 +560,6 @@ object frm_cad_empresa: Tfrm_cad_empresa
         StyleHot.LookAndFeel.NativeStyle = False
         StyleHot.LookAndFeel.SkinName = 'Office2013White'
         TabOrder = 0
-      end
-      object chk_4: TcxCheckBox
-        Left = 136
-        Top = 21
-        Caption = 'Apura'#231#227'o Mensal'
-        ParentBackground = False
-        ParentColor = False
-        ParentFont = False
-        Style.BorderColor = clWindow
-        Style.Color = clBtnHighlight
-        Style.Font.Charset = DEFAULT_CHARSET
-        Style.Font.Color = clNone
-        Style.Font.Height = -12
-        Style.Font.Name = 'Tahoma'
-        Style.Font.Style = [fsBold]
-        Style.LookAndFeel.NativeStyle = False
-        Style.LookAndFeel.SkinName = 'Office2013White'
-        Style.Shadow = False
-        Style.IsFontAssigned = True
-        StyleDisabled.LookAndFeel.NativeStyle = False
-        StyleDisabled.LookAndFeel.SkinName = 'Office2013White'
-        StyleFocused.LookAndFeel.NativeStyle = False
-        StyleFocused.LookAndFeel.SkinName = 'Office2013White'
-        StyleHot.LookAndFeel.NativeStyle = False
-        StyleHot.LookAndFeel.SkinName = 'Office2013White'
-        TabOrder = 1
-      end
-      object chk_5: TcxCheckBox
-        Left = 274
-        Top = 21
-        Caption = 'Apura'#231#227'o Decendial'
-        ParentBackground = False
-        ParentColor = False
-        ParentFont = False
-        Style.BorderColor = clWindow
-        Style.Color = clBtnHighlight
-        Style.Font.Charset = DEFAULT_CHARSET
-        Style.Font.Color = clNone
-        Style.Font.Height = -12
-        Style.Font.Name = 'Tahoma'
-        Style.Font.Style = [fsBold]
-        Style.LookAndFeel.NativeStyle = False
-        Style.LookAndFeel.SkinName = 'Office2013White'
-        Style.Shadow = False
-        Style.IsFontAssigned = True
-        StyleDisabled.LookAndFeel.NativeStyle = False
-        StyleDisabled.LookAndFeel.SkinName = 'Office2013White'
-        StyleFocused.LookAndFeel.NativeStyle = False
-        StyleFocused.LookAndFeel.SkinName = 'Office2013White'
-        StyleHot.LookAndFeel.NativeStyle = False
-        StyleHot.LookAndFeel.SkinName = 'Office2013White'
-        TabOrder = 2
-      end
-      object chk_9: TcxCheckBox
-        Left = 437
-        Top = 21
-        Caption = 'Soma IPI Base ICMS'
-        ParentBackground = False
-        ParentColor = False
-        ParentFont = False
-        Style.BorderColor = clWhite
-        Style.Color = clWhite
-        Style.Font.Charset = DEFAULT_CHARSET
-        Style.Font.Color = clBlack
-        Style.Font.Height = -12
-        Style.Font.Name = 'Tahoma'
-        Style.Font.Style = [fsBold]
-        Style.LookAndFeel.NativeStyle = False
-        Style.LookAndFeel.SkinName = 'Office2013White'
-        Style.Shadow = False
-        Style.IsFontAssigned = True
-        StyleDisabled.LookAndFeel.NativeStyle = False
-        StyleDisabled.LookAndFeel.SkinName = 'Office2013White'
-        StyleFocused.LookAndFeel.NativeStyle = False
-        StyleFocused.LookAndFeel.SkinName = 'Office2013White'
-        StyleHot.LookAndFeel.NativeStyle = False
-        StyleHot.LookAndFeel.SkinName = 'Office2013White'
-        TabOrder = 3
       end
     end
     object cxButton6: TcxButton
@@ -792,7 +616,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000}
-      TabOrder = 5
+      TabOrder = 4
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNone
       Font.Height = -17
@@ -3256,9 +3080,9 @@ object frm_cad_empresa: Tfrm_cad_empresa
     object TLabel
       Left = 11
       Top = 60
-      Width = 81
+      Width = 89
       Height = 17
-      Caption = 'Respos'#225'vel:'
+      Caption = 'Respons'#225'vel:'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -15
@@ -3345,6 +3169,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       ParentFont = False
     end
     object Edit37: TEdit
+      Tag = 100
       Left = 98
       Top = 23
       Width = 314
@@ -3359,6 +3184,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Text = 'Edit1'
     end
     object Edit38: TEdit
+      Tag = 100
       Left = 98
       Top = 55
       Width = 314
@@ -3401,6 +3227,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Text = 'Edit1'
     end
     object Edit41: TEdit
+      Tag = 100
       Left = 98
       Top = 181
       Width = 118
@@ -3415,6 +3242,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Text = 'Edit1'
     end
     object Edit42: TEdit
+      Tag = 100
       Left = 98
       Top = 214
       Width = 314
@@ -3429,6 +3257,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Text = 'Edit1'
     end
     object Edit43: TEdit
+      Tag = 200
       Left = 98
       Top = 149
       Width = 118
@@ -3457,6 +3286,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Text = 'Edit1'
     end
     object Edit45: TEdit
+      Tag = 200
       Left = 294
       Top = 149
       Width = 118
@@ -3616,131 +3446,6 @@ object frm_cad_empresa: Tfrm_cad_empresa
       ParentFont = False
     end
   end
-  object grpContatos: TGroupBox
-    Left = 658
-    Top = 36
-    Width = 211
-    Height = 155
-    Caption = '  Contatos Empresa  '
-    Color = clBtnHighlight
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clNone
-    Font.Height = -15
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentBackground = False
-    ParentColor = False
-    ParentFont = False
-    TabOrder = 6
-    object TLabel
-      Left = 27
-      Top = 90
-      Width = 44
-      Height = 17
-      Caption = 'Skype:'
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -15
-      Font.Name = 'Helvetica Neue'
-      Font.Style = []
-      ParentFont = False
-    end
-    object TLabel
-      Left = 42
-      Top = 122
-      Width = 29
-      Height = 17
-      Caption = 'Site:'
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -15
-      Font.Name = 'Helvetica Neue'
-      Font.Style = []
-      ParentFont = False
-    end
-    object TLabel
-      Left = 25
-      Top = 58
-      Width = 46
-      Height = 17
-      Caption = 'E-mail:'
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -15
-      Font.Name = 'Helvetica Neue'
-      Font.Style = []
-      ParentFont = False
-    end
-    object TLabel
-      Left = 13
-      Top = 26
-      Width = 58
-      Height = 17
-      Caption = 'Telefone:'
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -15
-      Font.Name = 'Helvetica Neue'
-      Font.Style = []
-      ParentFont = False
-    end
-    object Edit11: TEdit
-      Left = 76
-      Top = 21
-      Width = 118
-      Height = 26
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clNone
-      Font.Height = -15
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 0
-      Text = 'Edit1'
-    end
-    object Edit30: TEdit
-      Left = 76
-      Top = 53
-      Width = 118
-      Height = 26
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clNone
-      Font.Height = -15
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 1
-      Text = 'Edit1'
-    end
-    object Edit31: TEdit
-      Left = 76
-      Top = 85
-      Width = 118
-      Height = 26
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clNone
-      Font.Height = -15
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 2
-      Text = 'Edit1'
-    end
-    object Edit32: TEdit
-      Left = 76
-      Top = 117
-      Width = 118
-      Height = 26
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clNone
-      Font.Height = -15
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 3
-      Text = 'Edit1'
-    end
-  end
   object grpDadosEmpresa: TGroupBox
     Left = 21
     Top = 8
@@ -3753,7 +3458,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 7
+    TabOrder = 6
     object Label14: TLabel
       Left = 89
       Top = 182
@@ -3767,12 +3472,12 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Style = []
       ParentFont = False
     end
-    object Label8: TLabel
-      Left = 313
+    object label8: TLabel
+      Left = 315
       Top = 180
-      Width = 127
+      Width = 123
       Height = 17
-      Caption = 'IE Subst. Tribu'#225'trio:'
+      Caption = 'IE Subst.Tribut'#225'rio:'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -15
@@ -3885,6 +3590,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       ParentFont = False
     end
     object edRazaoSocial: TEdit
+      Tag = 100
       Left = 141
       Top = 21
       Width = 461
@@ -3899,6 +3605,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       TabOrder = 0
     end
     object edNomeFantasia: TEdit
+      Tag = 100
       Left = 141
       Top = 52
       Width = 461
@@ -3913,9 +3620,10 @@ object frm_cad_empresa: Tfrm_cad_empresa
       TabOrder = 1
     end
     object edCNAE: TEdit
-      Left = 141
+      Tag = 100
+      Left = 140
       Top = 177
-      Width = 145
+      Width = 147
       Height = 26
       Color = 8454016
       Font.Charset = DEFAULT_CHARSET
@@ -3927,7 +3635,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       TabOrder = 2
     end
     object edSUFRAMA: TEdit
-      Left = 139
+      Left = 140
       Top = 145
       Width = 147
       Height = 26
@@ -3941,6 +3649,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       TabOrder = 3
     end
     object edInscricaoEstadual: TEdit
+      Tag = 100
       Left = 141
       Top = 113
       Width = 147
@@ -3955,6 +3664,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       TabOrder = 4
     end
     object edCNPJ: TEdit
+      Tag = 100
       Left = 444
       Top = 84
       Width = 158
@@ -3987,6 +3697,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Top = 144
       Width = 158
       Height = 26
+      Color = 8454016
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNone
       Font.Height = -15
@@ -3996,11 +3707,12 @@ object frm_cad_empresa: Tfrm_cad_empresa
       TabOrder = 7
       Text = 'Edit1'
     end
-    object Edit29: TEdit
+    object edIESubstTributario: TEdit
       Left = 444
       Top = 177
       Width = 158
       Height = 26
+      Color = 8454016
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNone
       Font.Height = -15
@@ -4011,7 +3723,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Text = 'Edit1'
     end
     object edDataInicioAtividades: TMaskEdit
-      Tag = 123
+      Tag = 100
       Left = 141
       Top = 82
       Width = 83
@@ -4170,7 +3882,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       A5FFD1B3A4FFD1B3A4FFD0B2A4FFD1B2A4FFD0B2A4FFCFB2A3FFCFB2A3FFCFB2
       A3FFCFB0A3FFCFB1A2FFCFB0A2FFCEB0A2FFCEB0A2FFCEAFA1FF998277C10000
       0007000000020000000000000000000000000000000000000000}
-    TabOrder = 8
+    TabOrder = 7
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -4190,7 +3902,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 9
+    TabOrder = 8
     object Label12: TLabel
       Left = 55
       Top = 59
@@ -4324,7 +4036,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
     ParentBackground = False
     ParentColor = False
     ParentFont = False
-    TabOrder = 10
+    TabOrder = 9
     object Label17: TLabel
       Left = 192
       Top = 58
@@ -4534,11 +4246,13 @@ object frm_cad_empresa: Tfrm_cad_empresa
       TabOrder = 1
       OnClick = cxButton10Click
     end
-    object Edit19: TEdit
+    object edEnderecoMunicipio: TEdit
+      Tag = 100
       Left = 112
       Top = 119
       Width = 154
       Height = 26
+      Color = 8454016
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNone
       Font.Height = -15
@@ -4548,11 +4262,12 @@ object frm_cad_empresa: Tfrm_cad_empresa
       TabOrder = 2
       Text = 'Edit1'
     end
-    object Edit20: TEdit
+    object edEnderecoComplemento: TEdit
       Left = 112
       Top = 87
       Width = 490
       Height = 26
+      Color = 8454016
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNone
       Font.Height = -15
@@ -4562,11 +4277,13 @@ object frm_cad_empresa: Tfrm_cad_empresa
       TabOrder = 3
       Text = 'Edit1'
     end
-    object Edit21: TEdit
+    object edEnderecoNumero: TEdit
+      Tag = 100
       Left = 112
       Top = 53
       Width = 65
       Height = 26
+      Color = 8454016
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNone
       Font.Height = -15
@@ -4576,11 +4293,13 @@ object frm_cad_empresa: Tfrm_cad_empresa
       TabOrder = 4
       Text = 'Edit1'
     end
-    object Edit22: TEdit
+    object edEnderecoRua: TEdit
+      Tag = 100
       Left = 112
       Top = 19
       Width = 331
       Height = 26
+      Color = 8454016
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNone
       Font.Height = -15
@@ -4588,13 +4307,14 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Style = []
       ParentFont = False
       TabOrder = 5
-      Text = 'Edit1'
     end
-    object Edit24: TEdit
+    object edEnderecoMunicipioIBGE: TEdit
+      Tag = 100
       Left = 348
       Top = 119
       Width = 45
       Height = 26
+      Color = 8454016
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNone
       Font.Height = -15
@@ -4604,11 +4324,13 @@ object frm_cad_empresa: Tfrm_cad_empresa
       TabOrder = 6
       Text = 'Edit1'
     end
-    object Edit25: TEdit
+    object edEnderecoBairro: TEdit
+      Tag = 100
       Left = 241
       Top = 53
       Width = 334
       Height = 26
+      Color = 8454016
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNone
       Font.Height = -15
@@ -4618,22 +4340,27 @@ object frm_cad_empresa: Tfrm_cad_empresa
       TabOrder = 7
       Text = 'Edit1'
     end
-    object Edit26: TEdit
+    object edEnderecoUF: TEdit
+      Tag = 100
       Left = 446
       Top = 119
       Width = 49
       Height = 26
+      Color = 8454016
+      DoubleBuffered = False
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNone
       Font.Height = -15
       Font.Name = 'Tahoma'
       Font.Style = []
+      ParentDoubleBuffered = False
       ParentFont = False
       TabOrder = 8
       Text = 'Edit1'
     end
-    object Edit27: TEdit
-      Left = 553
+    object edEnderecoUFIBGE: TEdit
+      Tag = 100
+      Left = 552
       Top = 119
       Width = 49
       Height = 26
@@ -4644,13 +4371,15 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Style = []
       ParentFont = False
       TabOrder = 9
-      Text = 'Edit1'
+      Text = 'edEnderecoUFIBGE'
     end
-    object Edit28: TEdit
+    object edEnderecoCEP: TEdit
+      Tag = 100
       Left = 490
       Top = 19
       Width = 112
       Height = 26
+      Color = 8454016
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNone
       Font.Height = -15
@@ -4666,7 +4395,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
     Top = 227
     Width = 211
     Height = 155
-    Caption = '  Contatos Responss'#225'vel  '
+    Caption = '  Contatos Respons'#225'vel  '
     Color = clBtnHighlight
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clNone
@@ -4676,7 +4405,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
     ParentBackground = False
     ParentColor = False
     ParentFont = False
-    TabOrder = 11
+    TabOrder = 10
     object TLabel
       Left = 22
       Top = 90
@@ -4730,6 +4459,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       ParentFont = False
     end
     object Edit33: TEdit
+      Tag = 100
       Left = 76
       Top = 21
       Width = 118
@@ -4758,6 +4488,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Text = 'Edit1'
     end
     object Edit35: TEdit
+      Tag = 100
       Left = 76
       Top = 85
       Width = 118
@@ -4801,7 +4532,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
     ParentBackground = False
     ParentColor = False
     ParentFont = False
-    TabOrder = 12
+    TabOrder = 11
     object TLabel
       Left = 30
       Top = 31
@@ -4829,6 +4560,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       ParentFont = False
     end
     object Edit8: TEdit
+      Tag = 100
       Left = 449
       Top = 26
       Width = 153
@@ -4843,7 +4575,6 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Text = 'Edit1'
     end
     object MaskEdit2: TMaskEdit
-      Tag = 123
       Left = 155
       Top = 26
       Width = 83
@@ -4859,6 +4590,139 @@ object frm_cad_empresa: Tfrm_cad_empresa
       ReadOnly = True
       TabOrder = 1
       Text = '  /  /  '
+    end
+  end
+  object grpContatos: TGroupBox
+    Left = 652
+    Top = 33
+    Width = 211
+    Height = 155
+    Caption = '  Contatos Empresa  '
+    Color = clBtnHighlight
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNone
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentBackground = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 12
+    object TLabel
+      Left = 21
+      Top = 58
+      Width = 50
+      Height = 17
+      Caption = 'Celular:'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Helvetica Neue'
+      Font.Style = []
+      ParentFont = False
+    end
+    object TLabel
+      Left = 13
+      Top = 26
+      Width = 58
+      Height = 17
+      Caption = 'Telefone:'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Helvetica Neue'
+      Font.Style = []
+      ParentFont = False
+    end
+    object TLabel
+      Left = 24
+      Top = 90
+      Width = 47
+      Height = 17
+      Caption = 'Whats:'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Helvetica Neue'
+      Font.Style = []
+      ParentFont = False
+    end
+    object TLabel
+      Left = 25
+      Top = 122
+      Width = 46
+      Height = 17
+      Caption = 'E-mail:'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Helvetica Neue'
+      Font.Style = []
+      ParentFont = False
+    end
+    object edTelefone: TEdit
+      Tag = 100
+      Left = 76
+      Top = 21
+      Width = 118
+      Height = 26
+      Color = 8454016
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNone
+      Font.Height = -15
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      Text = 'Edit1'
+    end
+    object edCelular: TEdit
+      Tag = 100
+      Left = 76
+      Top = 53
+      Width = 118
+      Height = 26
+      Color = 8454016
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNone
+      Font.Height = -15
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+      Text = 'Edit1'
+    end
+    object edWhatsApp: TEdit
+      Tag = 100
+      Left = 76
+      Top = 85
+      Width = 118
+      Height = 26
+      Color = 8454016
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNone
+      Font.Height = -15
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 2
+      Text = 'Edit1'
+    end
+    object edEmail: TEdit
+      Tag = 100
+      Left = 76
+      Top = 117
+      Width = 118
+      Height = 26
+      Color = 8454016
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNone
+      Font.Height = -15
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 3
+      Text = 'Edit1'
     end
   end
 end
