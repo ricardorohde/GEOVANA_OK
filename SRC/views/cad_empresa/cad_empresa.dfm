@@ -3027,7 +3027,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
   end
   object gbContador: TGroupBox
     Left = 658
-    Top = 412
+    Top = 388
     Width = 437
     Height = 256
     Caption = '  Contabilidade  '
@@ -4599,11 +4599,12 @@ object frm_cad_empresa: Tfrm_cad_empresa
       TabOrder = 0
       Text = 'Edit1'
     end
-    object MaskEdit2: TMaskEdit
+    object edDataCadastro: TMaskEdit
       Left = 155
       Top = 26
       Width = 83
       Height = 26
+      TabStop = False
       EditMask = '!99/99/00;1;_'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText

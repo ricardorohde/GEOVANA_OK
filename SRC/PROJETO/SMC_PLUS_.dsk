@@ -15,9 +15,9 @@ File_12=TSourceModule,'C:\wander\Sistemas\Delphi\unisystem\SMC_PLUS\src\Controle
 File_13=TSourceModule,'C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\views\cadastro_empresa\cad_empresa.pas',0,1,1,1,25,0,0,,
 
 [Modules]
-Module0=C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\views\cad_empresa\cad_empresa.pas
+Module0=C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\Classes\Classe_Acesso.pas
 Module1=C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\Classes\Classe_Empresa.pas
-Module2=C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\Classes\Classe_Acesso.pas
+Module2=C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\views\cad_empresa\cad_empresa.pas
 Module3=default.htm
 Module4=C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\built\SMC_SISTEMA\SMC_PLUS_.dproj
 Module5=C:\wander\Sistemas\Delphi\brenaw10\SISTEMAS\Brena\FontesBrena\Codigo2020\Utilitarios\Funcoes.pas
@@ -32,13 +32,13 @@ Module13=C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\views\cad_consultor\ca
 Count=14
 EditWindowCount=1
 
-[C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\views\cad_empresa\cad_empresa.pas]
+[C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\Classes\Classe_Acesso.pas]
 ModuleType=TSourceModule
 
 [C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\Classes\Classe_Empresa.pas]
 ModuleType=TSourceModule
 
-[C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\Classes\Classe_Acesso.pas]
+[C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\views\cad_empresa\cad_empresa.pas]
 ModuleType=TSourceModule
 
 [default.htm]
@@ -76,7 +76,7 @@ ModuleType=TSourceModule
 
 [EditWindow0]
 ViewCount=14
-CurrentEditView=C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\views\cad_empresa\cad_empresa.pas
+CurrentEditView=C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\Classes\Classe_Acesso.pas
 View0=0
 View1=1
 View2=2
@@ -109,7 +109,7 @@ BorlandEditorCodeExplorer=BorlandEditorCodeExplorer@EditWindow0
 TopPanelSize=0
 LeftPanelSize=1897
 LeftPanelClients=PropertyInspector,DockSite3
-LeftPanelData=00000800010100000000F00E0000000000000169070000000000000100000000580E000009000000446F636B53697465330100000000731A00001100000050726F7065727479496E73706563746F72FFFFFFFF
+LeftPanelData=0000080001010100000009000000446F636B5369746533F00E0000000000000169070000000000000100000000731A00001100000050726F7065727479496E73706563746F72FFFFFFFF
 RightPanelSize=0
 RightPanelClients=DockSite2,DockSite4
 RightPanelData=0000080001010200000009000000446F636B536974653209000000446F636B5369746534871200000000000001D007000000000000FFFFFFFF
@@ -138,24 +138,24 @@ EditViewName=C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\views\Login\vw_Log
 [View2]
 CustomEditViewType=TEditView
 Module=C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\Classes\Classe_Empresa.pas
-CursorX=83
-CursorY=329
-TopLine=307
+CursorX=58
+CursorY=338
+TopLine=322
 LeftCol=1
 Elisions=
-Bookmarks={0,250,1}{1,1013,24}
+Bookmarks={0,255,1}{1,1041,24}
 EditViewName=C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\Classes\Classe_Empresa.pas
 
 [View3]
 CustomEditViewType=TEditView
 Module=C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\views\cad_empresa\cad_empresa.pas
-CursorX=67
-CursorY=354
-TopLine=338
+CursorX=1
+CursorY=1
+TopLine=1
 LeftCol=1
 Elisions=
 Bookmarks=
-EditViewName=Borland.FormDesignerView
+EditViewName=C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\views\cad_empresa\cad_empresa.pas
 
 [View4]
 CustomEditViewType=TEditView
@@ -215,9 +215,9 @@ EditViewName=C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\Funcoes\Funcoes.pa
 [View9]
 CustomEditViewType=TEditView
 Module=C:\wander\Sistemas\Delphi\UniSystem\SMC_PLUS\src\Classes\Classe_Acesso.pas
-CursorX=1
-CursorY=215
-TopLine=218
+CursorX=74
+CursorY=100
+TopLine=86
 LeftCol=1
 Elisions=
 Bookmarks=
@@ -440,14 +440,14 @@ Visible=1
 Docked=1
 State=0
 Left=0
-Top=300
+Top=18
 Width=1897
-Height=3022
+Height=6896
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1897
-ClientHeight=3022
-TBDockHeight=6497
+ClientHeight=6896
+TBDockHeight=6909
 LRDockWidth=1897
 Dockable=1
 StayOnTop=0
@@ -455,8 +455,8 @@ SplitPos=111
 
 [PropInspDesignerSelection]
 ArrangeBy=Name
-SelectedItem=Color,
-ExpandedItems=Anchors=0,BevelEdges=0,Constraints=0,Font=0,LiveBindings=0,"LiveBindings Designer=0",Margins=0,Padding=0,StyleElements=0
+SelectedItem=TabStop,
+ExpandedItems=Anchors=0,BevelEdges=0,Constraints=0,Font=0,LiveBindings=0,"LiveBindings Designer=0",Margins=0,StyleElements=0,Touch=0
 
 [ClassBrowserTool]
 PercentageSizes=1
@@ -464,8 +464,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=-129
-Top=-101
+Left=0
+Top=-83
 Width=1846
 Height=3146
 MaxLeft=-1
@@ -812,11 +812,11 @@ State=0
 Left=0
 Top=0
 Width=1897
-Height=3571
+Height=6909
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1897
-ClientHeight=3571
+ClientHeight=6909
 TBDockHeight=3681
 LRDockWidth=1897
 Dockable=1
@@ -940,18 +940,18 @@ HostDockSite=DockLeftPanel
 DockSiteType=1
 PercentageSizes=1
 Create=1
-Visible=1
+Visible=0
 Docked=1
 State=0
 Left=0
-Top=18
+Top=0
 Width=1897
-Height=3571
+Height=6909
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1897
-ClientHeight=3571
-TBDockHeight=6497
+ClientHeight=6909
+TBDockHeight=6909
 LRDockWidth=1897
 Dockable=1
 StayOnTop=0

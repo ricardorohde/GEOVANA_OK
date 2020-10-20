@@ -597,7 +597,6 @@ begin
         qEmpresa.SQL.Add('       EMP_CONTADOR_CEL1,         ');
         qEmpresa.SQL.Add('       EMP_CONTADOR_CEL2,         ');
         qEmpresa.SQL.Add('       EMP_CONTADOR_EMAIL,        ');
-        qEmpresa.SQL.Add('       EMP_DT,                    ');
 
         //passo10
         qEmpresa.SQL.Add('     )                            ');
@@ -644,7 +643,6 @@ begin
         qEmpresa.SQL.Add('      :EMP_CONTADOR_CEL1,         ');
         qEmpresa.SQL.Add('      :EMP_CONTADOR_CEL2,         ');
         qEmpresa.SQL.Add('      :EMP_CONTADOR_EMAIL,        ');
-        qEmpresa.SQL.Add('      :EMP_DT,                    ');
         qEmpresa.SQL.Add('     )                            ');
 
         //passo 11
@@ -928,8 +926,7 @@ begin
         qEmpresa.SQL.Add('       EMP_CONTADOR_CRC          = :EMP_CONTADOR_CRC,          ');
         qEmpresa.SQL.Add('       EMP_CONTADOR_CEL1         = :EMP_CONTADOR_CEL1,         ');
         qEmpresa.SQL.Add('       EMP_CONTADOR_CEL2         = :EMP_CONTADOR_CEL2,         ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_EMAIL        = :EMP_CONTADOR_EMAIL,        ');
-        qEmpresa.SQL.Add('       EMP_DT                    = :EMP_DT                     ');
+        qEmpresa.SQL.Add('       EMP_CONTADOR_EMAIL        = :EMP_CONTADOR_EMAIL         ');
 
         //passo11
         Preencher_Parametros_Empresa;

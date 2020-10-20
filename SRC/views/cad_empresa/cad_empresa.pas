@@ -121,7 +121,7 @@ type
     grpOutras: TGroupBox;
     Label13: TLabel;
     Edit8: TEdit;
-    MaskEdit2: TMaskEdit;
+    edDataCadastro: TMaskEdit;
     grpContatos: TGroupBox;
     edTelefone: TEdit;
     edCelular: TEdit;
@@ -311,6 +311,7 @@ begin
         Empresa.ContadorCelular1            := edContadorCelular1.Text;
         Empresa.ContadorCelular2            := edContadorCelular2.Text;
         Empresa.ContadorEmail               := edContadorEmail.Text;
+        Empresa.DataCadastro                := StrToDate(edDataCadastro.text);
         result := Empresa.Gravar;
     Except
 
@@ -356,6 +357,7 @@ begin
    edContadorCelular1.Text            := Empresa.ContadorCelular1;
    edContadorCelular2.Text            := Empresa.ContadorCelular2;
    edContadorEmail.Text               := Empresa.ContadorEmail;
+   edDataCadastro.Text                := Empresa.DataCadastroString;
 
 
 //PASSO 9 :)

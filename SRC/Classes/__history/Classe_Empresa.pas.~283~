@@ -205,9 +205,6 @@ EMP_CNPJCPF] [varchar](20) NULL,
     function getFContadorEmail: String;
     procedure setFContadorEmail(const Value: String);
     function getFContadorResponsavel: String;
-    function getDataCadastroString: String;
-    function getFDataCadastro: TDateTime;
-    procedure setFDataCadastro(const Value: TDateTime);
 
    public
       property NomeFantasia                : String    read getFNomeFantasia                write setFNomeFantasia;
@@ -253,8 +250,6 @@ EMP_CNPJCPF] [varchar](20) NULL,
       property ContadorCelular1            : String    read getFContadorCelular1            write setFContadorCelular1;
       property ContadorCelular2            : String    read getFContadorCelular2            write setFContadorCelular2;
       property ContadorEmail               : String    read getFContadorEmail               write setFContadorEmail;
-      property DataCadastro                : TDateTime read getFDataCadastro                write setFDataCadastro;
-      property DataCadastroString          : String    read getDataCadastroString;
 
 
 
@@ -334,7 +329,6 @@ begin
     FContadorCelular1            := qLocal.FieldByname('EMP_CONTADOR_CEL1'        ).AsString;
     FContadorCelular2            := qLocal.FieldByname('EMP_CONTADOR_CEL2'        ).AsString;
     FContadorEmail               := qLocal.FieldByname('EMP_CONTADOR_EMAIL'       ).AsString;
-    FDataCadastro                := qLocal.FieldByName('EMP_DT'                   ).AsDateTime;
 
     //PASSO 9
     Qlocal.Free;
@@ -349,11 +343,6 @@ begin
        exit;
 
     Result := True;
-end;
-
-function TEmpresa.getDataCadastroString: String;
-begin
-   result := self.FDataCadastroString;
 end;
 
 function TEmpresa.getDataInicioAtividadesString: String;
@@ -439,11 +428,6 @@ end;
 function TEmpresa.getFContribuinteIPI: Boolean;
 begin
    result := self.FContribuinteIPI
-end;
-
-function TEmpresa.getFDataCadastro: TDateTime;
-begin
-   result := self.FDataCadastro;
 end;
 
 function TEmpresa.getFDataInicioAtividades: TDateTime;
@@ -597,7 +581,6 @@ begin
         qEmpresa.SQL.Add('       EMP_CONTADOR_CEL1,         ');
         qEmpresa.SQL.Add('       EMP_CONTADOR_CEL2,         ');
         qEmpresa.SQL.Add('       EMP_CONTADOR_EMAIL,        ');
-        qEmpresa.SQL.Add('       EMP_DT,                    ');
 
         //passo10
         qEmpresa.SQL.Add('     )                            ');
@@ -644,7 +627,6 @@ begin
         qEmpresa.SQL.Add('      :EMP_CONTADOR_CEL1,         ');
         qEmpresa.SQL.Add('      :EMP_CONTADOR_CEL2,         ');
         qEmpresa.SQL.Add('      :EMP_CONTADOR_EMAIL,        ');
-        qEmpresa.SQL.Add('      :EMP_DT,                    ');
         qEmpresa.SQL.Add('     )                            ');
 
         //passo 11
@@ -704,8 +686,6 @@ begin
     qEmpresa.ParamByName('EMP_CONTADOR_CEL1'        ).AsString   := FContadorCelular1;
     qEmpresa.ParamByName('EMP_CONTADOR_CEL2'        ).AsString   := FContadorCelular2;
     qEmpresa.ParamByName('EMP_CONTADOR_EMAIL'       ).AsString   := FContadorEmail;
-    qEmpresa.ParamByName('EMP_DT'                   ).AsDateTime := FDataCadastro;
-
     //passo12
 end;
 
@@ -805,14 +785,9 @@ begin
   self.FContribuinteIPI := Value;
 end;
 
-procedure TEmpresa.setFDataCadastro(const Value: TDateTime);
-begin
-   self.FDataCadastro := Value;
-end;
-
 procedure TEmpresa.setFDataInicioAtividades(const Value: TDateTime);
 begin
-   self.FDataInicioAtividades := Value;
+   self.FDataInicioAtividades := Value; // este é data, nao precisaok
 end;
 
 procedure TEmpresa.setFEnderecoRua(const Value: String);
@@ -928,8 +903,7 @@ begin
         qEmpresa.SQL.Add('       EMP_CONTADOR_CRC          = :EMP_CONTADOR_CRC,          ');
         qEmpresa.SQL.Add('       EMP_CONTADOR_CEL1         = :EMP_CONTADOR_CEL1,         ');
         qEmpresa.SQL.Add('       EMP_CONTADOR_CEL2         = :EMP_CONTADOR_CEL2,         ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_EMAIL        = :EMP_CONTADOR_EMAIL,        ');
-        qEmpresa.SQL.Add('       EMP_DT                    = :EMP_DT                     ');
+        qEmpresa.SQL.Add('       EMP_CONTADOR_EMAIL        = :EMP_CONTADOR_EMAIL         ');
 
         //passo11
         Preencher_Parametros_Empresa;
