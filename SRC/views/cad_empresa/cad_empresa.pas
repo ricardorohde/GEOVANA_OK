@@ -51,7 +51,7 @@ type
     BtnNFSE: TcxButton;
     BtnMDE: TcxButton;
     cxButton4: TcxButton;
-    grpContatoCont: TGroupBox;
+    gbContador: TGroupBox;
     grpLogo: TGroupBox;
     TL_colab: TLabel;
     cxButton1: TcxButton;
@@ -107,16 +107,16 @@ type
     edResponsavelTelefone: TEdit;
     edResponsavelCelular: TEdit;
     edResponsavelEmail: TEdit;
-    Edit37: TEdit;
-    Edit38: TEdit;
-    Edit39: TEdit;
-    Edit40: TEdit;
-    Edit41: TEdit;
-    Edit42: TEdit;
-    Edit43: TEdit;
-    Edit44: TEdit;
-    Edit45: TEdit;
-    Edit46: TEdit;
+    edContadorEmpresa: TEdit;
+    edContadorResponsavel: TEdit;
+    edContadorCNPJ: TEdit;
+    edContadorCRC: TEdit;
+    edContadorCelular1: TEdit;
+    edContadorEmail: TEdit;
+    edContadorTelefone1: TEdit;
+    edContadorCPF: TEdit;
+    edContadorTeleFone2: TEdit;
+    edContadorCelular2: TEdit;
     edDataInicioAtividades: TMaskEdit;
     grpOutras: TGroupBox;
     Label13: TLabel;
@@ -301,6 +301,16 @@ begin
         Empresa.ResponsavelTelefone         := edResponsavelTelefone.Text;
         Empresa.ResponsavelCelular          := edResponsavelCelular.Text;
         Empresa.ResponsavelEmail            := edResponsavelEmail.Text;
+        Empresa.ContadorEmpresa             := edContadorEmpresa.Text;
+        Empresa.ContadorResponsavel         := edContadorResponsavel.Text;
+        Empresa.ContadorCNPJ                := edContadorCNPJ.Text;
+        Empresa.ContadorCPF                 := edContadorCPF.Text;
+        Empresa.ContadorTelefone1           := edContadorTelefone1.Text;
+        Empresa.ContadorTelefone2           := edContadorTelefone2.Text;
+        Empresa.ContadorCRC                 := edContadorCRC.Text;
+        Empresa.ContadorCelular1            := edContadorCelular1.Text;
+        Empresa.ContadorCelular2            := edContadorCelular2.Text;
+        Empresa.ContadorEmail               := edContadorEmail.Text;
         result := Empresa.Gravar;
     Except
 
@@ -336,6 +346,17 @@ begin
    edResponsavelTelefone.Text         := Empresa.ResponsavelTelefone;
    edResponsavelCelular.Text          := Empresa.ResponsavelCelular;
    edResponsavelEmail.Text            := Empresa.ResponsavelEmail;
+   edContadorEmpresa.Text             := Empresa.ContadorEmpresa;
+   edContadorResponsavel.Text         := Empresa.ContadorResponsavel;
+   edContadorCNPJ.Text                := Empresa.ContadorCNPJ;
+   edContadorCPF.Text                 := Empresa.ContadorCPF;
+   edContadorTelefone1.Text           := Empresa.ContadorTelefone1;
+   edContadorTelefone2.Text           := Empresa.ContadorTelefone2;
+   edContadorCRC.Text                 := Empresa.ContadorCRC;
+   edContadorCelular1.Text            := Empresa.ContadorCelular1;
+   edContadorCelular2.Text            := Empresa.ContadorCelular2;
+   edContadorEmail.Text               := Empresa.ContadorEmail;
+
 
 //PASSO 9 :)
    {

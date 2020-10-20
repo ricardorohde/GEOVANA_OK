@@ -183,27 +183,6 @@ EMP_CNPJCPF] [varchar](20) NULL,
     procedure setFResponsavelEmail(const Value: String);
     procedure setFResponsavelNome(const Value: String);
     procedure setFResponsavelTelefone(const Value: String);
-    function getFContadorEmpresa: String;
-    procedure setFContadorEmpresa(const Value: String);
-    procedure setFContadorResponsavel(const Value: String);
-    function getFContadorCNPJ: String;
-    procedure setFContadorCNPJ(const Value: String);
-    function getFContadorCPF: String;
-    procedure setFContadorCPF(const Value: String);
-    function getFContadorTelefone1: String;
-    procedure setFContadorTelefone1(const Value: String);
-    function getFContadorTelefone2: String;
-    procedure setFContadorTelefone2(const Value: String);
-    function getFContadorCRC: String;
-    procedure setFContadorCRC(const Value: String);
-    function getFContadorCelular1: String;
-    procedure setFContadorCelular1(const Value: String);
-    function getFContadorCelular2: String;
-    procedure setFContadorCelular2(const Value: String);
-    function getFContadorEmail: String;
-    procedure setFContadorEmail(const Value: String);
-    function getFContadorResponsavel: String;
-
    public
       property NomeFantasia                : String    read getFNomeFantasia                write setFNomeFantasia;
       property RazaoSocial                 : String    read getFRazaoSocial                 write setFRazaoSocial;
@@ -317,16 +296,6 @@ begin
     FResponsavelTelefone         := qLocal.FieldByname('EMP_RESPONSAVEL_TELEFONE' ).AsString;
     FResponsavelCelular          := qLocal.FieldByname('EMP_RESPONSAVEL_CELULAR'  ).AsString;
     FResponsavelEmail            := qLocal.FieldByname('EMP_RESPONSAVEL_EMAIL'    ).AsString;
-    FContadorEmpresa             := qLocal.FieldByname('EMP_CONTADOR_EMPRESA'     ).AsString;
-    FContadorResponsavel         := qLocal.FieldByname('EMP_CONTADOR_RESPONSAVEL' ).AsString;
-    FContadorCNPJ                := qLocal.FieldByname('EMP_CONTADOR_CNPJ'        ).AsString;
-    FContadorCPF                 := qLocal.FieldByname('EMP_CONTADOR_CPF'         ).AsString;
-    FContadorTelefone1           := qLocal.FieldByname('EMP_CONTADOR_TEL1'        ).AsString;
-    FContadorTelefone2           := qLocal.FieldByname('EMP_CONTADOR_TEL2'        ).AsString;
-    FContadorCRC                 := qLocal.FieldByname('EMP_CONTADOR_CRC'         ).AsString;
-    FContadorCelular1            := qLocal.FieldByname('EMP_CONTADOR_CEL1'        ).AsString;
-    FContadorCelular2            := qLocal.FieldByname('EMP_CONTADOR_CEL2'        ).AsString;
-    FContadorEmail               := qLocal.FieldByname('EMP_CONTADOR_EMAIL'       ).AsString;
 
     //PASSO 9
     Qlocal.Free;
@@ -569,17 +538,6 @@ begin
         qEmpresa.SQL.Add('       EMP_RESPONSAVEL_TELEFONE,  ');
         qEmpresa.SQL.Add('       EMP_RESPONSAVEL_CELULAR,   ');
         qEmpresa.SQL.Add('       EMP_RESPONSAVEL_EMAIL,     ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_EMPRESA,      ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_RESPONSAVEL,  ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_CNPJ,         ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_CPF,          ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_TEL1,         ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_TEL2,         ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_CRC,          ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_CEL1,         ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_CEL2,         ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_EMAIL,        ');
-
         //passo10
         qEmpresa.SQL.Add('     )                            ');
         qEmpresa.SQL.Add('VALUES                            ');
@@ -615,16 +573,7 @@ begin
         qEmpresa.SQL.Add('      :EMP_RESPONSAVEL_TELEFONE,  ');
         qEmpresa.SQL.Add('      :EMP_RESPONSAVEL_CELULAR,   ');
         qEmpresa.SQL.Add('      :EMP_RESPONSAVEL_EMAIL,     ');
-        qEmpresa.SQL.Add('      :EMP_CONTADOR_EMPRESA,      ');
-        qEmpresa.SQL.Add('      :EMP_CONTADOR_RESPONSAVEL,  ');
-        qEmpresa.SQL.Add('      :EMP_CONTADOR_CNPJ,         ');
-        qEmpresa.SQL.Add('      :EMP_CONTADOR_CPF,          ');
-        qEmpresa.SQL.Add('      :EMP_CONTADOR_TEL1,         ');
-        qEmpresa.SQL.Add('      :EMP_CONTADOR_TEL2,         ');
-        qEmpresa.SQL.Add('      :EMP_CONTADOR_CRC,          ');
-        qEmpresa.SQL.Add('      :EMP_CONTADOR_CEL1,         ');
-        qEmpresa.SQL.Add('      :EMP_CONTADOR_CEL2,         ');
-        qEmpresa.SQL.Add('      :EMP_CONTADOR_EMAIL,        ');
+
         qEmpresa.SQL.Add('     )                            ');
 
         //passo 11
@@ -674,16 +623,7 @@ begin
     qEmpresa.ParamByName('EMP_RESPONSAVEL_TELEFONE' ).AsString   := FResponsavelTelefone;
     qEmpresa.ParamByName('EMP_RESPONSAVEL_CELULAR'  ).AsString   := FResponsavelCelular;
     qEmpresa.ParamByName('EMP_RESPONSAVEL_EMAIL'    ).AsString   := FResponsavelEmail;
-    qEmpresa.ParamByName('EMP_CONTADOR_EMPRESA'     ).AsString   := FContadorEmpresa;
-    qEmpresa.ParamByName('EMP_CONTADOR_RESPONSAVEL' ).AsString   := FContadorResponsavel;
-    qEmpresa.ParamByName('EMP_CONTADOR_CNPJ'        ).AsString   := FContadorCNPJ;
-    qEmpresa.ParamByName('EMP_CONTADOR_CPF'         ).AsString   := FContadorCPF;
-    qEmpresa.ParamByName('EMP_CONTADOR_TEL1'        ).AsString   := FContadorTelefone1;
-    qEmpresa.ParamByName('EMP_CONTADOR_TEL2'        ).AsString   := FContadorTelefone2;
-    qEmpresa.ParamByName('EMP_CONTADOR_CRC'         ).AsString   := FContadorCRC;
-    qEmpresa.ParamByName('EMP_CONTADOR_CEL1'        ).AsString   := FContadorCelular1;
-    qEmpresa.ParamByName('EMP_CONTADOR_CEL2'        ).AsString   := FContadorCelular2;
-    qEmpresa.ParamByName('EMP_CONTADOR_EMAIL'       ).AsString   := FContadorEmail;
+
     //passo12
 end;
 
@@ -892,16 +832,6 @@ begin
         qEmpresa.SQL.Add('       EMP_RESPONSAVEL_TELEFONE  = :EMP_RESPONSAVEL_TELEFONE,  ');
         qEmpresa.SQL.Add('       EMP_RESPONSAVEL_CELULAR   = :EMP_RESPONSAVEL_CELULAR,   ');
         qEmpresa.SQL.Add('       EMP_RESPONSAVEL_EMAIL     = :EMP_RESPONSAVEL_EMAIL,     ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_EMPRESA      = :EMP_CONTADOR_EMPRESA,      ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_RESPONSAVEL  = :EMP_CONTADOR_RESPONSAVEL,  ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_CNPJ         = :EMP_CONTADOR_CNPJ,         ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_CPF          = :EMP_CONTADOR_CPF,          ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_TEL1         = :EMP_CONTADOR_TEL1,         ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_TEL2         = :EMP_CONTADOR_TEL2,         ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_CRC          = :EMP_CONTADOR_CRC,          ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_CEL1         = :EMP_CONTADOR_CEL1,         ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_CEL2         = :EMP_CONTADOR_CEL2,         ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_EMAIL        = :EMP_CONTADOR_EMAIL         ');
 
         //passo11
         Preencher_Parametros_Empresa;
@@ -915,6 +845,8 @@ begin
     end;
 end;
 
+
+
 function TEmpresa.getFContadorEmpresa: String;
 begin
    Result := self.FContadorEmpresa;
@@ -922,12 +854,12 @@ end;
 
 procedure TEmpresa.setFContadorEmpresa(const Value: String);
 begin
-  FContadorEmpresa  := Copy(Value,1,40);
+  FContadorEmpresa#
 end;
 
-function TEmpresa.getFContadorResponsavel: String;
+function TEmpresa.getFContadorEmpresa: String;
 begin
-   result := FContadorResponsavel;
+   Result := self.FContadorEmpresa;
 end;
 
 procedure TEmpresa.setFContadorResponsavel(const Value: String);
@@ -947,7 +879,7 @@ end;
 
 function TEmpresa.getFContadorCPF: String;
 begin
-   Result := self.FContadorCPF;
+   Result := self.FFContadorCPF;
 end;
 
 procedure TEmpresa.setFContadorCPF(const Value: String);

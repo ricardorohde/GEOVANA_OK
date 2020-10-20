@@ -43,16 +43,6 @@ type
     FResponsavelTelefone         : String;    // EMP_RESPONSAVEL_TELEFONE   varchar(40) NULL
     FResponsavelCelular          : String;    // EMP_RESPONSAVEL_CELULAR    varchar(40) NULL
     FResponsavelEmail            : String;    // EMP_RESPONSAVEL_EMAIL      varchar(40) NULL
-    FContadorEmpresa             : String;    // EMP_CONTADOR_EMPRESA       VARCHAR(40) MULL
-    FContadorResponsavel         : String;    // EMP_CONTADOR_RESPONSAVEL   VARCHAR(40) MULL
-    FContadorCNPJ                : String;    // EMP_CONTADOR_CNPJ          VARCHAR(14) MULL
-    FContadorCPF                 : String;    // EMP_CONTADOR_CPF           VARCHAR(11) MULL
-    FContadorTelefone1           : String;    // EMP_CONTADOR_TEL1          VARCHAR(20) MULL
-    FContadorTelefone2           : String;    // EMP_CONTADOR_TEL2          VARCHAR(20) MULL
-    FContadorCRC                 : String;    // EMP_CONTADOR_CRC           VARCHAR(20) MULL
-    FContadorCelular1            : String;    // EMP_CONTADOR_CEL1          VARCHAR(20) MULL
-    FContadorCelular2            : String;    // EMP_CONTADOR_CEL2          VARCHAR(20) MULL
-    FContadorEmail               : String;    // EMP_CONTADOR_EMAIL         VARCHAR(40) MULL
 
 
 //  FNomeDecente         : String;   // EMP_SEI LA O  QUE.....
@@ -183,27 +173,6 @@ EMP_CNPJCPF] [varchar](20) NULL,
     procedure setFResponsavelEmail(const Value: String);
     procedure setFResponsavelNome(const Value: String);
     procedure setFResponsavelTelefone(const Value: String);
-    function getFContadorEmpresa: String;
-    procedure setFContadorEmpresa(const Value: String);
-    procedure setFContadorResponsavel(const Value: String);
-    function getFContadorCNPJ: String;
-    procedure setFContadorCNPJ(const Value: String);
-    function getFContadorCPF: String;
-    procedure setFContadorCPF(const Value: String);
-    function getFContadorTelefone1: String;
-    procedure setFContadorTelefone1(const Value: String);
-    function getFContadorTelefone2: String;
-    procedure setFContadorTelefone2(const Value: String);
-    function getFContadorCRC: String;
-    procedure setFContadorCRC(const Value: String);
-    function getFContadorCelular1: String;
-    procedure setFContadorCelular1(const Value: String);
-    function getFContadorCelular2: String;
-    procedure setFContadorCelular2(const Value: String);
-    function getFContadorEmail: String;
-    procedure setFContadorEmail(const Value: String);
-    function getFContadorResponsavel: String;
-
    public
       property NomeFantasia                : String    read getFNomeFantasia                write setFNomeFantasia;
       property RazaoSocial                 : String    read getFRazaoSocial                 write setFRazaoSocial;
@@ -238,18 +207,6 @@ EMP_CNPJCPF] [varchar](20) NULL,
       property ResponsavelTelefone         : String    read getFResponsavelTelefone         write setFResponsavelTelefone;
       property ResponsavelCelular          : String    read getFResponsavelCelular          write setFResponsavelCelular;
       property ResponsavelEmail            : String    read getFResponsavelEmail            write setFResponsavelEmail;
-      property ContadorEmpresa             : String    read getFContadorEmpresa             write setFContadorEmpresa;
-      property ContadorResponsavel         : String    read getFContadorResponsavel         write setFContadorResponsavel;
-      property ContadorCNPJ                : String    read getFContadorCNPJ                write setFContadorCNPJ;
-      property ContadorCPF                 : String    read getFContadorCPF                 write setFContadorCPF;
-      property ContadorTelefone1           : String    read getFContadorTelefone1           write setFContadorTelefone1;
-      property ContadorTelefone2           : String    read getFContadorTelefone2           write setFContadorTelefone2;
-      property ContadorCRC                 : String    read getFContadorCRC                 write setFContadorCRC;
-      property ContadorCelular1            : String    read getFContadorCelular1            write setFContadorCelular1;
-      property ContadorCelular2            : String    read getFContadorCelular2            write setFContadorCelular2;
-      property ContadorEmail               : String    read getFContadorEmail               write setFContadorEmail;
-
-
 
      //PASSO 4
       procedure Abrir;
@@ -317,16 +274,6 @@ begin
     FResponsavelTelefone         := qLocal.FieldByname('EMP_RESPONSAVEL_TELEFONE' ).AsString;
     FResponsavelCelular          := qLocal.FieldByname('EMP_RESPONSAVEL_CELULAR'  ).AsString;
     FResponsavelEmail            := qLocal.FieldByname('EMP_RESPONSAVEL_EMAIL'    ).AsString;
-    FContadorEmpresa             := qLocal.FieldByname('EMP_CONTADOR_EMPRESA'     ).AsString;
-    FContadorResponsavel         := qLocal.FieldByname('EMP_CONTADOR_RESPONSAVEL' ).AsString;
-    FContadorCNPJ                := qLocal.FieldByname('EMP_CONTADOR_CNPJ'        ).AsString;
-    FContadorCPF                 := qLocal.FieldByname('EMP_CONTADOR_CPF'         ).AsString;
-    FContadorTelefone1           := qLocal.FieldByname('EMP_CONTADOR_TEL1'        ).AsString;
-    FContadorTelefone2           := qLocal.FieldByname('EMP_CONTADOR_TEL2'        ).AsString;
-    FContadorCRC                 := qLocal.FieldByname('EMP_CONTADOR_CRC'         ).AsString;
-    FContadorCelular1            := qLocal.FieldByname('EMP_CONTADOR_CEL1'        ).AsString;
-    FContadorCelular2            := qLocal.FieldByname('EMP_CONTADOR_CEL2'        ).AsString;
-    FContadorEmail               := qLocal.FieldByname('EMP_CONTADOR_EMAIL'       ).AsString;
 
     //PASSO 9
     Qlocal.Free;
@@ -569,17 +516,6 @@ begin
         qEmpresa.SQL.Add('       EMP_RESPONSAVEL_TELEFONE,  ');
         qEmpresa.SQL.Add('       EMP_RESPONSAVEL_CELULAR,   ');
         qEmpresa.SQL.Add('       EMP_RESPONSAVEL_EMAIL,     ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_EMPRESA,      ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_RESPONSAVEL,  ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_CNPJ,         ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_CPF,          ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_TEL1,         ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_TEL2,         ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_CRC,          ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_CEL1,         ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_CEL2,         ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_EMAIL,        ');
-
         //passo10
         qEmpresa.SQL.Add('     )                            ');
         qEmpresa.SQL.Add('VALUES                            ');
@@ -615,16 +551,7 @@ begin
         qEmpresa.SQL.Add('      :EMP_RESPONSAVEL_TELEFONE,  ');
         qEmpresa.SQL.Add('      :EMP_RESPONSAVEL_CELULAR,   ');
         qEmpresa.SQL.Add('      :EMP_RESPONSAVEL_EMAIL,     ');
-        qEmpresa.SQL.Add('      :EMP_CONTADOR_EMPRESA,      ');
-        qEmpresa.SQL.Add('      :EMP_CONTADOR_RESPONSAVEL,  ');
-        qEmpresa.SQL.Add('      :EMP_CONTADOR_CNPJ,         ');
-        qEmpresa.SQL.Add('      :EMP_CONTADOR_CPF,          ');
-        qEmpresa.SQL.Add('      :EMP_CONTADOR_TEL1,         ');
-        qEmpresa.SQL.Add('      :EMP_CONTADOR_TEL2,         ');
-        qEmpresa.SQL.Add('      :EMP_CONTADOR_CRC,          ');
-        qEmpresa.SQL.Add('      :EMP_CONTADOR_CEL1,         ');
-        qEmpresa.SQL.Add('      :EMP_CONTADOR_CEL2,         ');
-        qEmpresa.SQL.Add('      :EMP_CONTADOR_EMAIL,        ');
+
         qEmpresa.SQL.Add('     )                            ');
 
         //passo 11
@@ -674,16 +601,7 @@ begin
     qEmpresa.ParamByName('EMP_RESPONSAVEL_TELEFONE' ).AsString   := FResponsavelTelefone;
     qEmpresa.ParamByName('EMP_RESPONSAVEL_CELULAR'  ).AsString   := FResponsavelCelular;
     qEmpresa.ParamByName('EMP_RESPONSAVEL_EMAIL'    ).AsString   := FResponsavelEmail;
-    qEmpresa.ParamByName('EMP_CONTADOR_EMPRESA'     ).AsString   := FContadorEmpresa;
-    qEmpresa.ParamByName('EMP_CONTADOR_RESPONSAVEL' ).AsString   := FContadorResponsavel;
-    qEmpresa.ParamByName('EMP_CONTADOR_CNPJ'        ).AsString   := FContadorCNPJ;
-    qEmpresa.ParamByName('EMP_CONTADOR_CPF'         ).AsString   := FContadorCPF;
-    qEmpresa.ParamByName('EMP_CONTADOR_TEL1'        ).AsString   := FContadorTelefone1;
-    qEmpresa.ParamByName('EMP_CONTADOR_TEL2'        ).AsString   := FContadorTelefone2;
-    qEmpresa.ParamByName('EMP_CONTADOR_CRC'         ).AsString   := FContadorCRC;
-    qEmpresa.ParamByName('EMP_CONTADOR_CEL1'        ).AsString   := FContadorCelular1;
-    qEmpresa.ParamByName('EMP_CONTADOR_CEL2'        ).AsString   := FContadorCelular2;
-    qEmpresa.ParamByName('EMP_CONTADOR_EMAIL'       ).AsString   := FContadorEmail;
+
     //passo12
 end;
 
@@ -892,16 +810,6 @@ begin
         qEmpresa.SQL.Add('       EMP_RESPONSAVEL_TELEFONE  = :EMP_RESPONSAVEL_TELEFONE,  ');
         qEmpresa.SQL.Add('       EMP_RESPONSAVEL_CELULAR   = :EMP_RESPONSAVEL_CELULAR,   ');
         qEmpresa.SQL.Add('       EMP_RESPONSAVEL_EMAIL     = :EMP_RESPONSAVEL_EMAIL,     ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_EMPRESA      = :EMP_CONTADOR_EMPRESA,      ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_RESPONSAVEL  = :EMP_CONTADOR_RESPONSAVEL,  ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_CNPJ         = :EMP_CONTADOR_CNPJ,         ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_CPF          = :EMP_CONTADOR_CPF,          ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_TEL1         = :EMP_CONTADOR_TEL1,         ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_TEL2         = :EMP_CONTADOR_TEL2,         ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_CRC          = :EMP_CONTADOR_CRC,          ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_CEL1         = :EMP_CONTADOR_CEL1,         ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_CEL2         = :EMP_CONTADOR_CEL2,         ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_EMAIL        = :EMP_CONTADOR_EMAIL         ');
 
         //passo11
         Preencher_Parametros_Empresa;
@@ -913,106 +821,6 @@ begin
        ShowMessage('Erro ao alterar Empresa');
        LogErros('Erro ao alterar Empresa');
     end;
-end;
-
-function TEmpresa.getFContadorEmpresa: String;
-begin
-   Result := self.FContadorEmpresa;
-end;
-
-procedure TEmpresa.setFContadorEmpresa(const Value: String);
-begin
-  FContadorEmpresa  := Copy(Value,1,40);
-end;
-
-function TEmpresa.getFContadorResponsavel: String;
-begin
-   result := FContadorResponsavel;
-end;
-
-procedure TEmpresa.setFContadorResponsavel(const Value: String);
-begin
-  FContadorEmpresa  := Copy(Value,1,40);
-end;
-
-function TEmpresa.getFContadorCNPJ: String;
-begin
-   Result := self.FContadorCNPJ;
-end;
-
-procedure TEmpresa.setFContadorCNPJ(const Value: String);
-begin
-  FContadorCNPJ  := Copy(Value,1,14);
-end;
-
-function TEmpresa.getFContadorCPF: String;
-begin
-   Result := self.FContadorCPF;
-end;
-
-procedure TEmpresa.setFContadorCPF(const Value: String);
-begin
-  FContadorCPF  := Copy(Value,1,11);
-end;
-
-function TEmpresa.getFContadorTelefone1: String;
-begin
-   Result := self.FContadorTelefone1;
-end;
-
-procedure TEmpresa.setFContadorTelefone1(const Value: String);
-begin
-  FContadorTelefone1  := Copy(Value,1,40);
-end;
-
-function TEmpresa.getFContadorTelefone2: String;
-begin
-   Result := self.FContadorTelefone2;
-end;
-
-procedure TEmpresa.setFContadorTelefone2(const Value: String);
-begin
-  FContadorTelefone2  := Copy(Value,1,40);
-end;
-
-function TEmpresa.getFContadorCRC: String;
-begin
-   Result := self.FContadorCRC;
-end;
-
-procedure TEmpresa.setFContadorCRC(const Value: String);
-begin
-   FContadorCRC  := Copy(Value,1,20);
-end;
-
-function TEmpresa.getFContadorCelular1: String;
-begin
-   Result := self.FContadorCelular1;
-end;
-
-procedure TEmpresa.setFContadorCelular1(const Value: String);
-begin
-   FContadorCelular1  := Copy(Value,1,40);
-end;
-
-function TEmpresa.getFContadorCelular2: String;
-begin
-   Result := self.FContadorCelular2;
-end;
-
-procedure TEmpresa.setFContadorCelular2(const Value: String);
-begin
-   FContadorCelular1  := Copy(Value,1,40);
-end;
-
-function TEmpresa.getFContadorEmail: String;
-begin
-   Result := self.FContadorEmail;
-end;
-
-procedure TEmpresa.setFContadorEmail(const Value: String);
-begin
-  FContadorEmail := Copy(Value,1,40);
 end;
 
 end.

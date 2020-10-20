@@ -317,16 +317,6 @@ begin
     FResponsavelTelefone         := qLocal.FieldByname('EMP_RESPONSAVEL_TELEFONE' ).AsString;
     FResponsavelCelular          := qLocal.FieldByname('EMP_RESPONSAVEL_CELULAR'  ).AsString;
     FResponsavelEmail            := qLocal.FieldByname('EMP_RESPONSAVEL_EMAIL'    ).AsString;
-    FContadorEmpresa             := qLocal.FieldByname('EMP_CONTADOR_EMPRESA'     ).AsString;
-    FContadorResponsavel         := qLocal.FieldByname('EMP_CONTADOR_RESPONSAVEL' ).AsString;
-    FContadorCNPJ                := qLocal.FieldByname('EMP_CONTADOR_CNPJ'        ).AsString;
-    FContadorCPF                 := qLocal.FieldByname('EMP_CONTADOR_CPF'         ).AsString;
-    FContadorTelefone1           := qLocal.FieldByname('EMP_CONTADOR_TEL1'        ).AsString;
-    FContadorTelefone2           := qLocal.FieldByname('EMP_CONTADOR_TEL2'        ).AsString;
-    FContadorCRC                 := qLocal.FieldByname('EMP_CONTADOR_CRC'         ).AsString;
-    FContadorCelular1            := qLocal.FieldByname('EMP_CONTADOR_CEL1'        ).AsString;
-    FContadorCelular2            := qLocal.FieldByname('EMP_CONTADOR_CEL2'        ).AsString;
-    FContadorEmail               := qLocal.FieldByname('EMP_CONTADOR_EMAIL'       ).AsString;
 
     //PASSO 9
     Qlocal.Free;
@@ -569,17 +559,6 @@ begin
         qEmpresa.SQL.Add('       EMP_RESPONSAVEL_TELEFONE,  ');
         qEmpresa.SQL.Add('       EMP_RESPONSAVEL_CELULAR,   ');
         qEmpresa.SQL.Add('       EMP_RESPONSAVEL_EMAIL,     ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_EMPRESA,      ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_RESPONSAVEL,  ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_CNPJ,         ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_CPF,          ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_TEL1,         ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_TEL2,         ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_CRC,          ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_CEL1,         ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_CEL2,         ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_EMAIL,        ');
-
         //passo10
         qEmpresa.SQL.Add('     )                            ');
         qEmpresa.SQL.Add('VALUES                            ');
@@ -615,16 +594,16 @@ begin
         qEmpresa.SQL.Add('      :EMP_RESPONSAVEL_TELEFONE,  ');
         qEmpresa.SQL.Add('      :EMP_RESPONSAVEL_CELULAR,   ');
         qEmpresa.SQL.Add('      :EMP_RESPONSAVEL_EMAIL,     ');
-        qEmpresa.SQL.Add('      :EMP_CONTADOR_EMPRESA,      ');
-        qEmpresa.SQL.Add('      :EMP_CONTADOR_RESPONSAVEL,  ');
-        qEmpresa.SQL.Add('      :EMP_CONTADOR_CNPJ,         ');
-        qEmpresa.SQL.Add('      :EMP_CONTADOR_CPF,          ');
-        qEmpresa.SQL.Add('      :EMP_CONTADOR_TEL1,         ');
-        qEmpresa.SQL.Add('      :EMP_CONTADOR_TEL2,         ');
-        qEmpresa.SQL.Add('      :EMP_CONTADOR_CRC,          ');
-        qEmpresa.SQL.Add('      :EMP_CONTADOR_CEL1,         ');
-        qEmpresa.SQL.Add('      :EMP_CONTADOR_CEL2,         ');
-        qEmpresa.SQL.Add('      :EMP_CONTADOR_EMAIL,        ');
+        qEmpresa.SQL.Add('      :EMP_CONTADOR_EMPRESA'      ');
+        qEmpresa.SQL.Add('      :EMP_CONTADOR_RESPONSAVEL'  ');
+        qEmpresa.SQL.Add('      :EMP_CONTADOR_CNPJ'         ');
+        qEmpresa.SQL.Add('      :EMP_CONTADOR_CPF'          ');
+        qEmpresa.SQL.Add('      :EMP_CONTADOR_TEL1'         ');
+        qEmpresa.SQL.Add('      :EMP_CONTADOR_TEL2'         ');
+        qEmpresa.SQL.Add('      :EMP_CONTADOR_CRC'          ');
+        qEmpresa.SQL.Add('      :EMP_CONTADOR_CEL1'         ');
+        qEmpresa.SQL.Add('      :EMP_CONTADOR_CEL2'         ');
+        qEmpresa.SQL.Add('      :EMP_CONTADOR_EMAIL'        ');
         qEmpresa.SQL.Add('     )                            ');
 
         //passo 11
@@ -892,16 +871,6 @@ begin
         qEmpresa.SQL.Add('       EMP_RESPONSAVEL_TELEFONE  = :EMP_RESPONSAVEL_TELEFONE,  ');
         qEmpresa.SQL.Add('       EMP_RESPONSAVEL_CELULAR   = :EMP_RESPONSAVEL_CELULAR,   ');
         qEmpresa.SQL.Add('       EMP_RESPONSAVEL_EMAIL     = :EMP_RESPONSAVEL_EMAIL,     ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_EMPRESA      = :EMP_CONTADOR_EMPRESA,      ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_RESPONSAVEL  = :EMP_CONTADOR_RESPONSAVEL,  ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_CNPJ         = :EMP_CONTADOR_CNPJ,         ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_CPF          = :EMP_CONTADOR_CPF,          ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_TEL1         = :EMP_CONTADOR_TEL1,         ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_TEL2         = :EMP_CONTADOR_TEL2,         ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_CRC          = :EMP_CONTADOR_CRC,          ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_CEL1         = :EMP_CONTADOR_CEL1,         ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_CEL2         = :EMP_CONTADOR_CEL2,         ');
-        qEmpresa.SQL.Add('       EMP_CONTADOR_EMAIL        = :EMP_CONTADOR_EMAIL         ');
 
         //passo11
         Preencher_Parametros_Empresa;

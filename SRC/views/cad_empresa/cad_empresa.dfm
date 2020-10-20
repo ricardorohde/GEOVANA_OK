@@ -3025,7 +3025,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       OnClick = cxButton8Click
     end
   end
-  object grpContatoCont: TGroupBox
+  object gbContador: TGroupBox
     Left = 658
     Top = 412
     Width = 437
@@ -3168,12 +3168,14 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Style = []
       ParentFont = False
     end
-    object Edit37: TEdit
+    object edContadorEmpresa: TEdit
       Tag = 100
       Left = 98
       Top = 23
       Width = 314
       Height = 26
+      Cursor = crHandPoint
+      Color = 8454016
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNone
       Font.Height = -15
@@ -3183,12 +3185,14 @@ object frm_cad_empresa: Tfrm_cad_empresa
       TabOrder = 0
       Text = 'Edit1'
     end
-    object Edit38: TEdit
+    object edContadorResponsavel: TEdit
       Tag = 100
       Left = 98
       Top = 55
       Width = 314
       Height = 26
+      Cursor = crHandPoint
+      Color = 8454016
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNone
       Font.Height = -15
@@ -3198,11 +3202,13 @@ object frm_cad_empresa: Tfrm_cad_empresa
       TabOrder = 1
       Text = 'Edit1'
     end
-    object Edit39: TEdit
+    object edContadorCNPJ: TEdit
       Left = 98
       Top = 87
       Width = 118
       Height = 26
+      Cursor = crHandPoint
+      Color = 8454016
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNone
       Font.Height = -15
@@ -3212,11 +3218,13 @@ object frm_cad_empresa: Tfrm_cad_empresa
       TabOrder = 2
       Text = 'Edit1'
     end
-    object Edit40: TEdit
+    object edContadorCRC: TEdit
       Left = 98
-      Top = 118
+      Top = 117
       Width = 118
       Height = 26
+      Cursor = crHandPoint
+      Color = 8454016
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNone
       Font.Height = -15
@@ -3226,12 +3234,14 @@ object frm_cad_empresa: Tfrm_cad_empresa
       TabOrder = 3
       Text = 'Edit1'
     end
-    object Edit41: TEdit
+    object edContadorCelular1: TEdit
       Tag = 100
       Left = 98
       Top = 181
       Width = 118
       Height = 26
+      Cursor = crHandPoint
+      Color = 8454016
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNone
       Font.Height = -15
@@ -3241,12 +3251,14 @@ object frm_cad_empresa: Tfrm_cad_empresa
       TabOrder = 4
       Text = 'Edit1'
     end
-    object Edit42: TEdit
+    object edContadorEmail: TEdit
       Tag = 100
       Left = 98
       Top = 214
       Width = 314
       Height = 26
+      Cursor = crHandPoint
+      Color = 8454016
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNone
       Font.Height = -15
@@ -3256,12 +3268,14 @@ object frm_cad_empresa: Tfrm_cad_empresa
       TabOrder = 5
       Text = 'Edit1'
     end
-    object Edit43: TEdit
+    object edContadorTelefone1: TEdit
       Tag = 200
       Left = 98
       Top = 149
       Width = 118
       Height = 26
+      Cursor = crHandPoint
+      Color = 8454016
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNone
       Font.Height = -15
@@ -3271,11 +3285,13 @@ object frm_cad_empresa: Tfrm_cad_empresa
       TabOrder = 6
       Text = 'Edit1'
     end
-    object Edit44: TEdit
+    object edContadorCPF: TEdit
       Left = 294
       Top = 87
       Width = 118
       Height = 26
+      Cursor = crHandPoint
+      Color = 8454016
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNone
       Font.Height = -15
@@ -3285,12 +3301,14 @@ object frm_cad_empresa: Tfrm_cad_empresa
       TabOrder = 7
       Text = 'Edit1'
     end
-    object Edit45: TEdit
+    object edContadorTeleFone2: TEdit
       Tag = 200
       Left = 294
       Top = 149
       Width = 118
       Height = 26
+      Cursor = crHandPoint
+      Color = 8454016
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNone
       Font.Height = -15
@@ -3300,11 +3318,13 @@ object frm_cad_empresa: Tfrm_cad_empresa
       TabOrder = 8
       Text = 'Edit1'
     end
-    object Edit46: TEdit
+    object edContadorCelular2: TEdit
       Left = 294
       Top = 181
       Width = 118
       Height = 26
+      Cursor = crHandPoint
+      Color = 8454016
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNone
       Font.Height = -15

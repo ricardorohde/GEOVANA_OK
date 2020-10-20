@@ -317,16 +317,6 @@ begin
     FResponsavelTelefone         := qLocal.FieldByname('EMP_RESPONSAVEL_TELEFONE' ).AsString;
     FResponsavelCelular          := qLocal.FieldByname('EMP_RESPONSAVEL_CELULAR'  ).AsString;
     FResponsavelEmail            := qLocal.FieldByname('EMP_RESPONSAVEL_EMAIL'    ).AsString;
-    FContadorEmpresa             := qLocal.FieldByname('EMP_CONTADOR_EMPRESA'     ).AsString;
-    FContadorResponsavel         := qLocal.FieldByname('EMP_CONTADOR_RESPONSAVEL' ).AsString;
-    FContadorCNPJ                := qLocal.FieldByname('EMP_CONTADOR_CNPJ'        ).AsString;
-    FContadorCPF                 := qLocal.FieldByname('EMP_CONTADOR_CPF'         ).AsString;
-    FContadorTelefone1           := qLocal.FieldByname('EMP_CONTADOR_TEL1'        ).AsString;
-    FContadorTelefone2           := qLocal.FieldByname('EMP_CONTADOR_TEL2'        ).AsString;
-    FContadorCRC                 := qLocal.FieldByname('EMP_CONTADOR_CRC'         ).AsString;
-    FContadorCelular1            := qLocal.FieldByname('EMP_CONTADOR_CEL1'        ).AsString;
-    FContadorCelular2            := qLocal.FieldByname('EMP_CONTADOR_CEL2'        ).AsString;
-    FContadorEmail               := qLocal.FieldByname('EMP_CONTADOR_EMAIL'       ).AsString;
 
     //PASSO 9
     Qlocal.Free;
