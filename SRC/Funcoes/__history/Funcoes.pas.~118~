@@ -1215,10 +1215,8 @@ begin
      vPercentual := StrToFloat(MascToStr(pValor));
      if (vPercentual < 0  ) or
         (vPercentual > 100) then
-     begin
-       showmessage('Percentual inválido');
-       exit;
-     end;
+     showmessage('Percentual inválido');
+     exit;
    except
      showmessage('Percentual inválido');
      exit;

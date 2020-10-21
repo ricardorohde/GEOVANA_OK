@@ -302,6 +302,7 @@ begin
         Empresa.Telefone                    := edTelefone.Text;
         Empresa.Celular                     := edCelular.Text;
         Empresa.WhatsApp                    := edWhatsApp.Text;
+        Empresa.Email                       := edEmail.Text;
         Empresa.ContribuinteIPI             := cbContribuinteIPI.Checked;
         Empresa.ResponsavelNome             := edResponsavelNome.Text;
         Empresa.ResponsavelTelefone         := edResponsavelTelefone.Text;
@@ -361,11 +362,13 @@ begin
    edEnderecoBairro.Text              := Empresa.EnderecoBairro;
    edEnderecoComplemento.Text         := Empresa.EnderecoComplemento;
    edEnderecoMunicipio.Text           := Empresa.EnderecoMunicipio;
+   edEnderecoMunicipioIBGE.Text       := Empresa.EnderecoMunicipioIBGE;
    edEnderecoUF.Text                  := Empresa.EnderecoUF;
    edEnderecoUFIBGE.Text              := Empresa.EnderecoUFIBGE;
    edTelefone.Text                    := Empresa.Telefone;
    edCelular.Text                     := Empresa.Celular;
    edWhatsApp.Text                    := Empresa.WhatsApp;
+   edEmail.Text                       := Empresa.Email;
    cbContribuinteIPI.Checked          := Empresa.ContribuinteIPI;
    edResponsavelNome.Text             := Empresa.ResponsavelNome;
    edResponsavelTelefone.Text         := Empresa.ResponsavelTelefone;
@@ -382,8 +385,10 @@ begin
    edContadorCelular2.Text            := Empresa.ContadorCelular2;
    edContadorEmail.Text               := Empresa.ContadorEmail;
    edDataCadastro.Text                := Empresa.DataCadastroString;
-   edCodigoUniSystem.Text             := Empresa.CodigoUniSystem;
    rgPISCumulativo.ItemIndex          := f0ou1(Empresa.Tributacao.PIS.Cumulativo);
+   edPISAliquota.Text                 := FormatFloat('#.00',Empresa.Tributacao.PIS.Aliquota);
+   edDataCadastro.Text                := Empresa.DataCadastroString;
+   edCodigoUniSystem.Text             := Empresa.CodigoUniSystem;
 //PASSO 9 :)
    {
 

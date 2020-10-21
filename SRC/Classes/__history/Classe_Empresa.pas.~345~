@@ -67,7 +67,6 @@ type
 
     FExiste         : Boolean;
 
-    procedure Preencher_Parametros_Empresa(pQuery:TFDQuery);
     function getFNomeFantasia: String;
     function getFExiste: Boolean;
     function getFCodigoUniSystem: String;
@@ -89,6 +88,7 @@ type
     procedure setFInscricaoEstadual(const Value: String);
     function getFSUFRAMA: String;
     procedure setFSUFRAMA(const Value: String);
+    procedure Preencher_Parametros_Empresa;
     function getFCNAE: String;
     procedure setFCNAE(const Value: String);
     function getFCNPJ: String;
@@ -221,6 +221,8 @@ implementation
 
 uses Funcoes;
 
+var qEmpresa: TFDQuery;
+
 procedure TEmpresa.Abrir;
 var qLocal: TFDQuery;
 begin
@@ -336,7 +338,7 @@ end;
 
 function TEmpresa.getFEmail: String;
 begin
-   result := self.FEmail;
+   result := self.Email;
 end;
 
 function TEmpresa.getFTelefone: String;
@@ -509,7 +511,7 @@ begin
 end;
 
 function TEmpresa.Insert:Boolean;
-var qLocal:TFDQuery;
+var qLocal: TFDQuery;
 begin
     result := False;
     try
@@ -613,68 +615,66 @@ begin
         qLocal.SQL.Add('     )                            ');
 
         //passo 11
-        Preencher_Parametros_Empresa(qLocal);
+        Preencher_Parametros_Empresa;
         qLocal.ExecSql;
         qLocal.Free;
         Log('Incluiu empresa '+ Empresa.FNomeFantasia);
         Result := True;
     except
-       qLocal.Free;
        ShowMessage('Erro ao incluir Empresa');
        LOGErros('Erro ao incluir Empresa');
     end;
 end;
 
-procedure TEmpresa.Preencher_Parametros_Empresa(pQuery:TFDQuery);
+procedure TEmpresa.Preencher_Parametros_Empresa;
 begin
-    pQuery.ParamByName('EMP_PESSOAJF'             ).AsString   := FEMP_PESSOAJF;
-    pQuery.ParamByName('EMP_NOME_FANTASIA'        ).AsString   := FNomeFantasia;
-    pQuery.ParamByName('EMP_RAZAOSOCIAL'          ).AsString   := FRazaoSocial;
-    pQuery.ParamByName('EMP_CODIGO_UNISYSTEM'     ).AsString   := FCodigoUniSystem;
-    pQuery.ParamByName('EMP_INICIOATIVIDADES'     ).AsDateTime := FDataInicioAtividades;
+    qLocal.ParamByName('EMP_PESSOAJF'             ).AsString   := FEMP_PESSOAJF;
+    qLocal.ParamByName('EMP_NOME_FANTASIA'        ).AsString   := FNomeFantasia;
+    qLocal.ParamByName('EMP_RAZAOSOCIAL'          ).AsString   := FRazaoSocial;
+    qLocal.ParamByName('EMP_CODIGO_UNISYSTEM'     ).AsString   := FCodigoUniSystem;
+    qLocal.ParamByName('EMP_INICIOATIVIDADES'     ).AsDateTime := FDataInicioAtividades;
     if FAtiva then
-       pQuery.ParamByName('EMP_BLOQUEADA'         ).AsString   := 'N'
+       qLocal.ParamByName('EMP_BLOQUEADA'         ).AsString   := 'N'
     else
-       pQuery.ParamByName('EMP_BLOQUEADA'         ).AsString   := 'S';
-    pQuery.ParamByName('EMP_INSCRICAO_ESTADUAL'   ).AsString   := FInscricaoEstadual;
-    pQuery.ParamByName('EMP_INSCRICAO_MUNICIPAL'  ).AsString   := FInscricaoMunicipal;
-    pQuery.ParamByName('EMP_SUFRAMA'              ).AsString   := FSUFRAMA;
-    pQuery.ParamByName('EMP_CNAE'                 ).AsString   := FCNAE;
-    pQuery.ParamByName('EMP_CNPJ'                 ).AsString   := FCNPJ;
-    pQuery.ParamByName('EMP_NIRE'                 ).AsString   := FNIRE;
-    pQuery.ParamByName('EMP_INSCRICAO_ESTADUAL_ST').AsString   := FIESubstTributario;
-    pQuery.ParamByName('EMP_ENDERECO'             ).AsString   := FEnderecoRua;
-    pQuery.ParamByName('EMP_CEP'                  ).AsString   := FEnderecoCEP;
-    pQuery.ParamByName('EMP_ENDERECO_NUMERO'      ).AsString   := FEnderecoNumero;
-    pQuery.ParamByName('EMP_BAIRRO'               ).AsString   := FEnderecoBairro;
-    pQuery.ParamByName('EMP_ENDERECO_COMPLEMENTO' ).AsString   := FEnderecoComplemento;
-    pQuery.ParamByName('EMP_CIDADE'               ).AsString   := FEnderecoMunicipio;
-    pQuery.ParamByName('EMP_IBGECIDADE'           ).AsString   := FEnderecoMunicipioIBGE;
-    pQuery.ParamByName('EMP_UF'                   ).AsString   := FEnderecoUF;
-    pQuery.ParamByName('EMP_IBGEUF'               ).AsString   := FEnderecoUFIBGE;
-    pQuery.ParamByName('EMP_FONES'                ).AsString   := FTelefone;
-    pQuery.ParamByName('EMP_CELULAR'              ).AsString   := FCelular;
-    pQuery.ParamByName('EMP_WHATSAPP'             ).AsString   := FWhatsApp;
-    pQuery.ParamByName('EMP_EMAIL'                ).AsString   := FEmail;
-    pQuery.ParamByName('EMP_CONTRIBUINTE_IPI'     ).AsInteger  := f0ou1(FContribuinteIPI);
-    pQuery.ParamByName('EMP_RESPONSAVEL_NOME'     ).AsString   := FResponsavelNome;
-    pQuery.ParamByName('EMP_RESPONSAVEL_TELEFONE' ).AsString   := FResponsavelTelefone;
-    pQuery.ParamByName('EMP_RESPONSAVEL_CELULAR'  ).AsString   := FResponsavelCelular;
-    pQuery.ParamByName('EMP_RESPONSAVEL_EMAIL'    ).AsString   := FResponsavelEmail;
-    pQuery.ParamByName('EMP_CONTADOR_EMPRESA'     ).AsString   := FContadorEmpresa;
-    pQuery.ParamByName('EMP_CONTADOR_RESPONSAVEL' ).AsString   := FContadorResponsavel;
-    pQuery.ParamByName('EMP_CONTADOR_CNPJ'        ).AsString   := FContadorCNPJ;
-    pQuery.ParamByName('EMP_CONTADOR_CPF'         ).AsString   := FContadorCPF;
-    pQuery.ParamByName('EMP_CONTADOR_TEL1'        ).AsString   := FContadorTelefone1;
-    pQuery.ParamByName('EMP_CONTADOR_TEL2'        ).AsString   := FContadorTelefone2;
-    pQuery.ParamByName('EMP_CONTADOR_CRC'         ).AsString   := FContadorCRC;
-    pQuery.ParamByName('EMP_CONTADOR_CEL1'        ).AsString   := FContadorCelular1;
-    pQuery.ParamByName('EMP_CONTADOR_CEL2'        ).AsString   := FContadorCelular2;
-    pQuery.ParamByName('EMP_CONTADOR_EMAIL'       ).AsString   := FContadorEmail;
-    pQuery.ParamByName('EMP_DT'                   ).AsDateTime := FDataCadastro;
-    pQuery.ParamByName('EMP_CODIGO_UNISYSTEM'     ).AsString   := FCodigoUniSystem;
-    pQuery.ParamByName('EMP_PIS_CUMULATIVO'       ).AsInteger  := f0ou1(FTributacao.PIS.Cumulativo);
-    pQuery.ParamByName('EMP_PIS_ALIQUOTA'         ).AsFloat    := FTributacao.PIS.Aliquota;
+       qLocal.ParamByName('EMP_BLOQUEADA'         ).AsString   := 'S';
+    qLocal.ParamByName('EMP_INSCRICAO_ESTADUAL'   ).AsString   := FInscricaoEstadual;
+    qLocal.ParamByName('EMP_INSCRICAO_MUNICIPAL'  ).AsString   := FInscricaoMunicipal;
+    qLocal.ParamByName('EMP_SUFRAMA'              ).AsString   := FSUFRAMA;
+    qLocal.ParamByName('EMP_CNAE'                 ).AsString   := FCNAE;
+    qLocal.ParamByName('EMP_CNPJ'                 ).AsString   := FCNPJ;
+    qLocal.ParamByName('EMP_NIRE'                 ).AsString   := FNIRE;
+    qLocal.ParamByName('EMP_INSCRICAO_ESTADUAL_ST').AsString   := FIESubstTributario;
+    qLocal.ParamByName('EMP_ENDERECO'             ).AsString   := FEnderecoRua;
+    qLocal.ParamByName('EMP_CEP'                  ).AsString   := FEnderecoCEP;
+    qLocal.ParamByName('EMP_ENDERECO_NUMERO'      ).AsString   := FEnderecoNumero;
+    qLocal.ParamByName('EMP_BAIRRO'               ).AsString   := FEnderecoBairro;
+    qLocal.ParamByName('EMP_ENDERECO_COMPLEMENTO' ).AsString   := FEnderecoComplemento;
+    qLocal.ParamByName('EMP_CIDADE'               ).AsString   := FEnderecoMunicipio;
+    qLocal.ParamByName('EMP_IBGECIDADE'           ).AsString   := FEnderecoMunicipioIBGE;
+    qLocal.ParamByName('EMP_UF'                   ).AsString   := FEnderecoUF;
+    qLocal.ParamByName('EMP_IBGEUF'               ).AsString   := FEnderecoUFIBGE;
+    qLocal.ParamByName('EMP_FONES'                ).AsString   := FTelefone;
+    qLocal.ParamByName('EMP_CELULAR'              ).AsString   := FCelular;
+    qLocal.ParamByName('EMP_WHATSAPP'             ).AsString   := FWhatsApp;
+    qLocal.ParamByName('EMP_EMAIL'                ).AsString   := FEmail;
+    qLocal.ParamByName('EMP_CONTRIBUINTE_IPI'     ).AsInteger  := f0ou1(FContribuinteIPI);
+    qLocal.ParamByName('EMP_RESPONSAVEL_NOME'     ).AsString   := FResponsavelNome;
+    qLocal.ParamByName('EMP_RESPONSAVEL_TELEFONE' ).AsString   := FResponsavelTelefone;
+    qLocal.ParamByName('EMP_RESPONSAVEL_CELULAR'  ).AsString   := FResponsavelCelular;
+    qLocal.ParamByName('EMP_RESPONSAVEL_EMAIL'    ).AsString   := FResponsavelEmail;
+    qLocal.ParamByName('EMP_CONTADOR_EMPRESA'     ).AsString   := FContadorEmpresa;
+    qLocal.ParamByName('EMP_CONTADOR_RESPONSAVEL' ).AsString   := FContadorResponsavel;
+    qLocal.ParamByName('EMP_CONTADOR_CNPJ'        ).AsString   := FContadorCNPJ;
+    qLocal.ParamByName('EMP_CONTADOR_CPF'         ).AsString   := FContadorCPF;
+    qLocal.ParamByName('EMP_CONTADOR_TEL1'        ).AsString   := FContadorTelefone1;
+    qLocal.ParamByName('EMP_CONTADOR_TEL2'        ).AsString   := FContadorTelefone2;
+    qLocal.ParamByName('EMP_CONTADOR_CRC'         ).AsString   := FContadorCRC;
+    qLocal.ParamByName('EMP_CONTADOR_CEL1'        ).AsString   := FContadorCelular1;
+    qLocal.ParamByName('EMP_CONTADOR_CEL2'        ).AsString   := FContadorCelular2;
+    qLocal.ParamByName('EMP_CONTADOR_EMAIL'       ).AsString   := FContadorEmail;
+    qLocal.ParamByName('EMP_DT'                   ).AsDateTime := FDataCadastro;
+    qLocal.ParamByName('EMP_PIS_CUMULATIVO'       ).AsInteger  := f0ou1(FTributacao.PIS.Cumulativo);
+    qLocal.ParamByName('EMP_PIS_ALIQUOTA'         ).AsFloat    := FTributacao.PIS.Aliquota;
     //passo12
 end;
 
@@ -766,7 +766,7 @@ end;
 
 procedure TEmpresa.setFCodigoUniSystem(const Value: String);
 begin
-  self.FCodigoUniSystem := Copy(Value,1,10);
+  FCodigoUniSystem := Copy(Value,10);
 end;
 
 procedure TEmpresa.setFContribuinteIPI(const Value: Boolean);
@@ -864,6 +864,7 @@ begin
         qLocal.SQL.Add('UPDATE EMPRESA_EMP                                             ');
         qLocal.SQL.Add('   SET EMP_NOME_FANTASIA         = :EMP_NOME_FANTASIA,         ');
         qLocal.SQL.Add('       EMP_RAZAOSOCIAL           = :EMP_RAZAOSOCIAL,           ');
+        qLocal.SQL.Add('       EMP_CODIGO_UNISYSTEM      = :EMP_CODIGO_UNISYSTEM,      ');
         qLocal.SQL.Add('       EMP_INICIOATIVIDADES      = :EMP_INICIOATIVIDADES,      ');
         qLocal.SQL.Add('       EMP_BLOQUEADA             = :EMP_BLOQUEADA,             ');
         qLocal.SQL.Add('       EMP_PESSOAJF              = :EMP_PESSOAJF,              ');
@@ -902,14 +903,12 @@ begin
         qLocal.SQL.Add('       EMP_CONTADOR_CEL1         = :EMP_CONTADOR_CEL1,         ');
         qLocal.SQL.Add('       EMP_CONTADOR_CEL2         = :EMP_CONTADOR_CEL2,         ');
         qLocal.SQL.Add('       EMP_CONTADOR_EMAIL        = :EMP_CONTADOR_EMAIL,        ');
-        qLocal.SQL.Add('       EMP_PIS_CUMULATIVO        = :EMP_PIS_CUMULATIVO,        ');
-        qLocal.SQL.Add('       EMP_PIS_ALIQUOTA          = :EMP_PIS_ALIQUOTA,          ');
-
         qLocal.SQL.Add('       EMP_DT                    = :EMP_DT,                    ');
-        qLocal.SQL.Add('       EMP_CODIGO_UNISYSTEM      = :EMP_CODIGO_UNISYSTEM       ');
+        qLocal.SQL.Add('       EMP_PIS_CUMULATIVO        = :EMP_PIS_CUMULATIVO,        ');
+        qLocal.SQL.Add('       EMP_PIS_ALIQUOTA          = :EMP_PIS_ALIQUOTA           ');
 
         //passo11
-        Preencher_Parametros_Empresa(qLocal);
+        Preencher_Parametros_Empresa;
         qLocal.ExecSql;
         qLocal.Free;
         Log('Alterou empresa '+ Empresa.FNomeFantasia);

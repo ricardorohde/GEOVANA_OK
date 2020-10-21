@@ -263,7 +263,8 @@
             <Form>frm_acesso_remoto</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="..\..\SRC\Classes\Classe_EmpresaTributacao.pas"/>
+        <DCCReference Include="..\..\src\Classes\Classe_TributacaoPIS.pas"/>
+        <DCCReference Include="..\..\src\Classes\Classe_EmpresaTributacao.pas"/>
         <None Include="ModelSupport_SMC_PLUS_\default.txaPackage"/>
         <None Include="ModelSupport_SMC_PLUS_\default.txvpck"/>
         <None Include="ModelSupport_SMC_PLUS_\vw_Login\default.txvpck"/>

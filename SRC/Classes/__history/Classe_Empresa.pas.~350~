@@ -336,7 +336,7 @@ end;
 
 function TEmpresa.getFEmail: String;
 begin
-   result := self.FEmail;
+   result := self.Email;
 end;
 
 function TEmpresa.getFTelefone: String;
@@ -672,7 +672,6 @@ begin
     pQuery.ParamByName('EMP_CONTADOR_CEL2'        ).AsString   := FContadorCelular2;
     pQuery.ParamByName('EMP_CONTADOR_EMAIL'       ).AsString   := FContadorEmail;
     pQuery.ParamByName('EMP_DT'                   ).AsDateTime := FDataCadastro;
-    pQuery.ParamByName('EMP_CODIGO_UNISYSTEM'     ).AsString   := FCodigoUniSystem;
     pQuery.ParamByName('EMP_PIS_CUMULATIVO'       ).AsInteger  := f0ou1(FTributacao.PIS.Cumulativo);
     pQuery.ParamByName('EMP_PIS_ALIQUOTA'         ).AsFloat    := FTributacao.PIS.Aliquota;
     //passo12
@@ -766,7 +765,7 @@ end;
 
 procedure TEmpresa.setFCodigoUniSystem(const Value: String);
 begin
-  self.FCodigoUniSystem := Copy(Value,1,10);
+  FCodigoUniSystem := Copy(Value,10);
 end;
 
 procedure TEmpresa.setFContribuinteIPI(const Value: Boolean);
@@ -864,6 +863,7 @@ begin
         qLocal.SQL.Add('UPDATE EMPRESA_EMP                                             ');
         qLocal.SQL.Add('   SET EMP_NOME_FANTASIA         = :EMP_NOME_FANTASIA,         ');
         qLocal.SQL.Add('       EMP_RAZAOSOCIAL           = :EMP_RAZAOSOCIAL,           ');
+        qLocal.SQL.Add('       EMP_CODIGO_UNISYSTEM      = :EMP_CODIGO_UNISYSTEM,      ');
         qLocal.SQL.Add('       EMP_INICIOATIVIDADES      = :EMP_INICIOATIVIDADES,      ');
         qLocal.SQL.Add('       EMP_BLOQUEADA             = :EMP_BLOQUEADA,             ');
         qLocal.SQL.Add('       EMP_PESSOAJF              = :EMP_PESSOAJF,              ');
@@ -902,11 +902,9 @@ begin
         qLocal.SQL.Add('       EMP_CONTADOR_CEL1         = :EMP_CONTADOR_CEL1,         ');
         qLocal.SQL.Add('       EMP_CONTADOR_CEL2         = :EMP_CONTADOR_CEL2,         ');
         qLocal.SQL.Add('       EMP_CONTADOR_EMAIL        = :EMP_CONTADOR_EMAIL,        ');
-        qLocal.SQL.Add('       EMP_PIS_CUMULATIVO        = :EMP_PIS_CUMULATIVO,        ');
-        qLocal.SQL.Add('       EMP_PIS_ALIQUOTA          = :EMP_PIS_ALIQUOTA,          ');
-
         qLocal.SQL.Add('       EMP_DT                    = :EMP_DT,                    ');
-        qLocal.SQL.Add('       EMP_CODIGO_UNISYSTEM      = :EMP_CODIGO_UNISYSTEM       ');
+        qLocal.SQL.Add('       EMP_PIS_CUMULATIVO        = :EMP_PIS_CUMULATIVO,        ');
+        qLocal.SQL.Add('       EMP_PIS_ALIQUOTA          = :EMP_PIS_ALIQUOTA           ');
 
         //passo11
         Preencher_Parametros_Empresa(qLocal);

@@ -766,7 +766,7 @@ end;
 
 procedure TEmpresa.setFCodigoUniSystem(const Value: String);
 begin
-  self.FCodigoUniSystem := Copy(Value,1,10);
+  FCodigoUniSystem := Copy(Value,10);
 end;
 
 procedure TEmpresa.setFContribuinteIPI(const Value: Boolean);

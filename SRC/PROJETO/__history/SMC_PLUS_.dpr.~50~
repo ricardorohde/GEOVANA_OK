@@ -47,8 +47,7 @@ uses
   cad_empresa in '..\..\src\views\cad_empresa\cad_empresa.pas' {frm_cad_empresa},
   U_Municipio in '..\..\src\views\consultar_municipio\U_Municipio.pas' {Frm_Municipio},
   vw_acesso_remoto in '..\..\src\views\Acesso_Remoto\vw_acesso_remoto.pas' {frm_acesso_remoto},
-  Classe_TributacaoPIS in '..\..\src\Classes\Classe_TributacaoPIS.pas',
-  Classe_EmpresaTributacao in '..\..\src\Classes\Classe_EmpresaTributacao.pas';
+  Classe_EmpresaTributacao in '..\..\SRC\Classes\Classe_EmpresaTributacao.pas';
 
 {$R *.res}
 
