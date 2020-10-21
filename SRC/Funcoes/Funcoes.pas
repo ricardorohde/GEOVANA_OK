@@ -43,6 +43,8 @@ var Acesso : TAcesso;
     xxxAtualizado,
     globalFuncoes_Atualizado:String;
 
+function PercentualValido(pValor:String):Boolean;
+function masctostr(numero:string):string;
 function f0ou1(pBoolean:Boolean):Integer;
 function SoNumeros(pnumero:String):String;
 function SoNumerosI(pnumero:String):Integer;
@@ -913,7 +915,7 @@ begin
       //Edit
       if pTela.Components[vComponent] is tEdit then
       begin
-         if (pTela.Components[vComponent] as tEdit).Tag = 123 then
+         if (pTela.Components[vComponent] as tEdit).Tag = 100 then
          begin
             if (pTela.Components[vComponent] as tEdit).Text = '' then
             begin
@@ -935,6 +937,8 @@ begin
          end;
       end;
    end;
+   pTela.Refresh;
+   Application.ProcessMessages;
    if result then
    begin
      ShowMessage('Preencha os campos obrigatórios assinalados');
@@ -943,11 +947,16 @@ end;
 
 procedure Destroi_Objetos_das_Classes;
 begin
+    Usuario.Free;
+    Empresa.Free;
     Acesso.Desconectar;
     Acesso.Free;
-    Empresa.Free;
-    Usuario.Free;
     //VerificacaoInicial.Free;
+    {
+    FreeAndNil(Acesso);
+    FreeAndNil(Empresa);
+    FreeAndNil(Usuario);
+    }
 end;
 
 procedure Gravar_Dados_do_Ultimo_Acesso(pEmpresa:String);
@@ -1170,6 +1179,51 @@ function SoNumerosI(pnumero:String):Integer;
 begin
      Result := StrToInt(SoNumeros(pNumero));
 end;
+
+function masctostr(numero:string):string;
+(* masctostr = mascara(gerada pela funcao format) to string
+   esta funcao recebe uma mascara de numero como parametro gerada pel
+   funcao format e gera uma string sem formato
+   ex: masctostr('  10.905,25')  =  '10905,25'
+       masctostr('R$10.905,25')  =  '10905,25'
+       masctostr(' -10.905,25')  = '-10905,25' // wander 02/09/03
+*)
+var i:integer;
+    masctostr_numero1:string;
+begin
+        if numero = '' then numero := '0';
+
+        for i:=1 to length(numero) do
+        begin
+           case numero[i] of
+             '0'..'9':masctostr_numero1:=masctostr_numero1+numero[i];
+             ',':masctostr_numero1:=masctostr_numero1+numero[i];
+             '-':masctostr_numero1:=masctostr_numero1+numero[i]; // wander: para incluir os negativos
+           end;
+        end;
+//   masctostr:=masctostr_numero1;
+     Result := masctostr_numero1;
+     i := i + 1;
+     i := i + 1;
+end;
+
+function PercentualValido(pValor:String):Boolean;
+var vPercentual : Real;
+begin
+   result := false;
+   try
+     vPercentual := StrToFloat(MascToStr(pValor));
+     if (vPercentual < 0  ) or
+        (vPercentual > 100) then
+     showmessage('Percentual inválido');
+     exit;
+   except
+     showmessage('Percentual inválido');
+     exit;
+   end;
+   result := true;
+end;
+
 Function fNomeDoSistema:String;
 begin
      Result := 'SMC Plus';

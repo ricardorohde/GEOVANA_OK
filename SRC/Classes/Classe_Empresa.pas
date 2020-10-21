@@ -6,9 +6,12 @@ uses Classes, Dialogs, SysUtils, IniFiles,
      FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
      FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet,
      FireDAC.Comp.Client,
-     FireDAC.Stan.Intf, FireDAC.Stan.Option;
+     FireDAC.Stan.Intf, FireDAC.Stan.Option,
+
+     Classe_EmpresaTributacao;
 
 type
+
    TEmpresa = class
   private
 	  FAtiva                       : Boolean;   // EMP_BLOQUEADA        varchar(1)  NULL
@@ -16,6 +19,7 @@ type
     FCodigoUniSystem             : String;    // EMP_CODIGO_UNISYSTEM varchar(10) NULL
 	  FRazaoSocial                 : String;    // EMP_RAZAOSOCIAL      varchar(30) NULL
     FPessoaJuridica              : Boolean;   // EMP_PESSOAJF         varchar(1)  NULL
+    FEMP_PESSOAJF                : String;
     FDataInicioAtividades        : TDateTime; // EMP_INICIOATIVIDADES DATETIME    NULL
     FDataInicioAtividadesString  : String;
     FInscricaoEstadual           : String;    // EMP_INSCRICAO_ESTADUAL    varchar(20) NULL
@@ -55,21 +59,13 @@ type
     FContadorEmail               : String;    // EMP_CONTADOR_EMAIL         VARCHAR(40) MULL
     FDataCadastro                : TDateTime; // EMP_DT                     DATETIME    NULL
     FDataCadastroString          : String;
-
+    FTributacao                  : TTributosDeEmpresa;
 
 //  FNomeDecente         : String;   // EMP_SEI LA O  QUE.....
 //PASSO 3
-{
-
-
-
-  }
-
 
 
     FExiste         : Boolean;
-
-
 
     function getFNomeFantasia: String;
     function getFExiste: Boolean;
@@ -165,6 +161,8 @@ type
     procedure setFDataCadastro(const Value: TDateTime);
 
    public
+    constructor Create;
+    destructor Destroy; override;
       property NomeFantasia                : String    read getFNomeFantasia                write setFNomeFantasia;
       property RazaoSocial                 : String    read getFRazaoSocial                 write setFRazaoSocial;
       property CodigoUniSystem             : String    read getFCodigoUniSystem             write setFCodigoUniSystem;
@@ -210,21 +208,13 @@ type
       property ContadorEmail               : String    read getFContadorEmail               write setFContadorEmail;
       property DataCadastro                : TDateTime read getFDataCadastro                write setFDataCadastro;
       property DataCadastroString          : String    read getDataCadastroString;
-
-
+      property Tributacao                  : TTributosDeEmpresa read FTributacao write FTributacao;
 
      //PASSO 4
       procedure Abrir;
       Function Gravar:Boolean;
    end;
 
-{
-UPDATE EMPRESA_EMP SET EMP_CONTRIBUINTE_IPI = 1
-UPDATE EMPRESA_EMP SET EMP_APURACAO_MENSAL = 1
-UPDATE EMPRESA_EMP SET EMP_CELULAR = 'CEL TEST'
-UPDATE EMPRESA_EMP SET EMP_WHATSAPP = 'ZAP TEST'
-
-}
 
 implementation
 { TEmpresa }
@@ -290,20 +280,33 @@ begin
     FContadorCelular2            := qLocal.FieldByname('EMP_CONTADOR_CEL2'        ).AsString;
     FContadorEmail               := qLocal.FieldByname('EMP_CONTADOR_EMAIL'       ).AsString;
     FDataCadastro                := qLocal.FieldByName('EMP_DT'                   ).AsDateTime;
-
+    FTributacao.PIS.Cumulativo   :=(qLocal.FieldByName('EMP_PIS_CUMULATIVO'       ).AsInteger = 1);
+    FTributacao.PIS.Aliquota     := qLocal.FieldByName('EMP_PIS_ALIQUOTA'         ).AsFloat;
     //PASSO 9
     Qlocal.Free;
+end;
+
+constructor TEmpresa.Create;
+begin
+   FTributacao := TTributosDeEmpresa.Create;
 end;
 
 function TEmpresa.DadosCorretos: Boolean;
 begin
     Result := False;
-    if NaoInformadoString(FNomeFantasia   ,'Nome Fantasia'   ) or
-       NaoInformadoString(FCodigoUniSystem,'Código Unisystem') or
-	     NaoInformadoString(FRazaoSocial    ,'Razão Social'    ) then
-       exit;
+ //   if NaoInformadoString(FNomeFantasia   ,'Nome Fantasia'   ) or
+ //      NaoInformadoString(FCodigoUniSystem,'Código Unisystem') or
+ //	     NaoInformadoString(FRazaoSocial    ,'Razão Social'    ) then
+ //      exit;
 
     Result := True;
+end;
+
+
+destructor TEmpresa.Destroy;
+begin
+  FTributacao.Free;
+  inherited;
 end;
 
 function TEmpresa.getDataCadastroString: String;
@@ -553,8 +556,8 @@ begin
         qEmpresa.SQL.Add('       EMP_CONTADOR_CEL2,         ');
         qEmpresa.SQL.Add('       EMP_CONTADOR_EMAIL,        ');
         qEmpresa.SQL.Add('       EMP_DT,                    ');
-
-        //passo10
+        qEmpresa.SQL.Add('       EMP_PIS_CUMULATIVO,        ');
+        qEmpresa.SQL.Add('       EMP_PIS_ALIQUOTA           ');
         qEmpresa.SQL.Add('     )                            ');
         qEmpresa.SQL.Add('VALUES                            ');
         qEmpresa.SQL.Add('     (                            ');
@@ -600,6 +603,8 @@ begin
         qEmpresa.SQL.Add('      :EMP_CONTADOR_CEL2,         ');
         qEmpresa.SQL.Add('      :EMP_CONTADOR_EMAIL,        ');
         qEmpresa.SQL.Add('      :EMP_DT,                    ');
+        qEmpresa.SQL.Add('      :EMP_PIS_CUMULATIVO,        ');
+        qEmpresa.SQL.Add('      :EMP_PIS_ALIQUOTA           ');
         qEmpresa.SQL.Add('     )                            ');
 
         //passo 11
@@ -616,6 +621,7 @@ end;
 
 procedure TEmpresa.Preencher_Parametros_Empresa;
 begin
+    qEmpresa.ParamByName('EMP_PESSOAJF'             ).AsString   := FEMP_PESSOAJF;
     qEmpresa.ParamByName('EMP_NOME_FANTASIA'        ).AsString   := FNomeFantasia;
     qEmpresa.ParamByName('EMP_RAZAOSOCIAL'          ).AsString   := FRazaoSocial;
     qEmpresa.ParamByName('EMP_CODIGO_UNISYSTEM'     ).AsString   := FCodigoUniSystem;
@@ -660,7 +666,8 @@ begin
     qEmpresa.ParamByName('EMP_CONTADOR_CEL2'        ).AsString   := FContadorCelular2;
     qEmpresa.ParamByName('EMP_CONTADOR_EMAIL'       ).AsString   := FContadorEmail;
     qEmpresa.ParamByName('EMP_DT'                   ).AsDateTime := FDataCadastro;
-
+    qEmpresa.ParamByName('EMP_PIS_CUMULATIVO'       ).AsInteger  := f0ou1(FTributacao.PIS.Cumulativo);
+    qEmpresa.ParamByName('EMP_PIS_ALIQUOTA'         ).AsFloat    := FTributacao.PIS.Aliquota;
     //passo12
 end;
 
@@ -712,7 +719,7 @@ end;
 
 procedure TEmpresa.setFEnderecoMunicipioIBGE(const Value: String);
 begin
-   EnderecoMunicipioIBGE := Copy(Value,1,10)
+   FEnderecoMunicipioIBGE := Copy(Value,1,10)
 end;
 
 procedure TEmpresa.setFEnderecoComplemento(const Value: String);
@@ -808,6 +815,10 @@ end;
 procedure TEmpresa.setFPessoaJuridica(const Value: Boolean);
 begin
    FPessoaJuridica := Value;
+   if value then
+      self.FEMP_PESSOAJF := 'J'
+   else
+      self.FEMP_PESSOAJF := 'F';
 end;
 
 procedure TEmpresa.setFRazaoSocial(const Value: String);
@@ -884,7 +895,9 @@ begin
         qEmpresa.SQL.Add('       EMP_CONTADOR_CEL1         = :EMP_CONTADOR_CEL1,         ');
         qEmpresa.SQL.Add('       EMP_CONTADOR_CEL2         = :EMP_CONTADOR_CEL2,         ');
         qEmpresa.SQL.Add('       EMP_CONTADOR_EMAIL        = :EMP_CONTADOR_EMAIL,        ');
-        qEmpresa.SQL.Add('       EMP_DT                    = :EMP_DT                     ');
+        qEmpresa.SQL.Add('       EMP_DT                    = :EMP_DT,                    ');
+        qEmpresa.SQL.Add('       EMP_PIS_CUMULATIVO        = :EMP_PIS_CUMULATIVO,        ');
+        qEmpresa.SQL.Add('       EMP_PIS_ALIQUOTA          = :EMP_PIS_ALIQUOTA           ');
 
         //passo11
         Preencher_Parametros_Empresa;

@@ -158,7 +158,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000}
-    TabOrder = 0
+    TabOrder = 9
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -167,162 +167,12 @@ object frm_cad_empresa: Tfrm_cad_empresa
     ParentFont = False
     OnClick = BtnGravarClick
   end
-  object BtnAlterar: TcxButton
-    Left = 1132
-    Top = 56
-    Width = 105
-    Height = 42
-    Caption = 'Alterar'
-    LookAndFeel.Kind = lfOffice11
-    LookAndFeel.NativeStyle = False
-    LookAndFeel.SkinName = 'Metropolis'
-    OptionsImage.Glyph.Data = {
-      36100000424D3610000000000000360000002800000020000000200000000100
-      2000000000000010000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      000000000000000000000000000000000000B8824DFFB8824DFFB8824DFFA272
-      44E0060503090000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      000000000000000000000000000000000000B8824DFFB8824DFFA47445E31B13
-      0B250B08050F3324154700000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      000000000000000000000000000000000000B8824DFFA47445E31B130B250B08
-      050F8E643BC5B6804CFC3F2C1A57000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000009C6E41D81B130B250B08050F8E64
-      3BC5B8824DFFB8824DFFB6804CFC3F2C1A570000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000806030B0B08050F8E643BC5B882
-      4DFFB8824DFFB8824DFFB8824DFFB6804CFC3F2C1A5700000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      000000000000000000000000000000000000000000003A291851B7814DFEB882
-      4DFFB8824DFFB8824DFFB8824DFFB8824DFFB6804CFC3F2C1A57000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      000000000000000000000000000000000000000000000000000049331E65B781
-      4DFEB8824DFFB8824DFFB8824DFFB8824DFFB8824DFFB6804CFC3F2C1A570000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000004933
-      1E65B7814DFEB8824DFFB8824DFFB8824DFFB8824DFFB8824DFFB6804CFC3F2C
-      1A57000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      000049331E65B7814DFEB8824DFFB8824DFFB8824DFFB8824DFFB8824DFFB680
-      4CFC3F2C1A570000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      00000000000049331E65B7814DFEB8824DFFB8824DFFB8824DFFB8824DFFB882
-      4DFFB6804CFC3F2D1B5800000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000049331E65B7814DFEB8824DFFB8824DFFB8824DFFB882
-      4DFFB8824DFFB6804CFC3F2D1B58000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      000000000000000000000000000049331E65B7814DFEB8824DFFB8824DFFB882
-      4DFFB8824DFFB8824DFFB6804CFC3F2D1B580000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      00000000000000000000000000000000000049331E65B7814DFEB8824DFFB882
-      4DFFB8824DFFB8824DFFB8824DFFB6804CFC3F2D1B5800000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000049331E65B7814DFEB882
-      4DFFB8824DFFB8824DFFB8824DFFB8824DFF9A6D40D503020104000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      000000000000000000000000000000000000000000000000000049331E65B781
-      4DFEB8824DFFB8824DFFB8824DFF9C6E41D8120D0819110C07173928184F0000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000004933
-      1E65B7814DFEB8824DFF9C6E41D8120D0819110C07179A6D40D5B6804CFC3F2D
-      1B58000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      000049331E659B6E41D7120D0819110C07179A6D40D5B8824DFFB8824DFFB680
-      4CFC3F2D1B580000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      00000000000005040207100B07169A6D40D5B8824DFFB8824DFFB8824DFFB882
-      4DFF795532A70000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      000000000000000000003F2D1B58B7814DFEB8824DFFB8824DFFB8824DFF7B57
-      33AA020201030000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      000000000000000000000000000049331E65B7814DFEB8824DFF7B5733AA0202
-      0103000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      00000000000000000000000000000000000049331E657A5633A9020201030000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000}
-    TabOrder = 1
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'HelveticaNeue'
-    Font.Style = [fsBold]
-    Font.Quality = fqDraft
-    ParentFont = False
-  end
   object GroupBox1: TGroupBox
     Left = 21
     Top = 388
     Width = 625
     Height = 228
     Caption = '  Par'#226'metros de Tributa'#231#227'o'
-    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clNone
     Font.Height = -15
@@ -330,6 +180,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 2
+    TabStop = True
     object grpPisCofins: TGroupBox
       Left = 162
       Top = 80
@@ -342,61 +193,8 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 0
-      object chk_2: TcxCheckBox
-        Left = 6
-        Top = 53
-        Caption = 'N'#227'o Cumulativo'
-        ParentBackground = False
-        ParentColor = False
-        ParentFont = False
-        State = cbsChecked
-        Style.BorderColor = clWindow
-        Style.Color = clBtnHighlight
-        Style.Font.Charset = DEFAULT_CHARSET
-        Style.Font.Color = clNone
-        Style.Font.Height = -12
-        Style.Font.Name = 'Tahoma'
-        Style.Font.Style = [fsBold]
-        Style.LookAndFeel.NativeStyle = False
-        Style.LookAndFeel.SkinName = 'Office2013White'
-        Style.Shadow = False
-        Style.IsFontAssigned = True
-        StyleDisabled.LookAndFeel.NativeStyle = False
-        StyleDisabled.LookAndFeel.SkinName = 'Office2013White'
-        StyleFocused.LookAndFeel.NativeStyle = False
-        StyleFocused.LookAndFeel.SkinName = 'Office2013White'
-        StyleHot.LookAndFeel.NativeStyle = False
-        StyleHot.LookAndFeel.SkinName = 'Office2013White'
-        TabOrder = 1
-      end
-      object chk_1: TcxCheckBox
-        Left = 6
-        Top = 21
-        Caption = 'Cumulativo'
-        ParentBackground = False
-        ParentColor = False
-        ParentFont = False
-        Style.BorderColor = clWindow
-        Style.Color = clBtnHighlight
-        Style.Font.Charset = DEFAULT_CHARSET
-        Style.Font.Color = clNone
-        Style.Font.Height = -12
-        Style.Font.Name = 'Tahoma'
-        Style.Font.Style = [fsBold]
-        Style.LookAndFeel.NativeStyle = False
-        Style.LookAndFeel.SkinName = 'Office2013White'
-        Style.Shadow = False
-        Style.IsFontAssigned = True
-        StyleDisabled.LookAndFeel.NativeStyle = False
-        StyleDisabled.LookAndFeel.SkinName = 'Office2013White'
-        StyleFocused.LookAndFeel.NativeStyle = False
-        StyleFocused.LookAndFeel.SkinName = 'Office2013White'
-        StyleHot.LookAndFeel.NativeStyle = False
-        StyleHot.LookAndFeel.SkinName = 'Office2013White'
-        TabOrder = 0
-      end
-      object Edit4: TEdit
+      TabOrder = 1
+      object edPISAliquota: TEdit
         Left = 144
         Top = 17
         Width = 49
@@ -407,21 +205,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 2
-        Text = 'Edit1'
-      end
-      object Edit5: TEdit
-        Left = 144
-        Top = 48
-        Width = 49
-        Height = 26
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clRed
-        Font.Height = -15
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
-        TabOrder = 3
+        TabOrder = 1
         Text = 'Edit1'
       end
       object ed_EMPRESA_pCOFINS: TEdit
@@ -435,22 +219,23 @@ object frm_cad_empresa: Tfrm_cad_empresa
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 4
+        TabOrder = 2
         Text = '0,00'
       end
-      object Edit7: TEdit
-        Left = 220
-        Top = 48
-        Width = 49
-        Height = 26
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clRed
-        Font.Height = -15
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
-        TabOrder = 5
-        Text = 'Edit1'
+      object rgPISCumulativo: TRadioGroup
+        Left = 2
+        Top = 16
+        Width = 135
+        Height = 60
+        Ctl3D = False
+        DoubleBuffered = False
+        Items.Strings = (
+          'N'#227'o Comulativo'
+          'Cumulativo')
+        ParentBackground = False
+        ParentCtl3D = False
+        ParentDoubleBuffered = False
+        TabOrder = 0
       end
     end
     object cxCheckBox1: TcxCheckBox
@@ -477,7 +262,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       StyleFocused.LookAndFeel.SkinName = 'Office2013White'
       StyleHot.LookAndFeel.NativeStyle = False
       StyleHot.LookAndFeel.SkinName = 'Office2013White'
-      TabOrder = 1
+      TabOrder = 3
     end
     object GroupBox3: TGroupBox
       Left = 453
@@ -535,7 +320,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 3
+      TabOrder = 0
       object cbContribuinteIPI: TcxCheckBox
         Left = 20
         Top = 21
@@ -641,7 +426,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
     ParentBackground = False
     ParentColor = False
     ParentFont = False
-    TabOrder = 3
+    TabOrder = 11
     object BtnCertificado: TcxButton
       Left = 10
       Top = 7
@@ -1226,7 +1011,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000}
-      TabOrder = 2
+      TabOrder = 3
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -13
@@ -1517,7 +1302,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000}
-      TabOrder = 3
+      TabOrder = 4
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -13
@@ -1808,7 +1593,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000}
-      TabOrder = 4
+      TabOrder = 5
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -13
@@ -2099,7 +1884,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000}
-      TabOrder = 5
+      TabOrder = 6
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -13
@@ -2250,7 +2035,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000}
       OptionsImage.Layout = blGlyphTop
-      TabOrder = 6
+      TabOrder = 2
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -13
@@ -2720,7 +2505,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000}
-      TabOrder = 7
+      TabOrder = 8
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -13
@@ -3016,7 +2801,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000}
-      TabOrder = 8
+      TabOrder = 7
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -13
@@ -3038,7 +2823,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 4
+    TabOrder = 6
     object TLabel
       Left = 55
       Top = 154
@@ -3232,7 +3017,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 3
+      TabOrder = 4
       Text = 'Edit1'
     end
     object edContadorCelular1: TEdit
@@ -3249,7 +3034,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 4
+      TabOrder = 7
       Text = 'Edit1'
     end
     object edContadorEmail: TEdit
@@ -3266,7 +3051,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 5
+      TabOrder = 9
       Text = 'Edit1'
     end
     object edContadorTelefone1: TEdit
@@ -3283,7 +3068,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 6
+      TabOrder = 5
       Text = 'Edit1'
     end
     object edContadorCPF: TEdit
@@ -3299,7 +3084,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 7
+      TabOrder = 3
       Text = 'Edit1'
     end
     object edContadorTeleFone2: TEdit
@@ -3316,7 +3101,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 8
+      TabOrder = 6
       Text = 'Edit1'
     end
     object edContadorCelular2: TEdit
@@ -3332,7 +3117,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 9
+      TabOrder = 8
       Text = 'Edit1'
     end
   end
@@ -3348,7 +3133,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 5
+    TabOrder = 7
     object TL_colab: TLabel
       Left = 55
       Top = 75
@@ -3479,7 +3264,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 6
+    TabOrder = 0
     object Label14: TLabel
       Left = 89
       Top = 182
@@ -3612,8 +3397,8 @@ object frm_cad_empresa: Tfrm_cad_empresa
     end
     object edRazaoSocial: TEdit
       Tag = 100
-      Left = 141
-      Top = 21
+      Left = 139
+      Top = 20
       Width = 461
       Height = 26
       Color = 8454016
@@ -3653,7 +3438,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 2
+      TabOrder = 8
     end
     object edSUFRAMA: TEdit
       Left = 140
@@ -3667,7 +3452,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 3
+      TabOrder = 6
     end
     object edInscricaoEstadual: TEdit
       Tag = 100
@@ -3697,7 +3482,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 5
+      TabOrder = 3
     end
     object edInscricaoMunicipal: TEdit
       Left = 444
@@ -3711,7 +3496,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 6
+      TabOrder = 5
     end
     object edNIRE: TEdit
       Left = 444
@@ -3740,7 +3525,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 8
+      TabOrder = 9
       Text = 'Edit1'
     end
     object edDataInicioAtividades: TMaskEdit
@@ -3759,7 +3544,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       MaxLength = 8
       ParentFont = False
       ReadOnly = True
-      TabOrder = 9
+      TabOrder = 2
       Text = '  /  /  '
     end
   end
@@ -3903,7 +3688,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       A5FFD1B3A4FFD1B3A4FFD0B2A4FFD1B2A4FFD0B2A4FFCFB2A3FFCFB2A3FFCFB2
       A3FFCFB0A3FFCFB1A2FFCFB0A2FFCEB0A2FFCEB0A2FFCEAFA1FF998277C10000
       0007000000020000000000000000000000000000000000000000}
-    TabOrder = 7
+    TabOrder = 10
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -4057,7 +3842,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
     ParentBackground = False
     ParentColor = False
     ParentFont = False
-    TabOrder = 9
+    TabOrder = 1
     object Label17: TLabel
       Left = 192
       Top = 58
@@ -4218,7 +4003,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
         A2FC62504B900404031000000002000000000000000000000000000000000000
         000000000003241F1D3486726BADB69B91E6CCADA1FFB99C92E988736CB22822
         1F3E000000060000000100000000000000000000000000000000}
-      TabOrder = 0
+      TabOrder = 4
       OnClick = cxButton5Click
     end
     object cxButton10: TcxButton
@@ -4264,7 +4049,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
         A2FC62504B900404031000000002000000000000000000000000000000000000
         000000000003241F1D3486726BADB69B91E6CCADA1FFB99C92E988736CB22822
         1F3E000000060000000100000000000000000000000000000000}
-      TabOrder = 1
+      TabOrder = 7
       OnClick = cxButton10Click
     end
     object edEnderecoMunicipio: TEdit
@@ -4280,7 +4065,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 2
+      TabOrder = 6
       Text = 'Edit1'
     end
     object edEnderecoComplemento: TEdit
@@ -4295,7 +4080,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 3
+      TabOrder = 5
       Text = 'Edit1'
     end
     object edEnderecoNumero: TEdit
@@ -4311,7 +4096,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 4
+      TabOrder = 2
       Text = 'Edit1'
     end
     object edEnderecoRua: TEdit
@@ -4327,7 +4112,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 5
+      TabOrder = 0
     end
     object edEnderecoMunicipioIBGE: TEdit
       Tag = 100
@@ -4342,7 +4127,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 6
+      TabOrder = 8
       Text = 'Edit1'
     end
     object edEnderecoBairro: TEdit
@@ -4358,7 +4143,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 7
+      TabOrder = 3
       Text = 'Edit1'
     end
     object edEnderecoUF: TEdit
@@ -4376,7 +4161,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Style = []
       ParentDoubleBuffered = False
       ParentFont = False
-      TabOrder = 8
+      TabOrder = 9
       Text = 'Edit1'
     end
     object edEnderecoUFIBGE: TEdit
@@ -4392,7 +4177,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 9
+      TabOrder = 10
       Text = 'edEnderecoUFIBGE'
     end
     object edEnderecoCEP: TEdit
@@ -4408,7 +4193,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      TabOrder = 10
+      TabOrder = 1
       Text = 'Edit1'
     end
   end
@@ -4427,7 +4212,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
     ParentBackground = False
     ParentColor = False
     ParentFont = False
-    TabOrder = 10
+    TabOrder = 5
     object TLabel
       Left = 22
       Top = 90
@@ -4558,7 +4343,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
     ParentBackground = False
     ParentColor = False
     ParentFont = False
-    TabOrder = 11
+    TabOrder = 3
     object TLabel
       Left = 30
       Top = 31
@@ -4636,7 +4421,7 @@ object frm_cad_empresa: Tfrm_cad_empresa
     ParentBackground = False
     ParentColor = False
     ParentFont = False
-    TabOrder = 12
+    TabOrder = 4
     object TLabel
       Left = 21
       Top = 58

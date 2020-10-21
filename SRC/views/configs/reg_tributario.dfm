@@ -124,7 +124,7 @@ object frm_reg_tributaria: Tfrm_reg_tributaria
     object RadioButton1: TRadioButton
       Left = 13
       Top = 24
-      Width = 501
+      Width = 612
       Height = 17
       Caption = 
         '0. (400) N'#227'o tributada pelo Simples Nacional. Lucro Real ou Pres' +
@@ -142,7 +142,7 @@ object frm_reg_tributaria: Tfrm_reg_tributaria
     object RadioButton3: TRadioButton
       Left = 13
       Top = 93
-      Width = 516
+      Width = 660
       Height = 17
       Caption = 
         '3. (103) Isen'#231#227'o do ICMS no Simples Nacional para faixa de recei' +

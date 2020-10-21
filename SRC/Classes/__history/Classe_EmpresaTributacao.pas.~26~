@@ -1,0 +1,76 @@
+unit Classe_EmpresaTributacao;
+
+interface
+
+uses Classes, Dialogs, SysUtils, IniFiles,
+     FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+     FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet,
+     FireDAC.Comp.Client,
+     FireDAC.Stan.Intf, FireDAC.Stan.Option;
+
+type
+   TPIS = class
+   private
+      FCumulativo : Boolean;
+    function getFCumulativo: Boolean;
+    procedure setFCumulativo(const Value: Boolean);
+   public
+      property Cumulativo : Boolean read getFCumulativo write setFCumulativo;
+   end;
+
+   TTributosDeEmpresa = class
+  private
+	  FPIS : TPIS;
+    function getFPIS: TPIS;
+    procedure setFPIS(const Value: TPIS);
+   public
+     property PIS : TPIS read getFPIS write setFPIS;
+    Constructor Create;
+    Destructor  Destroy; Override;
+
+   end;
+
+implementation
+{ TEmpresa }
+
+uses Funcoes;
+
+var qEmpresa: TFDQuery;
+
+{ TPIS }
+
+
+function TPIS.getFCumulativo: Boolean;
+begin
+   result := self.FCumulativo;
+end;
+
+procedure TPIS.setFCumulativo(const Value: Boolean);
+begin
+   FCumulativo := Value;
+end;
+
+{ TTributosDeEmpresa }
+
+constructor TTributosDeEmpresa.Create;
+begin
+   FPIS := TPIS.Create;
+end;
+
+destructor TTributosDeEmpresa.Destroy;
+begin
+  FPIS.Destroy;
+  inherited;
+end;
+
+function TTributosDeEmpresa.getFPIS: TPIS;
+begin
+   result := self.FPIS;
+end;
+
+procedure TTributosDeEmpresa.setFPIS(const Value: TPIS);
+begin
+   FPIS := Value;
+end;
+
+end.

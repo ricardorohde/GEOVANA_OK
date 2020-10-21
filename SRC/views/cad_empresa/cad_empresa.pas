@@ -3,6 +3,7 @@ unit cad_empresa;
 interface
 
 uses
+
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, cxGraphics, cxLookAndFeels,
   cxLookAndFeelPainters, Vcl.Menus, dxSkinsCore, cxControls, cxContainer,
@@ -23,20 +24,15 @@ uses
   dxSkinTheAsphaltWorld, dxSkinsDefaultPainters, dxSkinValentine,
   dxSkinVisualStudio2013Blue, dxSkinVisualStudio2013Dark,
   dxSkinVisualStudio2013Light, dxSkinVS2010, dxSkinWhiteprint,
-  dxSkinXmas2008Blue;
+  dxSkinXmas2008Blue, Vcl.ExtCtrls;
 
 type
   Tfrm_cad_empresa = class(TForm)
     BtnGravar: TcxButton;
-    BtnAlterar: TcxButton;
     GroupBox1: TGroupBox;
     grpPisCofins: TGroupBox;
-    chk_2: TcxCheckBox;
-    chk_1: TcxCheckBox;
-    Edit4: TEdit;
-    Edit5: TEdit;
+    edPISAliquota: TEdit;
     ed_EMPRESA_pCOFINS: TEdit;
-    Edit7: TEdit;
     cxCheckBox1: TcxCheckBox;
     GroupBox3: TGroupBox;
     Label11: TLabel;
@@ -127,6 +123,7 @@ type
     edCelular: TEdit;
     edWhatsApp: TEdit;
     edEmail: TEdit;
+    rgPISCumulativo: TRadioGroup;
     procedure BtnCertificadoClick(Sender: TObject);
     procedure BtnEmailClick(Sender: TObject);
     procedure cxButton4Click(Sender: TObject);
@@ -244,7 +241,8 @@ end;
 procedure Tfrm_cad_empresa.cxButton6Click(Sender: TObject);
 begin
     frm_reg_tributaria := Tfrm_reg_tributaria.Create(nil);
-    frm_reg_tributaria.showmodal
+    frm_reg_tributaria.showmodal;
+    frm_reg_tributaria.Free;
 end;
 
 procedure Tfrm_cad_empresa.cxButton8Click(Sender: TObject);
@@ -261,7 +259,14 @@ end;
 
 function Tfrm_cad_empresa.DadosCorretos: Boolean;
 begin
-
+   result := false;
+   if FaltaPreencherAlgumCampoObrigatorio(frm_cad_empresa) then exit;
+   if edPISAliquota.Text = '' then
+      edPISAliquota.Text := '0'
+   else
+      if not PercentualValido(edPISAliquota.Text) then
+         exit;
+   result := true;
 end;
 
 procedure Tfrm_cad_empresa.FormShow(Sender: TObject);
@@ -275,6 +280,7 @@ function Tfrm_cad_empresa.Gravar_Empresa:Boolean;
 begin
     Result := False;
     try
+        Empresa.PessoaJuridica              := True;
         Empresa.NomeFantasia                := edNomeFantasia.Text;
         Empresa.RazaoSocial                 := edRazaoSocial.Text;
         Empresa.DataInicioAtividades        := StrToDate(edDataInicioAtividades.text);
@@ -311,8 +317,25 @@ begin
         Empresa.ContadorCelular1            := edContadorCelular1.Text;
         Empresa.ContadorCelular2            := edContadorCelular2.Text;
         Empresa.ContadorEmail               := edContadorEmail.Text;
-        Empresa.DataCadastro                := StrToDate(edDataCadastro.text);
+
+        //Tributacao
+        //----------------------------------------------------------------------
+        Empresa.Tributacao.PIS.Cumulativo   :=(rgPISCumulativo.ItemIndex = 1);
+        if edPISAliquota.Text = '' then
+           edPISAliquota.Text := '0';
+
+        Empresa.Tributacao.PIS.Aliquota     := StrToFloat(MascToStr(edPISAliquota.Text));
+
+
+        // UNISYSTEM
+        //----------------------------------------------------------------------
+        if edDataCadastro.text <> '  /  /  ' then
+           Empresa.DataCadastro                := StrToDate(edDataCadastro.text)
+        else
+           Empresa.DataCadastro := 0;
         Empresa.CodigoUniSystem             := edCodigoUniSystem.Text;
+
+
         result := Empresa.Gravar;
     Except
 
@@ -360,7 +383,7 @@ begin
    edContadorEmail.Text               := Empresa.ContadorEmail;
    edDataCadastro.Text                := Empresa.DataCadastroString;
    edCodigoUniSystem.Text             := Empresa.CodigoUniSystem;
-
+   rgPISCumulativo.ItemIndex          := f0ou1(Empresa.Tributacao.PIS.Cumulativo);
 //PASSO 9 :)
    {
 

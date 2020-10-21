@@ -7,7 +7,7 @@ uses Classes, Dialogs, SysUtils, TiposDeDados;
 type
    TVerificacaoInicial = class
    private
-      function getAcessoNegado: boolean;
+    function getAcessoNegado: boolean;
     function getValidadeCertificado: TDateTime;
    protected
       FValidadeDoSistema,
